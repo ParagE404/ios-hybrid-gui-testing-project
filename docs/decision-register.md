@@ -136,3 +136,21 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Design:** \`mcp_adapter/\` wraps the frozen engine as an MCP server over stdio.
 - **SEQ1 protocol:** 72 runs, ABBAAB block order, comparing direct vs MCP.
 - **Final Register Update:** e8ebe064.
+
+## Component attribution
+
+| Component | Origin | Source and licence | Notes |
+|---|---|---|---|
+| spikes/appium_smoke.py | original, AI-assisted | n/a | Week 1 spike |
+| engine/ (core) | original, AI-assisted | n/a | Design decisions D-006 to D-010 |
+| engine/vlm/showui.py | adapted, AI-assisted | ShowUI-2B model card | |
+| tests/ | original, AI-assisted | n/a | 47 tests |
+| engine/staticcheck.py | original, AI-assisted | n/a | Benchmark verification |
+| mcp_adapter/ | original, AI-assisted | MCP Python SDK (MIT) | D-026 |
+| analysis/ (scripts) | original, AI-assisted | n/a | D-014, D-025 |
+| apps/testbed/ | original, AI-assisted | n/a | SwiftUI testbed |
+| benchmark/scenarios/ | original, AI-assisted | n/a | YAML scenarios |
+| Appium + XCUITest | library | Apache-2.0 | |
+| ShowUI-2B | library (model) | model card licence | |
+| SyncUps / NetNewsWire | library | MIT | D-003 |
+| apps/external/*.patch | original, AI-assisted | n/a | Instrumentation |
