@@ -1,0 +1,10 @@
+# Design decision and component attribution register
+Promised in the proposal's risk register. Each decision gives the options, the evidence, and the rationale. These feed Chapters 3, 6 and 7 and the BCS requirement for "rationale for design/implementation decisions".
+
+## Decisions
+
+### D-001 Native execution through Appium XCUITest, not Playwright (accepted, proposal)
+- **Date:** 2026-06-26
+- **Options:** Playwright MCP with iPhone emulation; Appium XCUITest; XCUITest directly in Swift.
+- **Rationale:** Playwright emulates browser viewport, user agent and touch, not native UIKit/SwiftUI. Appium exposes XCTest-derived attributes to Python and has an MCP ecosystem.
+- **Source:** proposal, Critical Context.
