@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Demo: TB-07 hybrid perturbed",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "engine.cli",
+      "args": ["run", "benchmark/scenarios/tb-07.yaml", "--config", "hybrid", "--condition", "perturbed",
+               "--device", "iPhone 17", "--bundle", "uk.ac.city.parag.Errands",
+               "--log", "experiments/raw/demo.jsonl", "--run-id", "demo-debug"],
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "justMyCode": true
+    }
+  ]
+}
