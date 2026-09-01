@@ -10,6 +10,8 @@ appium = ["Appium-Python-Client>=4"]
 vlm = ["torch", "torchvision", "transformers>=4.45", "accelerate", "qwen-vl-utils", "pillow"]
 dev = ["pytest>=8"]
 
+[tool.setuptools]
+packages = ["engine"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
