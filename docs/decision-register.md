@@ -8,3 +8,7 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Options:** Playwright MCP with iPhone emulation; Appium XCUITest; XCUITest directly in Swift.
 - **Rationale:** Playwright emulates browser viewport, user agent and touch, not native UIKit/SwiftUI. Appium exposes XCTest-derived attributes to Python and has an MCP ecosystem.
 - **Source:** proposal, Critical Context.
+
+### D-012 Activation point for switches (proposed)
+- **Date:** 2026-09-05
+- **Logic:** All routes use \`Element.tap_point\` (trailing edge minus 32 pt for switches wider than 120 pt).
