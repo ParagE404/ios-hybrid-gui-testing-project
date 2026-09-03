@@ -1,0 +1,24 @@
+# Example scenario showing the format. Formal scenarios go in benchmark/scenarios/,
+# pilot scenarios in benchmark/pilot/ (pilot: true, never analysed).
+id: tb-example-add-item
+app: testbed
+title: Add an item to the shopping list
+pilot: false
+initial_state:
+  launch_args: ["-resetData"]
+steps:
+  - step: "Tap the 'Add item' button"
+    scripted: {strategy: accessibility_id, value: addItemButton}
+  - step: "Type 'Eggs' into the 'Item name' field"
+    scripted: {strategy: accessibility_id, value: itemNameField}
+    oracle: {type: TextField}
+  - step: "Tap the 'Save' button"
+    scripted: {strategy: accessibility_id, value: saveButton}
+    oracle: {type: Button, label: Save}
+postconditions:
+  - {check: exists, element: {type: Cell, label_contains: Eggs}}
+  - {check: count, n: 3, element: {type: Cell}}
+perturbation:
+  kind: identifier_rename
+  description: "Add button accessibilityIdentifier renamed addItemButton -> addButton_v2; label unchanged"
+  launch_args: ["-perturb", "identifier_rename"]
