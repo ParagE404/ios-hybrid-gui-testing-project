@@ -14,6 +14,10 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Proposed:** controlled English with quoted targets parsed by rules.
 - **Rationale:** Parsing stays deterministic, so results measure element resolution rather than language understanding.
 
+### D-010 Step oracle (confirmed)
+- **Date:** 2026-09-05
+- **Logic:** Correctness is judged by an author-written matcher (\`oracle\`) on the pre-action snapshot, independent of the resolver.
+
 ### D-012 Activation point for switches (proposed)
 - **Date:** 2026-09-05
 - **Logic:** All routes use \`Element.tap_point\` (trailing edge minus 32 pt for switches wider than 120 pt).
