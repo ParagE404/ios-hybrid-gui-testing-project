@@ -14,6 +14,19 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Proposed:** controlled English with quoted targets parsed by rules.
 - **Rationale:** Parsing stays deterministic, so results measure element resolution rather than language understanding.
 
+### D-007 Router uncertainty behavior (confirmed)
+- **Date:** 2026-09-05
+- **Proposed:** "best_effort" for both \`a11y_on_uncertain\` and \`hybrid_on_reject\`.
+- **Rationale:** This gives the accessibility-only baseline its strongest fair form, so any hybrid gain is not inflated.
+
+### D-008 VLM Constraints (confirmed)
+- **Date:** 2026-09-05
+- **Mechanism:** validator snaps the predicted point to the smallest compatible element and rejects it if that element is outside the resolver's candidate set.
+
+### D-009 Execution primitive shared by all routes (confirmed)
+- **Date:** 2026-09-05
+- **Logic:** All routes tap at screen coordinates through \`mobile: tap\`; scripted finds by locator and clicks. Same backend for all three configurations.
+
 ### D-010 Step oracle (confirmed)
 - **Date:** 2026-09-05
 - **Logic:** Correctness is judged by an author-written matcher (\`oracle\`) on the pre-action snapshot, independent of the resolver.
