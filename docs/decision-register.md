@@ -9,6 +9,13 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Rationale:** Playwright emulates browser viewport, user agent and touch, not native UIKit/SwiftUI. Appium exposes XCTest-derived attributes to Python and has an MCP ecosystem.
 - **Source:** proposal, Critical Context.
 
+### D-002 VLM hosting: local ShowUI-2B on M4 Pro vs approved API (decided: local)
+- **Date:** 2026-09-05
+- **Evidence (spikes/showui_batch.py):** synthetic 1206x2622 Settings screen, 13 labelled rows, MPS, float16. model load 6.1 s; 12/13 hits; latency median 3,215 ms.
+- **Live evidence (pilot round 1):** 6 calls, 3.2 to 3.9 s each; 1 accepted and correct (p-05 picker).
+- **Decision rule:** Local if median latency under about 10 s and outputs parseable. Both met, so the VLM runs locally.
+- **Runtime implication:** about 3.2 s per fallback call, so the 432-run experiment fits overnight.
+
 ### D-006 Step language: controlled English with quoted targets (confirmed)
 - **Date:** 2026-09-05
 - **Proposed:** controlled English with quoted targets parsed by rules.
