@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1BC4C81D4D1F240FE8E350E0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0571E863F09C9B67F5672D /* SettingsView.swift */; };
+		3A9F4C6C16D8CFBDDF0395BC /* ItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D655A5A238FBF37E8C09A846 /* ItemFormView.swift */; };
+		488F6F6ED61561EDB24FCF9C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAB947BAF19DA276CCA333E /* Store.swift */; };
+		56B9E48DF2EA6D2DD6944CC4 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12019C36A3DC0094553894B /* ItemDetailView.swift */; };
+		952878D64BCCCDB4B61DC2C4 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D60CBDA5093C96181343E3 /* ItemListView.swift */; };
+		C2E9181C6C27D8DA8460350C /* ErrandsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D682AA6425E46C5FEDDD66 /* ErrandsApp.swift */; };
+		CC9BAF30CAD1131E9A35A222 /* Perturb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDF930F97ED8B66E2A76C40 /* Perturb.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06D60CBDA5093C96181343E3 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		0AAB947BAF19DA276CCA333E /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		43D682AA6425E46C5FEDDD66 /* ErrandsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrandsApp.swift; sourceTree = "<group>"; };
+		9FDF930F97ED8B66E2A76C40 /* Perturb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perturb.swift; sourceTree = "<group>"; };
+		C12019C36A3DC0094553894B /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		D655A5A238FBF37E8C09A846 /* ItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFormView.swift; sourceTree = "<group>"; };
+		D8D16AD16CE113C86B89A26B /* Errands.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Errands.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB0571E863F09C9B67F5672D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		6CB9E220F4F0A442107F614C = {
+			isa = PBXGroup;
+			children = (
+				C1B50A37957D2B976974C626 /* Errands */,
+				8C15CC349AF79D21487BF2B6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8C15CC349AF79D21487BF2B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8D16AD16CE113C86B89A26B /* Errands.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C1B50A37957D2B976974C626 /* Errands */ = {
+			isa = PBXGroup;
+			children = (
+				43D682AA6425E46C5FEDDD66 /* ErrandsApp.swift */,
+				C12019C36A3DC0094553894B /* ItemDetailView.swift */,
+				D655A5A238FBF37E8C09A846 /* ItemFormView.swift */,
+				06D60CBDA5093C96181343E3 /* ItemListView.swift */,
+				9FDF930F97ED8B66E2A76C40 /* Perturb.swift */,
+				DB0571E863F09C9B67F5672D /* SettingsView.swift */,
+				0AAB947BAF19DA276CCA333E /* Store.swift */,
+			);
+			path = Errands;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4BA05DF4999D20A0333231B7 /* Errands */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0645D36BE221005F7688A0C /* Build configuration list for PBXNativeTarget "Errands" */;
+			buildPhases = (
+				65336F292426627EE71F1089 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Errands;
+			packageProductDependencies = (
+			);
+			productName = Errands;
+			productReference = D8D16AD16CE113C86B89A26B /* Errands.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DE3D716A20AFEB298FD50A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 8ED74C2DD06FDA3DD7BAE1EE /* Build configuration list for PBXProject "Errands" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 6CB9E220F4F0A442107F614C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 8C15CC349AF79D21487BF2B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BA05DF4999D20A0333231B7 /* Errands */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65336F292426627EE71F1089 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2E9181C6C27D8DA8460350C /* ErrandsApp.swift in Sources */,
+				56B9E48DF2EA6D2DD6944CC4 /* ItemDetailView.swift in Sources */,
+				3A9F4C6C16D8CFBDDF0395BC /* ItemFormView.swift in Sources */,
+				952878D64BCCCDB4B61DC2C4 /* ItemListView.swift in Sources */,
+				CC9BAF30CAD1131E9A35A222 /* Perturb.swift in Sources */,
+				1BC4C81D4D1F240FE8E350E0 /* SettingsView.swift in Sources */,
+				488F6F6ED61561EDB24FCF9C /* Store.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		373AEAB3AE60E1092E8840A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Errands;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.city.parag.Errands;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5077B379846B9E2892F2B0A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		50C301811B2064EF20060902 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Errands;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.city.parag.Errands;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		6C0112A86333AF7775899184 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8ED74C2DD06FDA3DD7BAE1EE /* Build configuration list for PBXProject "Errands" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C0112A86333AF7775899184 /* Debug */,
+				5077B379846B9E2892F2B0A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B0645D36BE221005F7688A0C /* Build configuration list for PBXNativeTarget "Errands" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				373AEAB3AE60E1092E8840A5 /* Debug */,
+				50C301811B2064EF20060902 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DE3D716A20AFEB298FD50A0 /* Project object */;
+}
