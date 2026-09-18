@@ -1,0 +1,42 @@
+# Errands testbed scenario. Origin: original, 
+# Scripted locators follow D-011 (developer id, else XPath on a unique name, else positional XPath).
+# VERIFY every locator and label against real page source from the simulator before the freeze.
+id: tb-07
+app: testbed
+title: Favourite 'Batteries'
+pilot: false
+category: 4
+expected_outcome: Scripted and a11y fail at the star (no label, generic id); hybrid is the only route.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Batteries' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Batteries, Qty 4"]
+  oracle:
+    type: Button
+    label_contains: Batteries,
+  screen: list
+- step: Tap the 'Favourite' button
+  scripted:
+    strategy: accessibility_id
+    value: favouriteButton
+  oracle:
+    type: Button
+    name: favouriteButton
+  screen: detail
+  oracle_perturbed:
+    type: Button
+    name: button_7
+postconditions:
+- check: exists
+  element:
+    label: In favourites
+perturbation:
+  kind: weak_metadata
+  description: Favourite star (drawn shape) loses its accessibility label; id becomes 'button_7'
+  launch_args:
+  - -perturb
+  - tb07_star_unlabelled
