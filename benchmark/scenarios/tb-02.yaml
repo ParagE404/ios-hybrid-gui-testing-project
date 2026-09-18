@@ -1,0 +1,53 @@
+# Errands testbed scenario. Origin: original, 
+# Scripted locators follow D-011 (developer id, else XPath on a unique name, else positional XPath).
+# VERIFY every locator and label against real page source from the simulator before the freeze.
+id: tb-02
+app: testbed
+title: Edit 'Bread' and mark it urgent
+pilot: false
+category: 1
+expected_outcome: Scripted fails at the Urgent toggle (id removed); a11y and hybrid succeed via labels.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Bread' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Bread, Qty 1"]
+  oracle:
+    type: Button
+    label_contains: Bread,
+  screen: list
+- step: Tap the 'Edit' button
+  scripted:
+    strategy: accessibility_id
+    value: editButton
+  oracle:
+    label: Edit
+  screen: detail
+- step: Toggle the 'Urgent' switch
+  scripted:
+    strategy: accessibility_id
+    value: urgentToggle
+  oracle:
+    type: Switch
+    label: Urgent
+  screen: edit_form
+- step: Tap the 'Save' button
+  scripted:
+    strategy: accessibility_id
+    value: saveButton
+  oracle:
+    label: Save
+  screen: edit_form
+postconditions:
+- check: exists
+  element:
+    label: Urgent item
+perturbation:
+  kind: identifier_removal
+  description: Urgent toggle and Save button lose their accessibilityIdentifiers
+  launch_args:
+  - -perturb
+  - tb02_ids_removed

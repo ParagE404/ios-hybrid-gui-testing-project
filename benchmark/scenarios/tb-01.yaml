@@ -1,0 +1,55 @@
+# Errands testbed scenario. Origin: original, 
+# Scripted locators follow D-011 (developer id, else XPath on a unique name, else positional XPath).
+# VERIFY every locator and label against real page source from the simulator before the freeze.
+id: tb-01
+app: testbed
+title: Add an item 'Coffee' with quantity 2
+pilot: false
+category: 1
+expected_outcome: Scripted fails at step 1 (id renamed); a11y and hybrid succeed via the unchanged label.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Add item' button
+  scripted:
+    strategy: accessibility_id
+    value: addItemButton
+  oracle:
+    label: Add item
+  screen: list
+- step: Type 'Coffee' into the 'Item name' field
+  scripted:
+    strategy: accessibility_id
+    value: itemNameField
+  oracle:
+    type: TextField
+  screen: add_form
+- step: Tap the 'Increment' button
+  scripted:
+    strategy: accessibility_id
+    value: quantityStepper-Increment
+  oracle:
+    type: Button
+    label_contains: Increment
+  screen: add_form
+- step: Tap the 'Save' button
+  scripted:
+    strategy: accessibility_id
+    value: saveButton
+  oracle:
+    label: Save
+  screen: add_form
+postconditions:
+- check: exists
+  element:
+    label_contains: Coffee
+- check: exists
+  element:
+    label_contains: Qty 2
+perturbation:
+  kind: identifier_rename
+  description: Add button accessibilityIdentifier addItemButton -> addButton_v2; label unchanged
+  launch_args:
+  - -perturb
+  - tb01_add_id_renamed
