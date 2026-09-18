@@ -1,0 +1,40 @@
+# Errands testbed scenario. Origin: original, 
+# Scripted locators follow D-011 (developer id, else XPath on a unique name, else positional XPath).
+# VERIFY every locator and label against real page source from the simulator before the freeze.
+id: tb-06
+app: testbed
+title: Sort the list by date
+pilot: false
+category: 3
+expected_outcome: Scripted passes (id unchanged); a11y likely uncertain on 'Sort' vs 'Options'; hybrid may recover
+  visually.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Sort' button
+  scripted:
+    strategy: accessibility_id
+    value: sortMenu
+  oracle:
+    identifier: sortMenu
+  screen: list
+- step: Tap the 'By date' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="By date"]
+  oracle:
+    label: By date
+  screen: sort_menu
+postconditions:
+- check: above
+  element:
+    label_contains: Milk
+  other:
+    label_contains: Batteries
+perturbation:
+  kind: generic_label
+  description: Sort menu relabelled 'Options' (generic); identifier unchanged
+  launch_args:
+  - -perturb
+  - tb06_sort_relabel

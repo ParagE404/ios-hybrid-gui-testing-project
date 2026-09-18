@@ -1,0 +1,53 @@
+# Errands testbed scenario. Origin: original, 
+# Scripted locators follow D-011 (developer id, else XPath on a unique name, else positional XPath).
+# VERIFY every locator and label against real page source from the simulator before the freeze.
+id: tb-08
+app: testbed
+title: Filter to 'Home' items and mark 'Light bulbs' as done
+pilot: false
+category: 4
+expected_outcome: Scripted and a11y fail (chips icon-only, unlabelled); hybrid must ground 'Home' to the house icon.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Home' filter
+  scripted:
+    strategy: accessibility_id
+    value: filter_Home
+  oracle:
+    type: Button
+    name: filter_Home
+  expect_after:
+    check: absent
+    element:
+      label_contains: Milk
+  screen: list
+  oracle_perturbed:
+    type: Button
+    name: chip_2
+- step: Tap the 'Light bulbs' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Light bulbs, Qty 3"]
+  oracle:
+    type: Button
+    label_contains: Light bulbs,
+  screen: list
+- step: Tap the 'Mark as done' button
+  scripted:
+    strategy: accessibility_id
+    value: markDoneButton
+  oracle:
+    label: Mark as done
+  screen: detail
+postconditions:
+- check: exists
+  element:
+    label: Completed
+perturbation:
+  kind: weak_metadata
+  description: Filter chips become icon-only with no accessibility label; ids become chip_0..3
+  launch_args:
+  - -perturb
+  - tb08_chips_unlabelled

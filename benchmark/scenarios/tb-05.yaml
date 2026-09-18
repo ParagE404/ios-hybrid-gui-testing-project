@@ -1,0 +1,55 @@
+# Errands testbed scenario. Origin: original, 
+# Scripted locators follow D-011 (developer id, else XPath on a unique name, else positional XPath).
+# VERIFY every locator and label against real page source from the simulator before the freeze.
+id: tb-05
+app: testbed
+title: Delete 'Eggs' and then 'Bread'
+pilot: false
+category: 3
+expected_outcome: Scripted fails (id becomes the shared deleteButton); a11y may resolve via the row context; hybrid
+  as fallback.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap 'Delete' in the 'Eggs' row
+  scripted:
+    strategy: accessibility_id
+    value: delete_Eggs
+  oracle:
+    type: Button
+    label_contains: Delete
+    in_row: Eggs
+  expect_after:
+    check: absent
+    element:
+      label_contains: Eggs
+  screen: list
+- step: Tap 'Delete' in the 'Bread' row
+  scripted:
+    strategy: accessibility_id
+    value: delete_Bread
+  oracle:
+    type: Button
+    label_contains: Delete
+    in_row: Bread
+  screen: list
+postconditions:
+- check: absent
+  element:
+    label_contains: Eggs
+- check: absent
+  element:
+    label_contains: Bread
+- check: exists
+  element:
+    label_contains: Milk
+- check: exists
+  element:
+    label_contains: Batteries
+perturbation:
+  kind: duplicate_label
+  description: Every row's delete button is labelled just 'Delete' with the same id 'deleteButton'
+  launch_args:
+  - -perturb
+  - tb05_duplicate_delete

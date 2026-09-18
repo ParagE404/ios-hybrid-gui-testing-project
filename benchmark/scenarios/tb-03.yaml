@@ -1,0 +1,45 @@
+# Errands testbed scenario. Origin: original, 
+# Scripted locators follow D-011 (developer id, else XPath on a unique name, else positional XPath).
+# VERIFY every locator and label against real page source from the simulator before the freeze.
+id: tb-03
+app: testbed
+title: Mark 'Milk' as done from its detail page
+pilot: false
+category: 2
+expected_outcome: Scripted fails at step 1 (row's combined label changes); a11y matches the 'Milk' segment of the
+  new label.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Milk' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Milk, Qty 1"]
+  oracle:
+    type: Button
+    label_contains: Milk,
+  screen: list
+- step: Tap the 'Mark as done' button
+  scripted:
+    strategy: accessibility_id
+    value: markDoneButton
+  oracle:
+    label: Mark as done
+  screen: detail
+- step: Go back
+  screen: detail
+postconditions:
+- check: exists
+  element:
+    label_contains: Milk done
+- check: absent
+  element:
+    label_contains: Light bulbs done
+perturbation:
+  kind: hierarchy_insertion
+  description: Pinned section inserted above the rows; each row gains a category caption, so 'Milk, Qty 1' becomes
+    'Milk, Food, Qty 1'
+  launch_args:
+  - -perturb
+  - tb03_rows_wrapped
