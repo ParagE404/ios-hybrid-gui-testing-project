@@ -1,0 +1,66 @@
+# PILOT scenario: used ONLY to calibrate router threshold and margin (D-005). Never analysed.
+# Origin: original, 
+# Scripted locators follow D-011 against the baseline page source.
+id: p-02
+app: testbed
+title: Delete 'Milk', then reset all data from Settings
+pilot: true
+category: 3
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap 'Delete' in the 'Milk' row
+  scripted:
+    strategy: accessibility_id
+    value: delete_Milk
+  oracle:
+    type: Button
+    label_contains: Delete
+    in_row: Milk
+  screen: list
+- step: Tap the 'Settings' tab
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Settings"]
+  oracle:
+    type: Button
+    label: Settings
+  screen: list
+- step: Tap the 'Reset data' button
+  scripted:
+    strategy: accessibility_id
+    value: resetButton
+  oracle:
+    type: Button
+    label: Reset data
+  screen: settings
+- step: Tap the 'Reset' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Reset"]
+  oracle:
+    type: Button
+    label: Reset
+  oracle_perturbed:
+    type: Button
+    label: OK
+  screen: reset_alert
+- step: Tap the 'List' tab
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="checklist"]
+  oracle:
+    type: Button
+    label: List
+  screen: settings
+postconditions:
+- check: exists
+  element:
+    label_contains: Milk,
+perturbation:
+  kind: generic_label
+  description: Alert's destructive 'Reset' button relabelled 'OK'
+  launch_args:
+  - -perturb
+  - p02_alert_generic
