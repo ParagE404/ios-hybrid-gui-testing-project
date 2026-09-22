@@ -1,0 +1,46 @@
+# PILOT scenario: used ONLY to calibrate router threshold and margin (D-005). Never analysed.
+# Origin: original, 
+# Scripted locators follow D-011 against the baseline page source.
+id: p-03
+app: testbed
+title: Turn on 'Compact rows'
+pilot: true
+category: 2
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Settings' tab
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Settings"]
+  oracle:
+    type: Button
+    label: Settings
+  screen: list
+- step: Toggle the 'Compact rows' switch
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeSwitch[@name="Compact rows"]
+  oracle:
+    type: Switch
+    label_contains: Compact rows
+  screen: settings
+- step: Tap the 'List' tab
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="checklist"]
+  oracle:
+    type: Button
+    label: List
+  screen: settings
+postconditions:
+- check: absent
+  element:
+    label_contains: Qty
+perturbation:
+  kind: hierarchy_restructure
+  description: '''Compact rows'' toggle label restructured with a subtitle ''Hide quantities'''
+  launch_args:
+  - -perturb
+  - p03_compact_subtitle

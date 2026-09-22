@@ -1,0 +1,61 @@
+# PILOT scenario: used ONLY to calibrate router threshold and margin (D-005). Never analysed.
+# Origin: original, 
+# Scripted locators follow D-011 against the baseline page source.
+id: p-05
+app: testbed
+title: Change 'Bread' category to Home
+pilot: true
+category: 3
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Bread' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Bread, Qty 1"]
+  oracle:
+    type: Button
+    label_contains: Bread,
+  screen: list
+- step: Tap the 'Edit' button
+  scripted:
+    strategy: accessibility_id
+    value: editButton
+  oracle:
+    type: Button
+    name: editButton
+  screen: detail
+- step: Tap the 'Category' button
+  scripted:
+    strategy: accessibility_id
+    value: categoryPicker
+  oracle:
+    type: Button
+    name: categoryPicker
+  screen: edit_form
+- step: Tap the 'Home' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Home"]
+  oracle:
+    type: Button
+    label: Home
+- step: Tap the 'Save' button
+  scripted:
+    strategy: accessibility_id
+    value: saveButton
+  oracle:
+    type: Button
+    label: Save
+  screen: edit_form
+postconditions:
+- check: exists
+  element:
+    label: Category, Home
+perturbation:
+  kind: generic_label
+  description: '''Category'' picker relabelled ''Type'''
+  launch_args:
+  - -perturb
+  - p05_picker_generic
