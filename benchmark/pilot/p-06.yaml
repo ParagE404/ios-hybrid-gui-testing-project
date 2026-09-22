@@ -1,0 +1,48 @@
+# PILOT scenario: used ONLY to calibrate router threshold and margin (D-005). Never analysed.
+# Origin: original, 
+# Scripted locators follow D-011 against the baseline page source.
+id: p-06
+app: testbed
+title: Start adding 'Tea', then cancel
+pilot: true
+category: 1
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Add item' button
+  scripted:
+    strategy: accessibility_id
+    value: addItemButton
+  oracle:
+    type: Button
+    label: Add item
+  screen: list
+- step: Type 'Tea' into the 'Item name' field
+  scripted:
+    strategy: accessibility_id
+    value: itemNameField
+  oracle:
+    type: TextField
+  screen: add_form
+- step: Tap the 'Cancel' button
+  scripted:
+    strategy: accessibility_id
+    value: cancelButton
+  oracle:
+    type: Button
+    label: Cancel
+  screen: add_form
+postconditions:
+- check: absent
+  element:
+    label_contains: Tea
+- check: exists
+  element:
+    label_contains: Milk,
+perturbation:
+  kind: identifier_removal
+  description: Cancel button loses its accessibilityIdentifier
+  launch_args:
+  - -perturb
+  - p06_cancel_id_removed

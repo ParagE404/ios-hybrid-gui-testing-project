@@ -1,0 +1,51 @@
+# PILOT scenario: used ONLY to calibrate router threshold and margin (D-005). Never analysed.
+# Origin: original, 
+# Scripted locators follow D-011 against the baseline page source.
+id: p-01
+app: testbed
+title: Sort by date using the Settings segmented control
+pilot: true
+category: 3
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Settings' tab
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Settings"]
+  oracle:
+    type: Button
+    label: Settings
+  screen: list
+- step: Tap the 'Date' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Date"]
+  oracle:
+    type: Button
+    label: Date
+  oracle_perturbed:
+    type: Button
+    label: Recent
+  screen: settings
+- step: Tap the 'List' tab
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="checklist"]
+  oracle:
+    type: Button
+    label: List
+  screen: settings
+postconditions:
+- check: above
+  element:
+    label_contains: Milk,
+  other:
+    label_contains: Batteries,
+perturbation:
+  kind: generic_label
+  description: Segments 'Name'/'Date' relabelled 'Alphabetical'/'Recent'
+  launch_args:
+  - -perturb
+  - p01_segment_relabel

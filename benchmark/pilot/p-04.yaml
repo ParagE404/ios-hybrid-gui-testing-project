@@ -1,0 +1,57 @@
+# PILOT scenario: used ONLY to calibrate router threshold and margin (D-005). Never analysed.
+# Origin: original, 
+# Scripted locators follow D-011 against the baseline page source.
+id: p-04
+app: testbed
+title: Increase 'Eggs' quantity to 13 via Edit
+pilot: true
+category: 4
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Eggs' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Eggs, Qty 12"]
+  oracle:
+    type: Button
+    label_contains: Eggs,
+  screen: list
+- step: Tap the 'Edit' button
+  scripted:
+    strategy: accessibility_id
+    value: editButton
+  oracle:
+    type: Button
+    name: editButton
+  oracle_perturbed:
+    type: Button
+    name: button_12
+  screen: detail
+- step: Tap the 'Increment' button
+  scripted:
+    strategy: accessibility_id
+    value: quantityStepper-Increment
+  oracle:
+    type: Button
+    label_contains: Increment
+  screen: edit_form
+- step: Tap the 'Save' button
+  scripted:
+    strategy: accessibility_id
+    value: saveButton
+  oracle:
+    type: Button
+    label: Save
+  screen: edit_form
+postconditions:
+- check: exists
+  element:
+    label: Quantity, 13
+perturbation:
+  kind: weak_metadata
+  description: '''Edit'' becomes an unlabelled pencil icon with id ''button_12'''
+  launch_args:
+  - -perturb
+  - p04_edit_icon
