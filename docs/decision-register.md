@@ -38,6 +38,15 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Date:** 2026-09-05
 - **Logic:** Correctness is judged by an author-written matcher (\`oracle\`) on the pre-action snapshot, independent of the resolver.
 
+### D-011 Scripted baseline locator policy (proposed 12 Sep 2026)
+- **Initial Rule (12 Sep 2026):** (1) developer identifier; (2) XPath on unique name; (3) positional XPath.
+- **Rationale:** mechanical application prevents author bias.
+
 ### D-012 Activation point for switches (proposed)
 - **Date:** 2026-09-05
 - **Logic:** All routes use \`Element.tap_point\` (trailing edge minus 32 pt for switches wider than 120 pt).
+
+### D-013 Separating development from evaluation (adopted)
+- **Date:** 2026-09-05
+- **Logic:** Engine fixes made from BASELINE testbed screens before the freeze are development.
+- **Static check result (10 Sep 2026):** baseline steps resolve through structured route; perturbed scripted locators break exactly at designed steps.
