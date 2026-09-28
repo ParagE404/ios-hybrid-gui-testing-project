@@ -50,3 +50,7 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Date:** 2026-09-05
 - **Logic:** Engine fixes made from BASELINE testbed screens before the freeze are development.
 - **Static check result (10 Sep 2026):** baseline steps resolve through structured route; perturbed scripted locators break exactly at designed steps.
+
+### D-014 Formal run protocol (pre-registered)
+- **Date:** 2026-09-10
+- **Implementation:** \`engine/batch.py\`. Repetition blocks with shuffled scenario order. Fresh app launch with \`-resetData\` before every run.
