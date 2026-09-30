@@ -24,6 +24,11 @@
 | qwen-vl-utils | 0.0.14 | `pip show qwen-vl-utils` |
 | pillow | 13.0.0 | `pip show pillow` |
 | huggingface_hub | 2.2.0 | `pip show huggingface_hub` |
+| numpy (analysis) | 2.5.4 | `pip show numpy` |
+| pandas (analysis) | 3.0.6 | `pip show pandas` |
+| scipy (analysis) | 1.18.1 | `pip show scipy` |
+| matplotlib (analysis) | 3.11.2 | `pip show matplotlib` |
+| tabulate (analysis, Markdown tables) | 0.10.0 | `pip show tabulate` |
 | VLM model + revision | showlab/ShowUI-2B @ cabec4fcc48d15ffd3efe0b33ea9bc7d41509d60 (weights: pytorch_model.bin, 4.4 GB) | HF commit hash (`refs/main` in HF cache) |
 | VLM processor + revision | Qwen/Qwen2-VL-2B-Instruct @ 895c3a49bc3fa70a340399125c650a463535e71c (2 safetensors shards, 4.4 GB) | HF commit hash (`refs/main` in HF cache) |
 
