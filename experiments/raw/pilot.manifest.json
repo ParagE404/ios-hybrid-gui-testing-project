@@ -1,0 +1,249 @@
+{
+ "batch_id": "20261018-2021-53f2",
+ "created": "2026-10-18T20:21:39+0100",
+ "seed": 20261018,
+ "host": "macOS-27.0.1-arm64-arm-64bit",
+ "python": "3.12.15",
+ "configs": {
+  "scripted": {
+   "use_resolver": false,
+   "use_vlm": false,
+   "a11y_on_uncertain": "best_effort",
+   "hybrid_on_reject": "best_effort",
+   "max_vlm_attempts": 2,
+   "router": {
+    "threshold": 0.75,
+    "margin": 0.1
+   },
+   "resolver": {
+    "w_text": 0.6,
+    "w_type": 0.25,
+    "w_context": 0.15,
+    "field_weights": {
+     "label": 1.0,
+     "identifier": 0.9,
+     "placeholder": 0.85,
+     "value": 0.6
+    },
+    "min_text": 0.35,
+    "collapse_eps": 0.05,
+    "max_candidates": 10,
+    "segment_weight": 0.95
+   }
+  },
+  "a11y": {
+   "use_resolver": true,
+   "use_vlm": false,
+   "a11y_on_uncertain": "best_effort",
+   "hybrid_on_reject": "best_effort",
+   "max_vlm_attempts": 2,
+   "router": {
+    "threshold": 0.75,
+    "margin": 0.1
+   },
+   "resolver": {
+    "w_text": 0.6,
+    "w_type": 0.25,
+    "w_context": 0.15,
+    "field_weights": {
+     "label": 1.0,
+     "identifier": 0.9,
+     "placeholder": 0.85,
+     "value": 0.6
+    },
+    "min_text": 0.35,
+    "collapse_eps": 0.05,
+    "max_candidates": 10,
+    "segment_weight": 0.95
+   }
+  },
+  "hybrid": {
+   "use_resolver": true,
+   "use_vlm": true,
+   "a11y_on_uncertain": "best_effort",
+   "hybrid_on_reject": "best_effort",
+   "max_vlm_attempts": 2,
+   "router": {
+    "threshold": 0.75,
+    "margin": 0.1
+   },
+   "resolver": {
+    "w_text": 0.6,
+    "w_type": 0.25,
+    "w_context": 0.15,
+    "field_weights": {
+     "label": 1.0,
+     "identifier": 0.9,
+     "placeholder": 0.85,
+     "value": 0.6
+    },
+    "min_text": 0.35,
+    "collapse_eps": 0.05,
+    "max_candidates": 10,
+    "segment_weight": 0.95
+   }
+  }
+ },
+ "scenarios": {
+  "p-01": "benchmark/pilot/p-01.yaml",
+  "p-02": "benchmark/pilot/p-02.yaml",
+  "p-03": "benchmark/pilot/p-03.yaml",
+  "p-04": "benchmark/pilot/p-04.yaml",
+  "p-05": "benchmark/pilot/p-05.yaml",
+  "p-06": "benchmark/pilot/p-06.yaml"
+ },
+ "plan": [
+  [
+   "p-05",
+   "perturbed",
+   "a11y",
+   1
+  ],
+  [
+   "p-05",
+   "perturbed",
+   "hybrid",
+   1
+  ],
+  [
+   "p-05",
+   "baseline",
+   "a11y",
+   1
+  ],
+  [
+   "p-05",
+   "baseline",
+   "hybrid",
+   1
+  ],
+  [
+   "p-04",
+   "baseline",
+   "hybrid",
+   1
+  ],
+  [
+   "p-04",
+   "baseline",
+   "a11y",
+   1
+  ],
+  [
+   "p-04",
+   "perturbed",
+   "hybrid",
+   1
+  ],
+  [
+   "p-04",
+   "perturbed",
+   "a11y",
+   1
+  ],
+  [
+   "p-06",
+   "baseline",
+   "hybrid",
+   1
+  ],
+  [
+   "p-06",
+   "perturbed",
+   "a11y",
+   1
+  ],
+  [
+   "p-06",
+   "perturbed",
+   "hybrid",
+   1
+  ],
+  [
+   "p-06",
+   "baseline",
+   "a11y",
+   1
+  ],
+  [
+   "p-01",
+   "baseline",
+   "hybrid",
+   1
+  ],
+  [
+   "p-01",
+   "perturbed",
+   "a11y",
+   1
+  ],
+  [
+   "p-01",
+   "perturbed",
+   "hybrid",
+   1
+  ],
+  [
+   "p-01",
+   "baseline",
+   "a11y",
+   1
+  ],
+  [
+   "p-03",
+   "perturbed",
+   "hybrid",
+   1
+  ],
+  [
+   "p-03",
+   "baseline",
+   "a11y",
+   1
+  ],
+  [
+   "p-03",
+   "perturbed",
+   "a11y",
+   1
+  ],
+  [
+   "p-03",
+   "baseline",
+   "hybrid",
+   1
+  ],
+  [
+   "p-02",
+   "perturbed",
+   "hybrid",
+   1
+  ],
+  [
+   "p-02",
+   "baseline",
+   "hybrid",
+   1
+  ],
+  [
+   "p-02",
+   "perturbed",
+   "a11y",
+   1
+  ],
+  [
+   "p-02",
+   "baseline",
+   "a11y",
+   1
+  ]
+ ],
+ "device": "iPhone 17",
+ "apps": {
+  "testbed": {
+   "bundle": "uk.ac.city.parag.Errands",
+   "framework": "SwiftUI"
+  }
+ },
+ "log": "experiments/raw/pilot.jsonl"
+}

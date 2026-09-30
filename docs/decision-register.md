@@ -54,3 +54,18 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 ### D-014 Formal run protocol (pre-registered)
 - **Date:** 2026-09-10
 - **Implementation:** \`engine/batch.py\`. Repetition blocks with shuffled scenario order. Fresh app launch with \`-resetData\` before every run.
+
+### D-015 Validator snaps only to interactive elements (pilot finding)
+- **Date:** 2026-09-15
+- **Finding:** Pilot p-02 showed ShowUI pointing at an alert title.
+- **Decision:** point must fall inside an enabled, visible interactive element.
+
+### D-016 VLM retry query (pilot finding)
+- **Date:** 2026-09-15
+- **Finding:** Identical calls returned the same point.
+- **Decision:** Attempt 1 uses short grounding description; retry uses full step wording.
+
+### D-017 Category 4 icons must carry no symbol semantics (pilot finding)
+- **Date:** 2026-09-15
+- **Finding:** SF Symbol labels ("Edit") leaked into accessibility metadata.
+- **Decision:** \`UnlabelledSymbol\` redraws the symbol into a plain bitmap.

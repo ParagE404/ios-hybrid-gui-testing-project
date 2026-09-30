@@ -9,6 +9,7 @@ dependencies = ["pyyaml>=6"]
 appium = ["Appium-Python-Client>=4"]
 vlm = ["torch", "torchvision", "transformers>=4.45", "accelerate", "qwen-vl-utils", "pillow"]
 dev = ["pytest>=8"]
+analysis = ["numpy", "pandas", "scipy", "matplotlib", "tabulate"]
 
 [tool.setuptools]
 packages = ["engine", "engine.vlm"]
