@@ -16,6 +16,13 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Decision rule:** Local if median latency under about 10 s and outputs parseable. Both met, so the VLM runs locally.
 - **Runtime implication:** about 3.2 s per fallback call, so the 432-run experiment fits overnight.
 
+### D-005 Router threshold and margin 
+- **Calibration set:** 6 pilot scenarios (benchmark/pilot/p-01..06), testbed only.
+- **Rule (written 15 Sep 2026):** grid tau 0.60 to 0.95 and delta 0.05 to 0.30; maximize precision (target 1.0), then coverage.
+- **Disclosure (15 Sep 2026):** baseline development runs of the FORMAL testbed scenarios reported accepted margins as low as 0.118. The rule is NOT changed in response to avoid tuning.
+- **Pilot round 1 (15 Sep 2026):** rule output tau = 0.66, delta = 0.09. Precision 1.0, coverage 0.933.
+- **Frozen values (pilot round ):** tau = 0.66, delta = 0.09, freeze tag \`experiment-freeze-1\`. Evidence: f22bc95f.
+
 ### D-006 Step language: controlled English with quoted targets (confirmed)
 - **Date:** 2026-09-05
 - **Proposed:** controlled English with quoted targets parsed by rules.
