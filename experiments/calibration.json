@@ -1,0 +1,404 @@
+{
+ "rule": "max coverage s.t. max precision; median of tied region (see module docstring)",
+ "n_points": 43,
+ "n_wrong_top": 4,
+ "precision_achieved": 1.0,
+ "coverage": 0.907,
+ "tau": 0.66,
+ "delta": 0.09,
+ "chosen_cell": {
+  "tau": 0.66,
+  "delta": 0.09,
+  "accepted": 39,
+  "coverage": 0.9069767441860465,
+  "precision": 1.0
+ },
+ "tied_tau_range": [
+  0.6,
+  0.72
+ ],
+ "tied_delta_range_at_tau": [
+  0.05,
+  0.14
+ ],
+ "wrong_top_points": [
+  {
+   "scenario": "p-04",
+   "condition": "perturbed",
+   "step": 1,
+   "top": 0.0,
+   "margin": 0.0,
+   "correct": false
+  },
+  {
+   "scenario": "p-01",
+   "condition": "perturbed",
+   "step": 1,
+   "top": 0.0,
+   "margin": 0.0,
+   "correct": false
+  },
+  {
+   "scenario": "p-02",
+   "condition": "perturbed",
+   "step": 3,
+   "top": 0.5074,
+   "margin": 0.5074,
+   "correct": false
+  },
+  {
+   "scenario": "p-02",
+   "condition": "perturbed",
+   "step": 4,
+   "top": 0.0,
+   "margin": 0.0,
+   "correct": false
+  }
+ ],
+ "points": [
+  {
+   "scenario": "p-05",
+   "condition": "perturbed",
+   "step": 0,
+   "top": 0.9059,
+   "margin": 0.22220000000000006,
+   "correct": true
+  },
+  {
+   "scenario": "p-05",
+   "condition": "perturbed",
+   "step": 1,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-05",
+   "condition": "perturbed",
+   "step": 2,
+   "top": 0.725,
+   "margin": 0.725,
+   "correct": true
+  },
+  {
+   "scenario": "p-05",
+   "condition": "perturbed",
+   "step": 3,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-05",
+   "condition": "perturbed",
+   "step": 4,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-05",
+   "condition": "baseline",
+   "step": 0,
+   "top": 0.9059,
+   "margin": 0.22220000000000006,
+   "correct": true
+  },
+  {
+   "scenario": "p-05",
+   "condition": "baseline",
+   "step": 1,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-05",
+   "condition": "baseline",
+   "step": 2,
+   "top": 0.9647,
+   "margin": 0.9647,
+   "correct": true
+  },
+  {
+   "scenario": "p-05",
+   "condition": "baseline",
+   "step": 3,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-05",
+   "condition": "baseline",
+   "step": 4,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-04",
+   "condition": "baseline",
+   "step": 0,
+   "top": 0.9059,
+   "margin": 0.23770000000000002,
+   "correct": true
+  },
+  {
+   "scenario": "p-04",
+   "condition": "baseline",
+   "step": 1,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-04",
+   "condition": "baseline",
+   "step": 2,
+   "top": 0.9647,
+   "margin": 0.9647,
+   "correct": true
+  },
+  {
+   "scenario": "p-04",
+   "condition": "baseline",
+   "step": 3,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-04",
+   "condition": "perturbed",
+   "step": 0,
+   "top": 0.9059,
+   "margin": 0.23770000000000002,
+   "correct": true
+  },
+  {
+   "scenario": "p-04",
+   "condition": "perturbed",
+   "step": 1,
+   "top": 0.0,
+   "margin": 0.0,
+   "correct": false
+  },
+  {
+   "scenario": "p-06",
+   "condition": "perturbed",
+   "step": 0,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-06",
+   "condition": "perturbed",
+   "step": 1,
+   "top": 0.9294,
+   "margin": 0.9294,
+   "correct": true
+  },
+  {
+   "scenario": "p-06",
+   "condition": "perturbed",
+   "step": 2,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-06",
+   "condition": "baseline",
+   "step": 0,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-06",
+   "condition": "baseline",
+   "step": 1,
+   "top": 0.9294,
+   "margin": 0.9294,
+   "correct": true
+  },
+  {
+   "scenario": "p-06",
+   "condition": "baseline",
+   "step": 2,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-01",
+   "condition": "perturbed",
+   "step": 0,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-01",
+   "condition": "perturbed",
+   "step": 1,
+   "top": 0.0,
+   "margin": 0.0,
+   "correct": false
+  },
+  {
+   "scenario": "p-01",
+   "condition": "baseline",
+   "step": 0,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-01",
+   "condition": "baseline",
+   "step": 1,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-01",
+   "condition": "baseline",
+   "step": 2,
+   "top": 1.0,
+   "margin": 0.1471,
+   "correct": true
+  },
+  {
+   "scenario": "p-03",
+   "condition": "baseline",
+   "step": 0,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-03",
+   "condition": "baseline",
+   "step": 1,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-03",
+   "condition": "baseline",
+   "step": 2,
+   "top": 1.0,
+   "margin": 0.1471,
+   "correct": true
+  },
+  {
+   "scenario": "p-03",
+   "condition": "perturbed",
+   "step": 0,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-03",
+   "condition": "perturbed",
+   "step": 1,
+   "top": 0.9647,
+   "margin": 0.9647,
+   "correct": true
+  },
+  {
+   "scenario": "p-03",
+   "condition": "perturbed",
+   "step": 2,
+   "top": 1.0,
+   "margin": 0.1471,
+   "correct": true
+  },
+  {
+   "scenario": "p-02",
+   "condition": "perturbed",
+   "step": 0,
+   "top": 0.8094,
+   "margin": 0.15000000000000002,
+   "correct": true
+  },
+  {
+   "scenario": "p-02",
+   "condition": "perturbed",
+   "step": 1,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-02",
+   "condition": "perturbed",
+   "step": 2,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-02",
+   "condition": "perturbed",
+   "step": 3,
+   "top": 0.5074,
+   "margin": 0.5074,
+   "correct": false
+  },
+  {
+   "scenario": "p-02",
+   "condition": "perturbed",
+   "step": 4,
+   "top": 0.0,
+   "margin": 0.0,
+   "correct": false
+  },
+  {
+   "scenario": "p-02",
+   "condition": "baseline",
+   "step": 0,
+   "top": 0.8094,
+   "margin": 0.15000000000000002,
+   "correct": true
+  },
+  {
+   "scenario": "p-02",
+   "condition": "baseline",
+   "step": 1,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-02",
+   "condition": "baseline",
+   "step": 2,
+   "top": 1.0,
+   "margin": 1.0,
+   "correct": true
+  },
+  {
+   "scenario": "p-02",
+   "condition": "baseline",
+   "step": 3,
+   "top": 1.0,
+   "margin": 0.49260000000000004,
+   "correct": true
+  },
+  {
+   "scenario": "p-02",
+   "condition": "baseline",
+   "step": 4,
+   "top": 1.0,
+   "margin": 0.1471,
+   "correct": true
+  }
+ ]
+}
