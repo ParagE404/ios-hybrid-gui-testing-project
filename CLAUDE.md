@@ -43,3 +43,16 @@ python -m engine.cli batch benchmark/scenarios --dry-run --limit 1
 
 - For analysis changes, rerun the relevant command in the [report reproduction guide](README.md#regenerate-report-results) with output directed to a temporary directory. Check the relevant tables, counts or figures against `analysis/out/`.
 - For live checks, follow [Live runs](README.md#live-runs) and [pinned versions](docs/versions.md). Appium and a booted iOS Simulator are required. `apps/testbed/build.sh` builds and installs Errands. Use a scratch `--log` path for new checks. The live `batch` command defaults to `experiments/raw/formal.jsonl`.
+
+## Experiment evidence
+
+- The primary benchmark has 24 scenarios across Errands, SyncUps and NetNewsWire, two conditions and three repetitions per configuration (432 runs). Pilot runs are for calibration and are excluded from the formal results. Keep the formal logs, manifests, scenarios, frozen defaults and reference fixtures as evidence.
+- When reproducing or extending the protocol, keep predictions and outcome criteria fixed before the evaluated runs. Keep configuration results blinded until the external scenarios are committed (D-018). Under D-023, all 12 development runs had to pass every step oracle before the formal external-app batch could start.
+- Keep SEQ1 and extensions D-027 to D-029 identifiable as separate analyses. Use the recorded protocol and scenario-level unit when reproducing the formal inference (D-025). Use pilot or development data for tuning and reserve held-out scenarios for evaluation.
+- Verify dates, run counts and versions against the raw logs, manifests and decision register. State any uncertainty about the freeze timeline and cite the evidence. Treat `20261018` as the batch seed.
+
+## Authorship and reporting
+
+- Parag owns benchmark design, predictions and interpretation. When updating the project records, describe what he decided, what AI contributed, what he accepted or changed and how he verified it. Quote prompts only when the original wording is available. Label paraphrases as summaries. See the [AI-use log](docs/ai-use-log.md).
+- Keep source origin headers accurate and aligned with the [component attribution table](docs/decision-register.md#component-attribution). Preserve the upstream MIT notices in both external app patches and the attribution for reused ShowUI code.
+- Follow the approved no-participants ethics scope. Use UK English and Harvard referencing in the report, and avoid em dashes. Keep the Word report and Turnitin source appendix outside Git.
