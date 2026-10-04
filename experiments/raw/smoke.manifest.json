@@ -1,0 +1,125 @@
+{
+ "batch_id": "20261018-2030-8b33",
+ "created": "2026-10-18T20:30:10+0100",
+ "seed": 20261018,
+ "host": "macOS-27.0.1-arm64-arm-64bit",
+ "python": "3.12.15",
+ "configs": {
+  "scripted": {
+   "use_resolver": false,
+   "use_vlm": false,
+   "a11y_on_uncertain": "best_effort",
+   "hybrid_on_reject": "best_effort",
+   "max_vlm_attempts": 2,
+   "router": {
+    "threshold": 0.75,
+    "margin": 0.1
+   },
+   "resolver": {
+    "w_text": 0.6,
+    "w_type": 0.25,
+    "w_context": 0.15,
+    "field_weights": {
+     "label": 1.0,
+     "identifier": 0.9,
+     "placeholder": 0.85,
+     "value": 0.6
+    },
+    "min_text": 0.35,
+    "collapse_eps": 0.05,
+    "max_candidates": 10,
+    "segment_weight": 0.95
+   }
+  },
+  "a11y": {
+   "use_resolver": true,
+   "use_vlm": false,
+   "a11y_on_uncertain": "best_effort",
+   "hybrid_on_reject": "best_effort",
+   "max_vlm_attempts": 2,
+   "router": {
+    "threshold": 0.75,
+    "margin": 0.1
+   },
+   "resolver": {
+    "w_text": 0.6,
+    "w_type": 0.25,
+    "w_context": 0.15,
+    "field_weights": {
+     "label": 1.0,
+     "identifier": 0.9,
+     "placeholder": 0.85,
+     "value": 0.6
+    },
+    "min_text": 0.35,
+    "collapse_eps": 0.05,
+    "max_candidates": 10,
+    "segment_weight": 0.95
+   }
+  },
+  "hybrid": {
+   "use_resolver": true,
+   "use_vlm": true,
+   "a11y_on_uncertain": "best_effort",
+   "hybrid_on_reject": "best_effort",
+   "max_vlm_attempts": 2,
+   "router": {
+    "threshold": 0.75,
+    "margin": 0.1
+   },
+   "resolver": {
+    "w_text": 0.6,
+    "w_type": 0.25,
+    "w_context": 0.15,
+    "field_weights": {
+     "label": 1.0,
+     "identifier": 0.9,
+     "placeholder": 0.85,
+     "value": 0.6
+    },
+    "min_text": 0.35,
+    "collapse_eps": 0.05,
+    "max_candidates": 10,
+    "segment_weight": 0.95
+   }
+  }
+ },
+ "scenarios": {
+  "tb-01": "benchmark/scenarios/tb-01.yaml",
+  "tb-02": "benchmark/scenarios/tb-02.yaml",
+  "tb-03": "benchmark/scenarios/tb-03.yaml",
+  "tb-04": "benchmark/scenarios/tb-04.yaml",
+  "tb-05": "benchmark/scenarios/tb-05.yaml",
+  "tb-06": "benchmark/scenarios/tb-06.yaml",
+  "tb-07": "benchmark/scenarios/tb-07.yaml",
+  "tb-08": "benchmark/scenarios/tb-08.yaml"
+ },
+ "plan": [
+  [
+   "tb-02",
+   "baseline",
+   "a11y",
+   1
+  ],
+  [
+   "tb-02",
+   "baseline",
+   "scripted",
+   1
+  ],
+  [
+   "tb-02",
+   "perturbed",
+   "scripted",
+   1
+  ]
+ ],
+ "device": "iPhone 17",
+ "apps": {
+  "testbed": {
+   "bundle": "uk.ac.city.parag.Errands",
+   "framework": "SwiftUI"
+  }
+ },
+ "log": "experiments/raw/smoke.jsonl"
+}
