@@ -76,3 +76,7 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Date:** 2026-09-15
 - **Finding:** SF Symbol labels ("Edit") leaked into accessibility metadata.
 - **Decision:** \`UnlabelledSymbol\` redraws the symbol into a plain bitmap.
+
+### D-018 Blind until benchmark is complete (adopted)
+- **Date:** 2026-09-30
+- **Rule:** Results are NOT broken down by configuration until all external scenarios are written and committed.
