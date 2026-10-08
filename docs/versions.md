@@ -31,6 +31,7 @@
 | tabulate (analysis, Markdown tables) | 0.10.0 | `pip show tabulate` |
 | VLM model + revision | showlab/ShowUI-2B @ cabec4fcc48d15ffd3efe0b33ea9bc7d41509d60 (weights: pytorch_model.bin, 4.4 GB) | HF commit hash (`refs/main` in HF cache) |
 | VLM processor + revision | Qwen/Qwen2-VL-2B-Instruct @ 895c3a49bc3fa70a340399125c650a463535e71c (2 safetensors shards, 4.4 GB) | HF commit hash (`refs/main` in HF cache) |
+| SyncUps (external app) | pointfreeco/syncups @ 170bc1ad7b0ec1e64606d7c45c54456a0f26b04c + apps/external/syncups.patch (swift-sharing pinned 2.8.2) | `git -C apps/external/syncups rev-parse HEAD` |
 
 ## Notes
 - Node: an nvm-managed Node v24.16.0 was already present, so `brew install node` from the setup checklist was skipped to avoid two Node installs competing on PATH. Appium therefore lives under `~/.nvm/versions/node/v24.16.0/`; switching nvm Node version will hide it.
