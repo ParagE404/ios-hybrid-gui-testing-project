@@ -2,3 +2,6 @@
 testbed:
   bundle: uk.ac.city.parag.Errands
   framework: SwiftUI
+syncups:
+  bundle: co.pointfree.SyncUps
+  framework: SwiftUI
