@@ -1,0 +1,315 @@
+SyncUps instrumentation patch for the MSc benchmark.
+Origin: original, 
+Upstream: https://github.com/pointfreeco/syncups @ 170bc1ad7b0ec1e64606d7c45c54456a0f26b04c (main)
+
+Apply (from the repo root):
+  git clone https://github.com/pointfreeco/syncups apps/external/syncups
+  git -C apps/external/syncups checkout 170bc1ad7b0ec1e64606d7c45c54456a0f26b04c
+  cp apps/external/syncups-Instrumentation.swift apps/external/syncups/SyncUps/Instrumentation.swift
+  git -C apps/external/syncups apply ../syncups.patch
+Build (no -sdk flag: it would build the Swift macro plugins for the simulator instead of the Mac):
+  xcodebuild -project SyncUps.xcodeproj -scheme SyncUps -configuration Debug \
+    -destination 'platform=iOS Simulator,name=iPhone 17,OS=27.0' -derivedDataPath build \
+    -skipMacroValidation -skipPackagePluginValidation CODE_SIGNING_ALLOWED=NO build
+
+Contents:
+  Instrumentation (benchmark, D-019; spec docs/external-perturbations.md):
+    Instrumentation.swift: Perturb enum (8 flags su01..su08), UnlabelledSymbol (copied from the testbed),
+      optionalIdentifier, ResetData seed.
+    SyncUpsApp.swift: ResetData.applyIfRequested().
+    SyncUpsList.swift: su01 Add icon, su03 notes flag passed to the new form, su05 confirm label,
+      su04 theme caption and su06 generic row label (CardView).
+    SyncUpForm.swift: su03 Notes section (new form only), su07 icon-only Theme row (edit sheet only;
+      a Menu with an inline Picker, because a Picker borrows "Paint Palette" from the selected option).
+    SyncUpDetail.swift: baseline id editSyncUpButton (removed by su02), su07 passed to the edit sheet,
+      su08 icon-only Delete.
+    project.pbxproj adds Instrumentation.swift to the SyncUps target.
+  Build compatibility with Xcode 27.1 / iOS 27 SDK (not instrumentation):
+    RecordMeeting.swift: SpeakerArc marked nonisolated (target defaults to MainActor, Shape is nonisolated).
+    Package.resolved: swift-sharing 2.8.0 -> 2.8.2 (2.8.0 fails to link with Swift 6.4; within the
+    project's own "up to next major from 2.0.0" requirement).
+
+diff --git a/SyncUps.xcodeproj/project.pbxproj b/SyncUps.xcodeproj/project.pbxproj
+index cf1c486..ca62675 100644
+--- a/SyncUps.xcodeproj/project.pbxproj
++++ b/SyncUps.xcodeproj/project.pbxproj
+@@ -19,6 +19,7 @@
+ 		CA350CB6298450BF00434F8A /* SyncUpsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA350CA9298450BF00434F8A /* SyncUpsList.swift */; };
+ 		CA350CB7298450BF00434F8A /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA350CAA298450BF00434F8A /* Models.swift */; };
+ 		CA350CB8298450BF00434F8A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA350CAB298450BF00434F8A /* Helpers.swift */; };
++		BB00000000000000000000A2 /* Instrumentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000000000000000000A1 /* Instrumentation.swift */; };
+ 		CA350CB9298450BF00434F8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA350CAC298450BF00434F8A /* Assets.xcassets */; };
+ 		CA350CCA2984518200434F8A /* RecordMeetingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA350CC62984518200434F8A /* RecordMeetingTests.swift */; };
+ 		CA350CCB2984518200434F8A /* SyncUpsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA350CC72984518200434F8A /* SyncUpsListTests.swift */; };
+@@ -71,6 +72,7 @@
+ 		CA350CA9298450BF00434F8A /* SyncUpsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncUpsList.swift; sourceTree = "<group>"; };
+ 		CA350CAA298450BF00434F8A /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+ 		CA350CAB298450BF00434F8A /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
++		BB00000000000000000000A1 /* Instrumentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrumentation.swift; sourceTree = "<group>"; };
+ 		CA350CAC298450BF00434F8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+ 		CA350CC62984518200434F8A /* RecordMeetingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordMeetingTests.swift; sourceTree = "<group>"; };
+ 		CA350CC72984518200434F8A /* SyncUpsListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncUpsListTests.swift; sourceTree = "<group>"; };
+@@ -143,6 +145,7 @@
+ 			children = (
+ 				2A368892298ADD2500E8C33A /* App.swift */,
+ 				CA350CAB298450BF00434F8A /* Helpers.swift */,
++				BB00000000000000000000A1 /* Instrumentation.swift */,
+ 				CA350CAA298450BF00434F8A /* Models.swift */,
+ 				CA350CA2298450BF00434F8A /* RecordMeeting.swift */,
+ 				CA350CA1298450BF00434F8A /* SyncUpDetail.swift */,
+@@ -368,6 +371,7 @@
+ 				CA350CB5298450BF00434F8A /* SoundEffectClient.swift in Sources */,
+ 				CA350CB6298450BF00434F8A /* SyncUpsList.swift in Sources */,
+ 				CA350CB8298450BF00434F8A /* Helpers.swift in Sources */,
++				BB00000000000000000000A2 /* Instrumentation.swift in Sources */,
+ 				CA350CB1298450BF00434F8A /* SyncUpForm.swift in Sources */,
+ 				2A368893298ADD2500E8C33A /* App.swift in Sources */,
+ 				CA350CB0298450BF00434F8A /* RecordMeeting.swift in Sources */,
+diff --git a/SyncUps.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved b/SyncUps.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+index bb184ce..deede07 100644
+--- a/SyncUps.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
++++ b/SyncUps.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+@@ -105,8 +105,8 @@
+       "kind" : "remoteSourceControl",
+       "location" : "http://github.com/pointfreeco/swift-sharing",
+       "state" : {
+-        "revision" : "bc27f8322bc30f6ce7d864d137dc77a6de8b57eb",
+-        "version" : "2.8.0"
++        "revision" : "e47a2f545bafa3c0c702600f3e6ce02b3d566b6f",
++        "version" : "2.8.2"
+       }
+     },
+     {
+diff --git a/SyncUps/RecordMeeting.swift b/SyncUps/RecordMeeting.swift
+index fb09925..a7acca7 100644
+--- a/SyncUps/RecordMeeting.swift
++++ b/SyncUps/RecordMeeting.swift
+@@ -318,7 +318,7 @@ struct MeetingTimerView: View {
+   }
+ }
+ 
+-struct SpeakerArc: Shape {
++nonisolated struct SpeakerArc: Shape {  // iOS 27 SDK build fix (Shape is nonisolated; target defaults to MainActor)
+   let totalSpeakers: Int
+   let speakerIndex: Int
+ 
+diff --git a/SyncUps/SyncUpDetail.swift b/SyncUps/SyncUpDetail.swift
+index 3637ef7..b57bb6b 100644
+--- a/SyncUps/SyncUpDetail.swift
++++ b/SyncUps/SyncUpDetail.swift
+@@ -173,11 +173,23 @@ struct SyncUpDetailView: View {
+       }
+ 
+       Section {
+-        Button("Delete") {
+-          model.deleteButtonTapped()
++        if Perturb.on(.su08DeleteIconOnly) {
++          // su08: unlabelled trash bitmap only, generic id.
++          Button {
++            model.deleteButtonTapped()
++          } label: {
++            UnlabelledSymbol(name: "trash")
++          }
++          .accessibilityIdentifier("button_9")
++          .foregroundColor(.red)
++          .frame(maxWidth: .infinity)
++        } else {
++          Button("Delete") {
++            model.deleteButtonTapped()
++          }
++          .foregroundColor(.red)
++          .frame(maxWidth: .infinity)
+         }
+-        .foregroundColor(.red)
+-        .frame(maxWidth: .infinity)
+       }
+     }
+     .navigationTitle(model.syncUp.title)
+@@ -185,13 +197,14 @@ struct SyncUpDetailView: View {
+       Button("Edit") {
+         model.editButtonTapped()
+       }
++      .optionalIdentifier(Perturb.on(.su02EditIdRemoved) ? nil : "editSyncUpButton")  // instrumentation
+     }
+     .alert($model.destination.alert) { action in
+       await model.alertButtonTapped(action)
+     }
+     .sheet(item: $model.destination.edit) { editModel in
+       NavigationStack {
+-        SyncUpFormView(model: editModel)
++        SyncUpFormView(model: editModel, themeIconOnly: Perturb.on(.su07ThemeIconOnly))
+           .navigationTitle(model.syncUp.title)
+           .toolbar {
+             ToolbarItem(placement: .cancellationAction) {
+diff --git a/SyncUps/SyncUpForm.swift b/SyncUps/SyncUpForm.swift
+index 77f4792..9360901 100644
+--- a/SyncUps/SyncUpForm.swift
++++ b/SyncUps/SyncUpForm.swift
+@@ -48,9 +48,19 @@ final class SyncUpFormModel: Identifiable {
+ struct SyncUpFormView: View {
+   @FocusState var focus: SyncUpFormModel.Field?
+   @Bindable var model: SyncUpFormModel
++  var notesSection = false      // su03 (new sync-up form only)
++  var themeIconOnly = false     // su07 (edit sheet only)
++  @State private var notes = ""
+ 
+   var body: some View {
+     Form {
++      if notesSection {
++        Section {
++          TextField("Notes", text: $notes)
++        } header: {
++          Text("Notes")
++        }
++      }
+       Section {
+         TextField("Title", text: $model.syncUp.title)
+           .focused($focus, equals: .title)
+@@ -61,7 +71,7 @@ struct SyncUpFormView: View {
+           Spacer()
+           Text(model.syncUp.duration.formatted(.units()))
+         }
+-        ThemePicker(selection: $model.syncUp.theme)
++        ThemePicker(selection: $model.syncUp.theme, iconOnly: themeIconOnly)
+       } header: {
+         Text("Sync-up Info")
+       }
+@@ -87,20 +97,52 @@ struct SyncUpFormView: View {
+ 
+ struct ThemePicker: View {
+   @Binding var selection: Theme
++  var iconOnly = false
+ 
+   var body: some View {
+-    Picker("Theme", selection: $selection) {
+-      ForEach(Theme.allCases) { theme in
+-        ZStack {
+-          RoundedRectangle(cornerRadius: 4)
+-            .fill(theme.mainColor)
+-          Label(theme.name, systemImage: "paintpalette")
+-            .padding(4)
++    if iconOnly {
++      // su07: same theme menu, but the row shows only an unlabelled palette bitmap and the
++      // colour name. A Picker would take its label from the selected option's SF Symbol
++      // ("Paint Palette"), so the row is a Menu whose label view carries no label (D-017).
++      Menu {
++        Picker(selection: $selection) {
++          options
++        } label: {
++          EmptyView()
++        }
++        .pickerStyle(.inline)
++      } label: {
++        HStack {
++          UnlabelledSymbol(name: "paintpalette")
++          Spacer()
++          Text(selection.name)
++            .foregroundStyle(.secondary)
++          UnlabelledSymbol(name: "chevron.up.chevron.down", pointSize: 12)
++            .foregroundStyle(.secondary)
+         }
+-        .foregroundColor(theme.accentColor)
+-        .fixedSize(horizontal: false, vertical: true)
+-        .tag(theme)
++        .accessibilityElement(children: .ignore)
++        .accessibilityLabel(Text(""))
++      }
++      .accessibilityIdentifier("button_3")
++    } else {
++      Picker("Theme", selection: $selection) {
++        options
++      }
++    }
++  }
++
++  @ViewBuilder
++  private var options: some View {
++    ForEach(Theme.allCases) { theme in
++      ZStack {
++        RoundedRectangle(cornerRadius: 4)
++          .fill(theme.mainColor)
++        Label(theme.name, systemImage: "paintpalette")
++          .padding(4)
+       }
++      .foregroundColor(theme.accentColor)
++      .fixedSize(horizontal: false, vertical: true)
++      .tag(theme)
+     }
+   }
+ }
+diff --git a/SyncUps/SyncUpsApp.swift b/SyncUps/SyncUpsApp.swift
+index 4ff4a2c..a7fc05b 100644
+--- a/SyncUps/SyncUpsApp.swift
++++ b/SyncUps/SyncUpsApp.swift
+@@ -8,6 +8,7 @@ struct SyncUpsApp: App {
+   static let model = AppModel()
+ 
+   init() {
++    ResetData.applyIfRequested()  // research instrumentation (Instrumentation.swift)
+     setUpForUITest()
+   }
+ 
+diff --git a/SyncUps/SyncUpsList.swift b/SyncUps/SyncUpsList.swift
+index d565d34..cb12113 100644
+--- a/SyncUps/SyncUpsList.swift
++++ b/SyncUps/SyncUpsList.swift
+@@ -90,13 +90,13 @@ struct SyncUpsList: View {
+       Button {
+         model.addSyncUpButtonTapped()
+       } label: {
+-        Image(systemName: "plus")
++        Image(systemName: Perturb.on(.su01AddSymbolChanged) ? "plus.circle" : "plus")
+       }
+     }
+     .navigationTitle("Daily Sync-ups")
+     .sheet(item: $model.addSyncUp) { syncUpFormModel in
+       NavigationStack {
+-        SyncUpFormView(model: syncUpFormModel)
++        SyncUpFormView(model: syncUpFormModel, notesSection: Perturb.on(.su03NotesSectionInserted))
+           .navigationTitle("New sync-up")
+           .toolbar {
+             ToolbarItem(placement: .cancellationAction) {
+@@ -105,7 +105,7 @@ struct SyncUpsList: View {
+               }
+             }
+             ToolbarItem(placement: .confirmationAction) {
+-              Button("Add") {
++              Button(Perturb.on(.su05ConfirmRelabelled) ? "Done" : "Add") {
+                 model.confirmAddSyncUpButtonTapped()
+               }
+             }
+@@ -122,6 +122,10 @@ struct CardView: View {
+     VStack(alignment: .leading) {
+       Text(syncUp.title)
+         .font(.headline)
++      if Perturb.on(.su04RowsRestructured) {
++        Text(syncUp.theme.name)
++          .font(.caption)
++      }
+       Spacer()
+       HStack {
+         Label("\(syncUp.attendees.count)", systemImage: "person.3")
+@@ -133,6 +137,22 @@ struct CardView: View {
+     }
+     .padding()
+     .foregroundColor(syncUp.theme.accentColor)
++    .modifier(GenericRowLabel(syncUp: syncUp))
++  }
++}
++
++/// su06: the row's label omits the title ("Sync-up, 2, 30 min"); visible text unchanged.
++private struct GenericRowLabel: ViewModifier {
++  let syncUp: SyncUp
++
++  func body(content: Content) -> some View {
++    if Perturb.on(.su06RowsGenericLabel) {
++      content
++        .accessibilityElement(children: .ignore)
++        .accessibilityLabel("Sync-up, \(syncUp.attendees.count), \(syncUp.duration.formatted(.units()))")
++    } else {
++      content
++    }
+   }
+ }
+ 
+# Perturbation logic
