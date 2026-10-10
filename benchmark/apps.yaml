@@ -5,3 +5,6 @@ testbed:
 syncups:
   bundle: co.pointfree.SyncUps
   framework: SwiftUI
+netnewswire:
+  bundle: uk.ac.city.parag.NetNewsWire.iOS-DEBUG
+  framework: UIKit

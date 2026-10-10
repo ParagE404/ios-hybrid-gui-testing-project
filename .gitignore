@@ -12,3 +12,5 @@ build/
 *.egg-info/
 # Third-party app clones (pinned in D-003; reproduce from the commit + apps/external/*.patch)
 apps/external/syncups/
+apps/external/netnewswire/
+apps/external/SharedXcodeSettings/

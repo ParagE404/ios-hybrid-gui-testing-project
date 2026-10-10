@@ -1,0 +1,142 @@
+NetNewsWire instrumentation patch for the MSc benchmark.
+Origin: original, 
+Upstream: https://github.com/Ranchero-Software/NetNewsWire @ bb5ab3dc91f9da00fa8eaedf89a04c5e7970ad5c (main)
+
+Apply (from the repo root):
+  git clone https://github.com/Ranchero-Software/NetNewsWire apps/external/netnewswire
+  git -C apps/external/netnewswire checkout bb5ab3dc91f9da00fa8eaedf89a04c5e7970ad5c
+  (cd apps/external/netnewswire && printf '\n\nuk.ac.city.parag\n' | ./setup.sh)   # empty Team ID, no signing
+  cp apps/external/netnewswire-Instrumentation.swift apps/external/netnewswire/iOS/Instrumentation.swift
+  git -C apps/external/netnewswire apply ../netnewswire.patch
+Build (run twice from clean: the first build can race with SecretKey.swift generation):
+  xcodebuild -project NetNewsWire.xcodeproj -scheme NetNewsWire-iOS -configuration Debug \
+    -destination 'platform=iOS Simulator,name=iPhone 17,OS=27.0' -derivedDataPath build \
+    -skipMacroValidation -skipPackagePluginValidation CODE_SIGNING_ALLOWED=NO build
+Bundle id: uk.ac.city.parag.NetNewsWire.iOS-DEBUG (from the org identifier given to setup.sh).
+iOS/ is a synchronised folder, so Instrumentation.swift joins the app target without a project edit.
+
+Contents:
+  Instrumentation only, no build fixes needed (D-019; spec docs/external-perturbations.md):
+  Instrumentation.swift: Perturb enum (8 flags nn01..nn08), UnlabelledSymbol bitmap, ResetData, ResearchUI hooks.
+  AppDelegate.swift: ResetData.wipeIfRequested() first in didFinishLaunching; ResetData.seedIfRequested()
+    after the first-run block; the default (network) feed import is skipped when -resetData is given.
+  MainFeedCollectionViewController.swift: toolbar ids addButton/settingsButton and nn01/nn02/nn07/nn08;
+    nn04 subtitles on the Add action sheet (tap) and the long-press UIMenu; nn05 label override per cell.
+  MainFeedCollectionViewCell.swift: accessibilityLabelOverride honoured by the accessibilityLabel getter.
+  SettingsViewController.swift: nn03 subtitle rows and nn06 generic switch labels.
+
+diff --git a/iOS/AppDelegate.swift b/iOS/AppDelegate.swift
+index fa916f45b..8f6efae7d 100644
+--- a/iOS/AppDelegate.swift
++++ b/iOS/AppDelegate.swift
+@@ -59,6 +59,7 @@ import Images
+ 	}
+ 
+ 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
++		ResetData.wipeIfRequested()  // research instrumentation (Instrumentation.swift)
+ 		FaviconGenerator.templateImage = Assets.Images.faviconTemplate
+ 
+ 		WebViewConfiguration.resolveBrowserUserAgent()
+@@ -72,10 +73,11 @@ import Images
+ 			Self.logger.info("Is first run.")
+ 		}
+ 
+-		if isFirstRun && !AccountManager.shared.anyAccountHasAtLeastOneFeed() {
++		if isFirstRun && !AccountManager.shared.anyAccountHasAtLeastOneFeed() && !ResetData.requested {
+ 			let localAccount = AccountManager.shared.defaultAccount
+ 			DefaultFeedsImporter.importDefaultFeeds(account: localAccount)
+ 		}
++		ResetData.seedIfRequested()  // research instrumentation (Instrumentation.swift)
+ 
+ 		registerBackgroundTasks()
+ 		CacheCleaner.purgeIfNecessary()
+diff --git a/iOS/MainFeed/Collection View Cells/MainFeedCollectionViewCell.swift b/iOS/MainFeed/Collection View Cells/MainFeedCollectionViewCell.swift
+index b4e06f59f..49169b11e 100644
+--- a/iOS/MainFeed/Collection View Cells/MainFeedCollectionViewCell.swift	
++++ b/iOS/MainFeed/Collection View Cells/MainFeedCollectionViewCell.swift	
+@@ -54,8 +54,13 @@ final class MainFeedCollectionViewCell: UICollectionViewCell {
+ 		}
+ 	}
+ 
++	var accessibilityLabelOverride: String?  // research instrumentation (Instrumentation.swift)
++
+ 	override var accessibilityLabel: String? {
+ 		get {
++			if let accessibilityLabelOverride {
++				return accessibilityLabelOverride
++			}
+ 			let name = feedTitle.text ?? ""
+ 			guard let unreadText = AppDefaults.shared.unreadCountDisplay.accessibilityText(for: unreadCount) else {
+ 				return name
+diff --git a/iOS/MainFeed/MainFeedCollectionViewController.swift b/iOS/MainFeed/MainFeedCollectionViewController.swift
+index 48e69d3f5..b942c44d7 100644
+--- a/iOS/MainFeed/MainFeedCollectionViewController.swift
++++ b/iOS/MainFeed/MainFeedCollectionViewController.swift
+@@ -90,6 +90,7 @@ final class MainFeedCollectionViewController: UICollectionViewController, Undoab
+ 		super.viewDidLoad()
+ 		registerForNotifications()
+ 		configureCurrentActivityButton()
++		ResearchUI.configureFeedsToolbar(self)  // research instrumentation (Instrumentation.swift)
+ 		configureCollectionView()
+ 		configureDiffableDataSource()
+ 		collectionView.dragDelegate = self
+@@ -822,6 +823,7 @@ final class MainFeedCollectionViewController: UICollectionViewController, Undoab
+ 			cell.feedTitle.text = sidebarItem.nameForDisplay
+ 			cell.unreadCount = sidebarItem.unreadCount
+ 			cell.indentationLevel = indentationLevel
++			cell.accessibilityLabelOverride = ResearchUI.cellLabelOverride(for: sidebarItem)  // research instrumentation
+ 			configureIcon(cell, sidebarItem: sidebarItem)
+ 		}
+ 	}
+@@ -960,12 +962,14 @@ final class MainFeedCollectionViewController: UICollectionViewController, Undoab
+ 		let addFeedAction = UIAction(title: addFeedActionTitle, image: Assets.Images.plus) { _ in
+ 			self.coordinator.showAddFeed()
+ 		}
++		ResearchUI.addSubtitle(ResearchUI.addFeedSubtitle, to: addFeedAction)  // research instrumentation
+ 		menuItems.append(addFeedAction)
+ 
+ 		let addFolderActionTitle = NSLocalizedString("Add Folder", comment: "Add Folder")
+ 		let addFolderAction = UIAction(title: addFolderActionTitle, image: Assets.Images.folderOutlinePlus) { _ in
+ 			self.coordinator.showAddFolder()
+ 		}
++		ResearchUI.addSubtitle(ResearchUI.addFolderSubtitle, to: addFolderAction)  // research instrumentation
+ 
+ 		menuItems.append(addFolderAction)
+ 
+@@ -991,9 +995,10 @@ final class MainFeedCollectionViewController: UICollectionViewController, Undoab
+ 		let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel)
+ 
+ 		let addFeedActionTitle = NSLocalizedString("Add Feed", comment: "Add Feed")
+-		let addFeedAction = UIAlertAction(title: addFeedActionTitle, style: .default) { _ in
++		let addFeedAction = UIAlertAction(title: ResearchUI.sheetTitle(addFeedActionTitle, ResearchUI.addFeedSubtitle), style: .default) { _ in
+ 			self.coordinator.showAddFeed()
+ 		}
++		ResearchUI.labelSheetAction(addFeedAction, addFeedActionTitle, ResearchUI.addFeedSubtitle)  // research instrumentation
+ 
+ 		alertController.addAction(addFeedAction)
+ 
+@@ -1007,9 +1012,10 @@ final class MainFeedCollectionViewController: UICollectionViewController, Undoab
+ 		}()
+ 		if anyActiveAccountSupportsFolders {
+ 			let addFolderActionTitle = NSLocalizedString("Add Folder", comment: "Add Folder")
+-			let addFolderAction = UIAlertAction(title: addFolderActionTitle, style: .default) { _ in
++			let addFolderAction = UIAlertAction(title: ResearchUI.sheetTitle(addFolderActionTitle, ResearchUI.addFolderSubtitle), style: .default) { _ in
+ 				self.coordinator.showAddFolder()
+ 			}
++			ResearchUI.labelSheetAction(addFolderAction, addFolderActionTitle, ResearchUI.addFolderSubtitle)  // research instrumentation
+ 			alertController.addAction(addFolderAction)
+ 		}
+ 
+diff --git a/iOS/Settings/SettingsViewController.swift b/iOS/Settings/SettingsViewController.swift
+index ed5182c50..3c47f1540 100644
+--- a/iOS/Settings/SettingsViewController.swift
++++ b/iOS/Settings/SettingsViewController.swift
+@@ -105,6 +105,7 @@ final class SettingsViewController: UITableViewController {
+ 		addPopUpButton(unreadCountDisplayPopUpButton, to: unreadCountDisplayCell, accessibilityLabel: NSLocalizedString("Unread Counts", comment: "Unread Counts"))
+ 		updateColorPalettePopUpButton()
+ 		updateUnreadCountDisplayPopUpButton()
++		ResearchUI.configureTimelineSwitches(self)  // research instrumentation (Instrumentation.swift)
+ 	}
+ 
+ 	override func viewWillAppear(_ animated: Bool) {
+# NN instrumented
