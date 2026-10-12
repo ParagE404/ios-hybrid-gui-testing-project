@@ -25,6 +25,12 @@ Promised in the proposal's risk register. Each decision gives the options, the e
   - NetNewsWire: @ bb5ab3dc... Bundle id uk.ac.city.parag.NetNewsWire.iOS-DEBUG.
 - **Gates (5 Oct 2026):** Determinism verified via two -resetData launches giving byte-identical page source except for processId.
 
+### D-004 Perturbation design (confirmed)
+- **Date:** 2026-10-11
+- **Balanced:** 3 apps x 4 categories x 2 scenarios = 24. Categories: 1 identifier rename/removal, 2 hierarchy insertion/restructure, 3 duplicate/generic labels, 4 visually clear but weak metadata.
+- **Mechanism:** testbed uses launch arguments (\`-perturb <flag>\`); external apps use one git patch per perturbed scenario.
+- **Bias control:** each scenario file carries an \`expected_outcome\` written before any formal run.
+
 ### D-005 Router threshold and margin 
 - **Calibration set:** 6 pilot scenarios (benchmark/pilot/p-01..06), testbed only.
 - **Rule (written 15 Sep 2026):** grid tau 0.60 to 0.95 and delta 0.05 to 0.30; maximize precision (target 1.0), then coverage.
