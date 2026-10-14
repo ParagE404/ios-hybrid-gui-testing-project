@@ -95,3 +95,8 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 ### D-018 Blind until benchmark is complete (adopted)
 - **Date:** 2026-09-30
 - **Rule:** Results are NOT broken down by configuration until all external scenarios are written and committed.
+
+### D-020 Generic labels and XCUITest (finding)
+- **Date:** 2026-10-15
+- **Finding:** Initial captures showed that while labels were generic, iOS kept visible titles in the snapshot as \`accessible=false\` StaticText.
+- **Decision:** Keep perturbations but revise predictions (a11y now predicted to succeed).
