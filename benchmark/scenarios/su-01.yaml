@@ -1,0 +1,49 @@
+# SyncUps scenario. Origin: original, 
+# Written 18 Oct 2026 BEFORE any formal results were viewed (D-018). expected_outcome is a prediction.
+# Scripted locators follow D-011 against the baseline page source. Perturbations: docs/external-perturbations.md.
+# Steps marked VERIFY have no captured screen yet; check them against page source before the batch.
+id: su-01
+app: syncups
+title: Create a sync-up called 'Retro'
+pilot: false
+category: 1
+expected_outcome: Scripted fails at step 1 (name 'plus' gone); a11y and hybrid succeed via the unchanged label 'Add'.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Add' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="plus"]
+  oracle:
+    type: Button
+    label: Add
+  screen: list
+- step: Type 'Retro' into the 'Title' field
+  scripted:
+    strategy: xpath
+    value: (//XCUIElementTypeTextField)[1]
+  oracle:
+    type: TextField
+    value: Title
+  screen: new_syncup
+- step: Tap the 'Add' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Add"]
+  oracle:
+    type: Button
+    name: Add
+  screen: new_syncup
+postconditions:
+- check: exists
+  element:
+    label_contains: Retro
+perturbation:
+  kind: identifier_rename
+  description: List toolbar Add icon changes from SF Symbol 'plus' to 'plus.circle'; its implicit identifier (name) changes,
+    its label stays 'Add'
+  launch_args:
+  - -perturb
+  - su01_add_symbol_changed

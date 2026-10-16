@@ -1,0 +1,52 @@
+# SyncUps scenario. Origin: original, 
+# Written 18 Oct 2026 BEFORE any formal results were viewed (D-018). expected_outcome is a prediction.
+# Scripted locators follow D-011 against the baseline page source. Perturbations: docs/external-perturbations.md.
+# Steps marked VERIFY have no captured screen yet; check them against page source before the batch.
+id: su-04
+app: syncups
+title: Delete the 'Engineering' sync-up
+pilot: false
+category: 2
+expected_outcome: Scripted fails at step 1 (row name changed); a11y matches the 'Engineering' segment.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Engineering' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Engineering, 2, 10 min"]
+  oracle:
+    type: Button
+    label_contains: Engineering,
+  screen: list
+- step: Tap the 'Delete' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Delete"]
+  oracle:
+    type: Button
+    label: Delete
+  screen: detail_delete
+- step: Tap the 'Yes' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Yes"]
+  oracle:
+    type: Button
+    label: 'Yes'
+  screen: delete_alert
+postconditions:
+- check: absent
+  element:
+    label_contains: Engineering
+- check: exists
+  element:
+    label_contains: Design,
+perturbation:
+  kind: hierarchy_restructure
+  description: List rows gain a theme-name caption as an extra child view, so 'Engineering, 2, 10 min' becomes 'Engineering,
+    Navy, 2, 10 min' (theme as seeded)
+  launch_args:
+  - -perturb
+  - su04_rows_restructured

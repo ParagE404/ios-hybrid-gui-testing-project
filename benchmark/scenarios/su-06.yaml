@@ -1,0 +1,57 @@
+# SyncUps scenario. Origin: original, 
+# Written 18 Oct 2026 BEFORE any formal results were viewed (D-018). expected_outcome is a prediction.
+# Scripted locators follow D-011 against the baseline page source. Perturbations: docs/external-perturbations.md.
+# Steps marked VERIFY have no captured screen yet; check them against page source before the batch.
+id: su-06
+app: syncups
+title: Delete the 'Product' sync-up
+pilot: false
+category: 3
+expected_outcome: 'REVISED 18 Oct 22:55 after static inspection, before any results (D-020): scripted fails at step 1. a11y
+  is predicted to SUCCEED: the generic row label hides the title from VoiceOver, but XCUITest''s snapshot still contains the
+  title text (accessible=false), and the resolver reads the full tree. Hybrid behaves like a11y.'
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Product' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Product, 2, 30 min"]
+  oracle:
+    type: Button
+    label_contains: Product,
+  screen: list
+  oracle_perturbed:
+    type: Button
+    label_contains: 30 min
+- step: Tap the 'Delete' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Delete"]
+  oracle:
+    type: Button
+    label: Delete
+  screen: detail_delete
+- step: Tap the 'Yes' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Yes"]
+  oracle:
+    type: Button
+    label: 'Yes'
+  screen: delete_alert
+postconditions:
+- check: absent
+  element:
+    label_contains: Product
+- check: exists
+  element:
+    label_contains: Design,
+perturbation:
+  kind: duplicate_label
+  description: 'Each list row''s accessibility label omits the sync-up title: ''Product, 2, 30 min'' becomes ''Sync-up, 2,
+    30 min'' (children ignored, so the title text is not exposed separately); visible text unchanged'
+  launch_args:
+  - -perturb
+  - su06_rows_generic_label

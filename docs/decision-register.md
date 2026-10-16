@@ -96,6 +96,11 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Date:** 2026-09-30
 - **Rule:** Results are NOT broken down by configuration until all external scenarios are written and committed.
 
+### D-019 External-app scenarios and instrumentation (proposed)
+- **Date:** 2026-10-11
+- **Implementation:** 16 scenarios written from captured baseline page source.
+- **Instrumentation:** identifiers added to key buttons to allow category 1 (rename/remove) to function. Evidence: a94b46bd.
+
 ### D-020 Generic labels and XCUITest (finding)
 - **Date:** 2026-10-15
 - **Finding:** Initial captures showed that while labels were generic, iOS kept visible titles in the snapshot as \`accessible=false\` StaticText.
