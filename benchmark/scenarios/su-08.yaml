@@ -1,0 +1,57 @@
+# SyncUps scenario. Origin: original, 
+# Written 18 Oct 2026 BEFORE any formal results were viewed (D-018). expected_outcome is a prediction.
+# Scripted locators follow D-011 against the baseline page source. Perturbations: docs/external-perturbations.md.
+# Steps marked VERIFY have no captured screen yet; check them against page source before the batch.
+id: su-08
+app: syncups
+title: Delete the 'Design' sync-up
+pilot: false
+category: 4
+expected_outcome: Scripted and a11y fail at the Delete step; hybrid is the only route.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Design' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Design, 6, 1 min"]
+  oracle:
+    type: Button
+    label_contains: Design,
+  screen: list
+- step: Swipe up
+  screen: detail
+- step: Tap the 'Delete' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Delete"]
+  oracle:
+    type: Button
+    label: Delete
+  screen: detail_delete
+  oracle_perturbed:
+    type: Button
+    name: button_9
+- step: Tap the 'Yes' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Yes"]
+  oracle:
+    type: Button
+    label: 'Yes'
+  screen: delete_alert
+postconditions:
+- check: absent
+  element:
+    label_contains: Design
+- check: exists
+  element:
+    label_contains: Engineering,
+perturbation:
+  kind: weak_metadata
+  description: The detail screen's Delete button becomes an unlabelled trash icon (UnlabelledSymbol 'trash'), no text or label,
+    generic id 'button_9'
+  launch_args:
+  - -perturb
+  - su08_delete_icon_only

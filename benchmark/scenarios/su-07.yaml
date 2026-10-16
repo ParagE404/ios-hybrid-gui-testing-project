@@ -1,0 +1,70 @@
+# SyncUps scenario. Origin: original, 
+# Written 18 Oct 2026 BEFORE any formal results were viewed (D-018). expected_outcome is a prediction.
+# Scripted locators follow D-011 against the baseline page source. Perturbations: docs/external-perturbations.md.
+# Steps marked VERIFY have no captured screen yet; check them against page source before the batch.
+id: su-07
+app: syncups
+title: Change the 'Engineering' theme to Seafoam
+pilot: false
+category: 4
+expected_outcome: 'Scripted and a11y fail at step 3 (no element says ''Theme''); hybrid is the only route. Note: the current
+  colour name stays visible on the row, as in the real app.'
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Engineering' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Engineering, 2, 10 min"]
+  oracle:
+    type: Button
+    label_contains: Engineering,
+  screen: list
+- step: Tap the 'Edit' button
+  scripted:
+    strategy: accessibility_id
+    value: editSyncUpButton
+  oracle:
+    type: Button
+    label: Edit
+  screen: detail
+- step: Tap the 'Theme' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="paintpalette"]
+  oracle:
+    type: Button
+    label: Theme
+  screen: edit
+  oracle_perturbed:
+    type: Button
+    name: button_3
+- step: Wait 2 seconds
+- step: Tap the 'Seafoam' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@label="Seafoam"]
+  oracle:
+    type: Button
+    label: Seafoam
+  screen: theme_menu
+- step: Tap the 'Done' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Done"]
+  oracle:
+    type: Button
+    label: Done
+  screen: edit
+postconditions:
+- check: exists
+  element:
+    label: Seafoam
+perturbation:
+  kind: weak_metadata
+  description: The edit sheet's Theme row shows only an unlabelled palette icon (UnlabelledSymbol 'paintpalette') plus the
+    colour name; no 'Theme' text or label; generic id 'button_3'
+  launch_args:
+  - -perturb
+  - su07_theme_icon_only

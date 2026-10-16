@@ -1,0 +1,65 @@
+# SyncUps scenario. Origin: original, 
+# Written 18 Oct 2026 BEFORE any formal results were viewed (D-018). expected_outcome is a prediction.
+# Scripted locators follow D-011 against the baseline page source. Perturbations: docs/external-perturbations.md.
+# Steps marked VERIFY have no captured screen yet; check them against page source before the batch.
+id: su-02
+app: syncups
+title: Change the 'Product' theme to Lavender
+pilot: false
+category: 1
+expected_outcome: Scripted fails at step 2; a11y and hybrid succeed via label 'Edit'.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Product' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Product, 2, 30 min"]
+  oracle:
+    type: Button
+    label_contains: Product,
+  screen: list
+- step: Tap the 'Edit' button
+  scripted:
+    strategy: accessibility_id
+    value: editSyncUpButton
+  oracle:
+    type: Button
+    label: Edit
+  screen: detail
+- step: Tap the 'Theme' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="paintpalette"]
+  oracle:
+    type: Button
+    label: Theme
+  screen: edit
+- step: Wait 2 seconds
+- step: Tap the 'Lavender' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@label="Lavender"]
+  oracle:
+    type: Button
+    label: Lavender
+  screen: theme_menu
+- step: Tap the 'Done' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Done"]
+  oracle:
+    type: Button
+    label: Done
+  screen: edit
+postconditions:
+- check: exists
+  element:
+    label: Lavender
+perturbation:
+  kind: identifier_removal
+  description: Detail Edit button loses the instrumentation identifier 'editSyncUpButton'
+  launch_args:
+  - -perturb
+  - su02_edit_id_removed
