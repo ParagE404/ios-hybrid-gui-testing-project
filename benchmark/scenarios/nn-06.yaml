@@ -1,0 +1,64 @@
+# NetNewsWire scenario. Origin: original, 
+# Written 18 Oct 2026 BEFORE any formal results were viewed (D-018). expected_outcome is a prediction.
+# Scripted locators follow D-011 against the baseline page source. Perturbations: docs/external-perturbations.md.
+# Steps marked VERIFY have no captured screen yet; check them against page source before the batch.
+id: nn-06
+app: netnewswire
+title: Turn off 'Confirm Mark All as Read'
+pilot: false
+category: 3
+expected_outcome: Scripted fails at step 2. a11y may confidently pick the row's StaticText and tap the label, which does not
+  toggle (wrong target); hybrid behaves like a11y if the structured route accepts. A predicted failure mode, not a design
+  flaw.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Settings' button
+  scripted:
+    strategy: accessibility_id
+    value: settingsButton
+  oracle:
+    type: Button
+    label: Settings
+  screen: feeds
+- step: Toggle the 'Confirm Mark All as Read' switch
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeSwitch[@name="Confirm Mark All as Read"]
+  oracle:
+    type: Switch
+    label_contains: Confirm Mark All as Read
+  screen: settings
+  oracle_perturbed:
+    type: Switch
+    in_row: Confirm Mark All as Read
+- step: Tap the 'Done' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Done"]
+  oracle:
+    type: Button
+    label: Done
+  screen: settings
+- step: Tap the 'Settings' button
+  scripted:
+    strategy: accessibility_id
+    value: settingsButton
+  oracle:
+    type: Button
+    label: Settings
+  screen: feeds
+postconditions:
+- check: exists
+  element:
+    type: Switch
+    in_row: Confirm Mark All as Read
+    value: '0'
+perturbation:
+  kind: generic_label
+  description: All four Timeline switches get the accessibility label 'Switch' (and identifier removed); the visible row text
+    is a separate StaticText as in baseline
+  launch_args:
+  - -perturb
+  - nn06_switches_generic

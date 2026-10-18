@@ -1,0 +1,58 @@
+# NetNewsWire scenario. Origin: original, 
+# Written 18 Oct 2026 BEFORE any formal results were viewed (D-018). expected_outcome is a prediction.
+# Scripted locators follow D-011 against the baseline page source. Perturbations: docs/external-perturbations.md.
+# Steps marked VERIFY have no captured screen yet; check them against page source before the batch.
+id: nn-02
+app: netnewswire
+title: Turn on 'Group by Feed'
+pilot: false
+category: 1
+expected_outcome: Scripted fails at step 1; a11y and hybrid succeed via label 'Settings'.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Settings' button
+  scripted:
+    strategy: accessibility_id
+    value: settingsButton
+  oracle:
+    type: Button
+    label: Settings
+  screen: feeds
+- step: Toggle the 'Group by Feed' switch
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeSwitch[@name="Group by Feed"]
+  oracle:
+    type: Switch
+    label_contains: Group by Feed
+  screen: settings
+- step: Tap the 'Done' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Done"]
+  oracle:
+    type: Button
+    label: Done
+  screen: settings
+- step: Tap the 'Settings' button
+  scripted:
+    strategy: accessibility_id
+    value: settingsButton
+  oracle:
+    type: Button
+    label: Settings
+  screen: feeds
+postconditions:
+- check: exists
+  element:
+    type: Switch
+    label_contains: Group by Feed
+    value: '1'
+perturbation:
+  kind: identifier_removal
+  description: Toolbar Settings button loses the instrumentation identifier 'settingsButton'
+  launch_args:
+  - -perturb
+  - nn02_settings_id_removed

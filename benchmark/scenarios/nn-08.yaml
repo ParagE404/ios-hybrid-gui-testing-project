@@ -1,0 +1,62 @@
+# NetNewsWire scenario. Origin: original, 
+# Written 18 Oct 2026 BEFORE any formal results were viewed (D-018). expected_outcome is a prediction.
+# Scripted locators follow D-011 against the baseline page source. Perturbations: docs/external-perturbations.md.
+# Steps marked VERIFY have no captured screen yet; check them against page source before the batch.
+id: nn-08
+app: netnewswire
+title: Turn on 'Refresh to Clear Read Articles'
+pilot: false
+category: 4
+expected_outcome: Scripted and a11y fail at step 1; hybrid is the only route (it must ground the gear icon twice).
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Settings' button
+  scripted:
+    strategy: accessibility_id
+    value: settingsButton
+  oracle:
+    type: Button
+    label: Settings
+  oracle_perturbed: &id001
+    type: Button
+    name: button_6
+  screen: feeds
+- step: Toggle the 'Refresh to Clear Read Articles' switch
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeSwitch[@name="Refresh to Clear Read Articles"]
+  oracle:
+    type: Switch
+    label_contains: Refresh to Clear Read Articles
+  screen: settings
+- step: Tap the 'Done' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Done"]
+  oracle:
+    type: Button
+    label: Done
+  screen: settings
+- step: Tap the 'Settings' button
+  scripted:
+    strategy: accessibility_id
+    value: settingsButton
+  oracle:
+    type: Button
+    label: Settings
+  oracle_perturbed: *id001
+  screen: feeds
+postconditions:
+- check: exists
+  element:
+    type: Switch
+    label_contains: Refresh to Clear Read Articles
+    value: '1'
+perturbation:
+  kind: weak_metadata
+  description: Toolbar Settings button becomes an unlabelled bitmap gear icon (no label), identifier 'button_6'
+  launch_args:
+  - -perturb
+  - nn08_settings_icon_unlabelled

@@ -1,0 +1,59 @@
+# NetNewsWire scenario. Origin: original, 
+# Written 18 Oct 2026 BEFORE any formal results were viewed (D-018). expected_outcome is a prediction.
+# Scripted locators follow D-011 against the baseline page source. Perturbations: docs/external-perturbations.md.
+# Steps marked VERIFY have no captured screen yet; check them against page source before the batch.
+id: nn-03
+app: netnewswire
+title: Turn on 'Sort Oldest to Newest'
+pilot: false
+category: 2
+expected_outcome: Scripted fails at step 2 (switch name changed); a11y matches the first label segment.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Settings' button
+  scripted:
+    strategy: accessibility_id
+    value: settingsButton
+  oracle:
+    type: Button
+    label: Settings
+  screen: feeds
+- step: Toggle the 'Sort Oldest to Newest' switch
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeSwitch[@name="Sort Oldest to Newest"]
+  oracle:
+    type: Switch
+    label_contains: Sort Oldest to Newest
+  screen: settings
+- step: Tap the 'Done' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Done"]
+  oracle:
+    type: Button
+    label: Done
+  screen: settings
+- step: Tap the 'Settings' button
+  scripted:
+    strategy: accessibility_id
+    value: settingsButton
+  oracle:
+    type: Button
+    label: Settings
+  screen: feeds
+postconditions:
+- check: exists
+  element:
+    type: Switch
+    label_contains: Sort Oldest to Newest
+    value: '1'
+perturbation:
+  kind: hierarchy_restructure
+  description: Timeline setting cells are rebuilt with a subtitle view; the switch's label becomes 'Sort Oldest to Newest,
+    Timeline order' (same for the other three Timeline switches with their own subtitles)
+  launch_args:
+  - -perturb
+  - nn03_timeline_cells_restructured

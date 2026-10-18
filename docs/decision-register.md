@@ -105,3 +105,7 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Date:** 2026-10-15
 - **Finding:** Initial captures showed that while labels were generic, iOS kept visible titles in the snapshot as \`accessible=false\` StaticText.
 - **Decision:** Keep perturbations but revise predictions (a11y now predicted to succeed).
+
+### D-021 Scenario corrections after external capture
+- **Date:** 2026-10-15
+- **Logic:** Oracles made unique; su-07 target changed from Indigo to Seafoam (Indigo was scrolled off-screen).

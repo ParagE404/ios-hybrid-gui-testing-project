@@ -1,0 +1,56 @@
+# NetNewsWire scenario. Origin: original, 
+# Written 18 Oct 2026 BEFORE any formal results were viewed (D-018). expected_outcome is a prediction.
+# Scripted locators follow D-011 against the baseline page source. Perturbations: docs/external-perturbations.md.
+# Steps marked VERIFY have no captured screen yet; check them against page source before the batch.
+id: nn-01
+app: netnewswire
+title: Add a folder called 'Music'
+pilot: false
+category: 1
+expected_outcome: Scripted fails at step 1; a11y and hybrid succeed via label 'Add'.
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Add' button
+  scripted:
+    strategy: accessibility_id
+    value: addButton
+  oracle:
+    type: Button
+    label: Add
+  screen: feeds
+- step: Tap the 'Add Folder' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Add Folder"]
+  oracle:
+    type: Button
+    label: Add Folder
+  screen: add_menu
+- step: Type 'Music' into the 'Name' field
+  scripted:
+    strategy: xpath
+    value: (//XCUIElementTypeTextField)[1]
+  oracle:
+    type: TextField
+  screen: add_folder
+- step: Tap the 'Add' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Add"]
+  oracle:
+    type: Button
+    name: Add
+  screen: add_folder
+postconditions:
+- check: exists
+  element:
+    type: Cell
+    label_contains: Music
+perturbation:
+  kind: identifier_rename
+  description: Toolbar Add button identifier 'addButton' renamed 'addFeedOrFolderButton'; label unchanged
+  launch_args:
+  - -perturb
+  - nn01_add_id_renamed

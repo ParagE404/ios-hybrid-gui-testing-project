@@ -1,0 +1,46 @@
+# NetNewsWire scenario. Origin: original, 
+# Written 18 Oct 2026 BEFORE any formal results were viewed (D-018). expected_outcome is a prediction.
+# Scripted locators follow D-011 against the baseline page source. Perturbations: docs/external-perturbations.md.
+# Steps marked VERIFY have no captured screen yet; check them against page source before the batch.
+id: nn-05
+app: netnewswire
+title: Show only unread articles in 'Today'
+pilot: false
+category: 3
+expected_outcome: 'REVISED 18 Oct 22:55 after static inspection, before any results (D-020): scripted fails at step 1. a11y
+  is predicted to SUCCEED via the cell''s title text, which XCUITest still exposes (accessible=false) under the generic ''Smart
+  Feed'' label. Hybrid behaves like a11y.'
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Today' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeCell[@name="Today"]
+  oracle:
+    type: Cell
+    label: Today
+  oracle_perturbed:
+    type: StaticText
+    label: Today
+  screen: feeds
+- step: Tap the 'Filter Read Articles' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Filter Read Articles"]
+  oracle:
+    type: Button
+    label_contains: Filter Read Articles
+  screen: today_timeline
+postconditions:
+- check: exists
+  element:
+    type: Button
+    label_contains: Selected - Filter Read Articles
+perturbation:
+  kind: generic_label
+  description: Today, All Unread and Starred cells all get the accessibility label 'Smart Feed'; visible text unchanged
+  launch_args:
+  - -perturb
+  - nn05_smart_feeds_generic
