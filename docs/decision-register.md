@@ -109,3 +109,9 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 ### D-021 Scenario corrections after external capture
 - **Date:** 2026-10-15
 - **Logic:** Oracles made unique; su-07 target changed from Indigo to Seafoam (Indigo was scrolled off-screen).
+
+### D-022 Settle wait for theme menu
+- **Date:** 2026-10-18
+- **Finding:** SwiftUI theme menu loads items while scrolling.
+- **Fix:** Add "Wait 2 seconds" step.
+- **Status:** Verification failed; positional indices remained unstable.
