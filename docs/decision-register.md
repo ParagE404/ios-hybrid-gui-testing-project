@@ -60,8 +60,9 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Date:** 2026-09-05
 - **Logic:** Correctness is judged by an author-written matcher (\`oracle\`) on the pre-action snapshot, independent of the resolver.
 
-### D-011 Scripted baseline locator policy (proposed 12 Sep 2026)
+### D-011 Scripted baseline locator policy (proposed 12 Sep; amended 28 Oct 2026)
 - **Initial Rule (12 Sep 2026):** (1) developer identifier; (2) XPath on unique name; (3) positional XPath.
+- **Amended (D-023, 28 Oct 2026):** a unique non-empty label is tried before a positional XPath.
 - **Rationale:** mechanical application prevents author bias.
 
 ### D-012 Activation point for switches (proposed)
@@ -115,3 +116,8 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Finding:** SwiftUI theme menu loads items while scrolling.
 - **Fix:** Add "Wait 2 seconds" step.
 - **Status:** Verification failed; positional indices remained unstable.
+
+### D-023 Label rung added to locator policy
+- **Date:** 2026-10-22
+- **Finding:** Page source read during animation can settle on a tree with missing items.
+- **Decision:** D-011 gains a rung: (1) id $\rightarrow$ (2) unique name $\rightarrow$ (3) unique non-empty label $\rightarrow$ (4) positional.
