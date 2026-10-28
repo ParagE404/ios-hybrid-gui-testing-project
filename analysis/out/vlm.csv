@@ -1,0 +1,2 @@
+condition,steps_with_vlm,vlm_calls,accepted,accepted_and_correct,median_call_ms,mean_image_kb,mean_input_chars,mean_output_chars
+perturbed,27,40,15,12,3549.763292015996,237.2876338252315,260.68518518518516,11.592592592592593

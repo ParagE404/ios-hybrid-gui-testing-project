@@ -1,0 +1,7 @@
+config,condition,runs,completed,rate,ci_low,ci_high
+a11y,baseline,72,72,1.0,1.0,1.0
+a11y,perturbed,72,42,0.5833333333333334,0.375,0.7916666666666666
+hybrid,baseline,72,72,1.0,1.0,1.0
+hybrid,perturbed,72,54,0.75,0.5833333333333334,0.9166666666666666
+scripted,baseline,72,69,0.9583333333333334,0.875,1.0
+scripted,perturbed,72,3,0.041666666666666664,0.0,0.125

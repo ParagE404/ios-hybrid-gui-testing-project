@@ -1,0 +1,4 @@
+config,retention_n,retention_rate,after_scripted_break_n,after_scripted_break_rate
+scripted,69,0.043478260869565216,69,0.0
+a11y,72,0.5833333333333334,69,0.5652173913043478
+hybrid,72,0.75,69,0.7391304347826086

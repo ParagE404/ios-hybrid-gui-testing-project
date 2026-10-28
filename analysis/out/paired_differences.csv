@@ -1,0 +1,7 @@
+condition,comparison,scenarios,diff_pp,ci_low_pp,ci_high_pp,mcnemar_b,mcnemar_c,mcnemar_p
+baseline,hybrid - a11y,24,0.0,0.0,0.0,0,0,1.0
+baseline,hybrid - scripted,24,4.166666666666666,0.0,12.5,3,0,0.25
+baseline,a11y - scripted,24,4.166666666666666,0.0,12.5,3,0,0.25
+perturbed,hybrid - a11y,24,16.666666666666664,4.166666666666666,33.33333333333333,12,0,0.00048828125
+perturbed,hybrid - scripted,24,70.83333333333334,50.0,87.5,51,0,8.881784197001252e-16
+perturbed,a11y - scripted,24,54.166666666666664,33.33333333333333,75.0,39,0,3.637978807091713e-12

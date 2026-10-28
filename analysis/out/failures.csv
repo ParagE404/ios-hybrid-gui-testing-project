@@ -1,0 +1,12 @@
+config,condition,failure,runs
+a11y,perturbed,not_executed:fallback:incompatible_state,9
+a11y,perturbed,not_executed:fallback:no_match,15
+a11y,perturbed,postcondition_failed,3
+a11y,perturbed,wrong_target:structured,3
+hybrid,perturbed,not_executed:vlm_rejected:incompatible_state,9
+hybrid,perturbed,postcondition_failed,3
+hybrid,perturbed,wrong_target:structured,3
+hybrid,perturbed,wrong_target:vlm,3
+scripted,baseline,scripted_locator_not_found,3
+scripted,perturbed,postcondition_failed,3
+scripted,perturbed,scripted_locator_not_found,66
