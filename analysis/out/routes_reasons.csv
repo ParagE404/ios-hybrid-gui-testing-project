@@ -1,0 +1,10 @@
+config,condition,route,reason,steps
+a11y,baseline,structured,ok,243
+a11y,perturbed,fallback,incompatible_state,9
+a11y,perturbed,fallback,no_match,15
+a11y,perturbed,structured,ok,183
+hybrid,baseline,structured,ok,243
+hybrid,perturbed,structured,ok,201
+hybrid,perturbed,vlm,no_match,15
+hybrid,perturbed,vlm_rejected,incompatible_state,9
+hybrid,perturbed,vlm_rejected,no_match,3

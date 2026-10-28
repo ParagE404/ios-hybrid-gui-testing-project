@@ -1,0 +1,7 @@
+config,condition,target_steps,step_success,structured,vlm_route,fallback_needed
+a11y,baseline,243,1.0,1.0,0.0,0.0
+a11y,perturbed,207,0.8695652173913043,0.8840579710144928,0.0,0.11594202898550725
+hybrid,baseline,243,1.0,1.0,0.0,0.0
+hybrid,perturbed,228,0.9210526315789473,0.881578947368421,0.06578947368421052,0.11842105263157894
+scripted,baseline,237,0.9873417721518988,0.0,0.0,0.0
+scripted,perturbed,120,0.45,0.0,0.0,0.0
