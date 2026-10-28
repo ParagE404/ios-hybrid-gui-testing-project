@@ -121,3 +121,7 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Date:** 2026-10-22
 - **Finding:** Page source read during animation can settle on a tree with missing items.
 - **Decision:** D-011 gains a rung: (1) id $\rightarrow$ (2) unique name $\rightarrow$ (3) unique non-empty label $\rightarrow$ (4) positional.
+
+### D-024 Blind lifted; formal analysis run
+- **Date:** 2026-10-25
+- **Action:** Condition of D-018 met. Analysis script run once on the full log. Evidence: 5de7b856.
