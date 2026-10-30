@@ -1,0 +1,7 @@
+condition,comparison,scenarios,rate_a,rate_b,diff_pp,a_only,b_only,exact_p
+baseline,hybrid - a11y,24,1.0,1.0,0.0,0,0,1.0
+baseline,hybrid - scripted,24,1.0,0.958,4.2,1,0,1.0
+baseline,a11y - scripted,24,1.0,0.958,4.2,1,0,1.0
+perturbed,hybrid - a11y,24,0.75,0.583,16.7,4,0,0.125
+perturbed,hybrid - scripted,24,0.75,0.042,70.8,17,0,2e-05
+perturbed,a11y - scripted,24,0.583,0.042,54.2,13,0,0.00024
