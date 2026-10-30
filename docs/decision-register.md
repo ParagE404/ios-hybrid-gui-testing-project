@@ -125,3 +125,8 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 ### D-024 Blind lifted; formal analysis run
 - **Date:** 2026-10-25
 - **Action:** Condition of D-018 met. Analysis script run once on the full log. Evidence: 5de7b856.
+
+### D-025 Reporting formal results
+- **Date:** 2026-10-22
+- **Observation:** Repetitions never disagreed.
+- **Decision:** Report scenario-cluster bootstrap CI as primary; use exact McNemar on one observation per scenario.
