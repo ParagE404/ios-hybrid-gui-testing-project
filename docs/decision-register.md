@@ -130,3 +130,9 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Date:** 2026-10-22
 - **Observation:** Repetitions never disagreed.
 - **Decision:** Report scenario-cluster bootstrap CI as primary; use exact McNemar on one observation per scenario.
+
+### D-026 MCP adapter and the SEQ1 protocol
+- **Date:** 2026-11-02
+- **Design:** \`mcp_adapter/\` wraps the frozen engine as an MCP server over stdio.
+- **SEQ1 protocol:** 72 runs, ABBAAB block order, comparing direct vs MCP.
+- **Final Register Update:** e8ebe064.
