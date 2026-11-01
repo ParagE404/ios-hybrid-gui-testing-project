@@ -12,7 +12,7 @@ dev = ["pytest>=8"]
 analysis = ["numpy", "pandas", "scipy", "matplotlib", "tabulate"]
 
 [tool.setuptools]
-packages = ["engine", "engine.vlm"]
+packages = ["engine", "engine.vlm", "mcp_adapter"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
