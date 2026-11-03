@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ios-hybrid": {
+      "command": ".venv/bin/python",
+      "args": ["-m", "mcp_adapter.server", "--vlm", "--log", "experiments/raw/mcp_demo.jsonl"]
+    }
+  }
+}

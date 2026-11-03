@@ -10,6 +10,7 @@ appium = ["Appium-Python-Client>=4"]
 vlm = ["torch", "torchvision", "transformers>=4.45", "accelerate", "qwen-vl-utils", "pillow"]
 dev = ["pytest>=8"]
 analysis = ["numpy", "pandas", "scipy", "matplotlib", "tabulate"]
+mcp = ["mcp>=2.3,<3", "anyio"]
 
 [tool.setuptools]
 packages = ["engine", "engine.vlm", "mcp_adapter"]
