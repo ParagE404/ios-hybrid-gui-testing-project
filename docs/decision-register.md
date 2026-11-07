@@ -21,8 +21,8 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Selection:** Testbed "Errands" (SwiftUI, own), SyncUps by Point-Free (SwiftUI, MIT), NetNewsWire by Ranchero Software (mostly UIKit, MIT).
 - **Rationale:** one controlled app for internal validity, two independent real apps for external validity, both SwiftUI and UIKit.
 - **Pinned commits:**
-  - SyncUps: @ 170bc1ad... Bundle id co.pointfree.SyncUps.
-  - NetNewsWire: @ bb5ab3dc... Bundle id uk.ac.city.parag.NetNewsWire.iOS-DEBUG.
+  - SyncUps: @ ... Bundle id co.pointfree.SyncUps.
+  - NetNewsWire: @ ... Bundle id uk.ac.city.parag.NetNewsWire.iOS-DEBUG.
 - **Gates (5 Oct 2026):** Determinism verified via two -resetData launches giving byte-identical page source except for processId.
 
 ### D-004 Perturbation design (confirmed)
@@ -36,7 +36,7 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Rule (written 15 Sep 2026):** grid tau 0.60 to 0.95 and delta 0.05 to 0.30; maximize precision (target 1.0), then coverage.
 - **Disclosure (15 Sep 2026):** baseline development runs of the FORMAL testbed scenarios reported accepted margins as low as 0.118. The rule is NOT changed in response to avoid tuning.
 - **Pilot round 1 (15 Sep 2026):** rule output tau = 0.66, delta = 0.09. Precision 1.0, coverage 0.933.
-- **Frozen values (pilot round ):** tau = 0.66, delta = 0.09, freeze tag \`experiment-freeze-1\`. Evidence: f22bc95f.
+- **Frozen values (pilot round ):** tau = 0.66, delta = 0.09, freeze tag \`experiment-freeze-1\`. Evidence: .
 
 ### D-006 Step language: controlled English with quoted targets (confirmed)
 - **Date:** 2026-09-05
@@ -100,7 +100,7 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 ### D-019 External-app scenarios and instrumentation (proposed)
 - **Date:** 2026-10-11
 - **Implementation:** 16 scenarios written from captured baseline page source.
-- **Instrumentation:** identifiers added to key buttons to allow category 1 (rename/remove) to function. Evidence: a94b46bd.
+- **Instrumentation:** identifiers added to key buttons to allow category 1 (rename/remove) to function. Evidence: .
 
 ### D-020 Generic labels and XCUITest (finding)
 - **Date:** 2026-10-15
@@ -124,7 +124,7 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 
 ### D-024 Blind lifted; formal analysis run
 - **Date:** 2026-10-25
-- **Action:** Condition of D-018 met. Analysis script run once on the full log. Evidence: 5de7b856.
+- **Action:** Condition of D-018 met. Analysis script run once on the full log. Evidence: .
 
 ### D-025 Reporting formal results
 - **Date:** 2026-10-22
@@ -135,7 +135,7 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Date:** 2026-11-02
 - **Design:** \`mcp_adapter/\` wraps the frozen engine as an MCP server over stdio.
 - **SEQ1 protocol:** 72 runs, ABBAAB block order, comparing direct vs MCP.
-- **Final Register Update:** e8ebe064.
+- **Final Register Update:** .
 
 ## Component attribution
 
