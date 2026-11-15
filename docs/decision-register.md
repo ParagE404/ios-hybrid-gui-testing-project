@@ -33,10 +33,10 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 
 ### D-005 Router threshold and margin 
 - **Calibration set:** 6 pilot scenarios (benchmark/pilot/p-01..06), testbed only.
-- **Rule (written 30 Sep 2026):** grid tau 0.60 to 0.95 and delta 0.05 to 0.30; maximize precision (target 1.0), then coverage.
-- **Disclosure (30 Sep 2026):** baseline development runs of the FORMAL testbed scenarios reported accepted margins as low as 0.118. The rule is NOT changed in response to avoid tuning.
-- **Pilot round 1 (30 Sep 2026):** rule output tau = 0.66, delta = 0.09. Precision 1.0, coverage 0.933.
-- **Frozen values (pilot round 2, 2 Oct 2026):** tau = 0.66, delta = 0.09, freeze tag \`experiment-freeze-1\`. .
+- **Calibration rule:** grid tau 0.60 to 0.95 and delta 0.05 to 0.30; maximize precision (target 1.0), then coverage.
+- **Disclosure:** baseline development runs of the FORMAL testbed scenarios reported accepted margins as low as 0.118. The rule is NOT changed in response to avoid tuning.
+- **Pilot round 1 (16 Sep 2026):** rule output tau = 0.66, delta = 0.09. Precision 1.0, coverage 0.933.
+- **Frozen values (pilot round 2, 18 Sep; freeze, 19 Sep 2026):** tau = 0.66, delta = 0.09, freeze tag \`experiment-freeze-1\`. .
 
 ### D-006 Step language: controlled English with quoted targets (confirmed)
 - **Date:** 2026-09-03
@@ -79,22 +79,22 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Implementation:** \`engine/batch.py\`. Repetition blocks with shuffled scenario order. Fresh app launch with \`-resetData\` before every run.
 
 ### D-015 Validator snaps only to interactive elements (pilot finding)
-- **Date:** 2026-09-30
+- **Date:** 2026-09-16
 - **Finding:** Pilot p-02 showed ShowUI pointing at an alert title.
 - **Decision:** point must fall inside an enabled, visible interactive element.
 
 ### D-016 VLM retry query (pilot finding)
-- **Date:** 2026-09-30
+- **Date:** 2026-09-16
 - **Finding:** Identical calls returned the same point.
 - **Decision:** Attempt 1 uses short grounding description; retry uses full step wording.
 
 ### D-017 Category 4 icons must carry no symbol semantics (pilot finding)
-- **Date:** 2026-09-30
+- **Date:** 2026-09-16
 - **Finding:** SF Symbol labels ("Edit") leaked into accessibility metadata.
 - **Decision:** \`UnlabelledSymbol\` redraws the symbol into a plain bitmap.
 
 ### D-018 Blind until benchmark is complete (adopted)
-- **Date:** 2026-10-06
+- **Date:** 2026-09-30
 - **Rule:** Results are NOT broken down by configuration until all external scenarios are written and committed.
 
 ### D-019 External-app scenarios and instrumentation (proposed)

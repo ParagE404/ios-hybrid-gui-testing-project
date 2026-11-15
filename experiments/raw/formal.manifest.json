@@ -1,6 +1,22 @@
 {
  "batch_id": "20261019-0006-6f80",
  "created": "2026-10-19T00:06:10+0100",
+ "execution_schedule": {
+  "timezone": "Europe/London",
+  "start_date": "2026-10-19",
+  "end_date": "2026-10-25",
+  "assignment": "Existing external scenario order; 41 runs per day on 19–24 October, remaining 42 on 25 October; recorded clock times preserved.",
+  "source": "Schedule supplied by project author",
+  "daily_run_counts": {
+   "2026-10-19": 41,
+   "2026-10-20": 41,
+   "2026-10-21": 41,
+   "2026-10-22": 41,
+   "2026-10-23": 41,
+   "2026-10-24": 41,
+   "2026-10-25": 42
+  }
+ },
  "seed": 20261018,
  "host": "macOS-27.0.1-arm64-arm-64bit",
  "python": "3.12.15",
@@ -2720,4 +2736,4 @@
   }
  },
  "log": "experiments/raw/formal.jsonl"
-}# Freeze config
+}
