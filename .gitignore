@@ -15,3 +15,4 @@ apps/external/syncups/
 apps/external/netnewswire/
 apps/external/SharedXcodeSettings/
 .claude/settings.local.json
+.docx
