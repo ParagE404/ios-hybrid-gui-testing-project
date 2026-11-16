@@ -1,6 +1,6 @@
 """Structured (accessibility-only) resolver: rank candidate elements for an Intent.
 
-Origin: original,  The idea of
+  The idea of
 combining several weighted attributes into one similarity score follows
 similarity-based element localisation (Nass et al., 2023).
 

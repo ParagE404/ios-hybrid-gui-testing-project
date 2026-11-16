@@ -1,6 +1,6 @@
 """Render a synthetic iOS-style Settings screen for the ShowUI spike (no simulator needed).
 
-Origin: original, 
+ 
 Writes spikes/out/screenshot.png at iPhone 16 Pro pixel size (1206x2622, 3x scale) and
 spikes/out/screenshot_truth.json with the true centre of each row (relative 0..1), so
 the spike's predictions can be scored, not just eyeballed.

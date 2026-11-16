@@ -1,5 +1,5 @@
 # PILOT scenario: used ONLY to calibrate router threshold and margin (D-005). Never analysed.
-# Origin: original, 
+#  
 # Scripted locators follow D-011 against the baseline page source.
 id: p-06
 app: testbed

@@ -1,4 +1,4 @@
-# App registry for the batch runner. Origin: original, 
+# App registry for the batch runner.  
 testbed:
   bundle: uk.ac.city.parag.Errands
   framework: SwiftUI

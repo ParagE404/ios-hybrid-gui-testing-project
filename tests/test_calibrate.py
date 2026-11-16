@@ -1,4 +1,4 @@
-"""Tests for the pilot calibration rule. Origin: original, """
+"""Tests for the pilot calibration rule.  """
 import sys
 from pathlib import Path
 

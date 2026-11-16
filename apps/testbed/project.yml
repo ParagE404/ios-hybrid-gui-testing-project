@@ -1,5 +1,5 @@
 # XcodeGen spec for the Errands testbed app.
-# Origin: original, 
+#  
 # Generate the Xcode project with:  brew install xcodegen && xcodegen generate
 name: Errands
 options:

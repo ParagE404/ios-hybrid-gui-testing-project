@@ -1,6 +1,6 @@
 """Print the steps of one run from a telemetry log as a readable table (video demo aid).
 
-Origin: original,  Not part of the engine
+  Not part of the engine
 or the analysis: it only reads a JSONL log and prints it.
 
 Usage:

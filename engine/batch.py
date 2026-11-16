@@ -1,6 +1,6 @@
 """Formal experiment batch runner: scenarios x conditions x configurations x repetitions.
 
-Origin: original, 
+ 
 
 Pre-registered run protocol:
   * Order: repetition blocks (all of rep 1, then rep 2, then rep 3). Within a block the

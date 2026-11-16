@@ -1,6 +1,6 @@
 """Show where ShowUI pointed: a simulator screenshot with the model's point drawn on it (video demo aid).
 
-Origin: original, AI-assisted (Claude), reviewed by Parag Dharadhar. Reads the last VLM proposal from a
+ AI-assisted (Claude), reviewed by Parag Dharadhar. Reads the last VLM proposal from a
 telemetry log, takes a fresh screenshot of the booted simulator, and draws the point. The screenshot is
 taken after the run, so the star already shows as filled; say so if you narrate over it.
 

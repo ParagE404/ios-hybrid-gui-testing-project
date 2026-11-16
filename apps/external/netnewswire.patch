@@ -1,5 +1,5 @@
 NetNewsWire instrumentation patch for the MSc benchmark.
-Origin: original, 
+ 
 Upstream: https://github.com/Ranchero-Software/NetNewsWire @ bb5ab3dc91f9da00fa8eaedf89a04c5e7970ad5c (main)
 
 Apply (from the repo root):

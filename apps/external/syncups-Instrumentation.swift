@@ -1,5 +1,5 @@
 // Research instrumentation for the MSc benchmark; not part of upstream SyncUps.
-// Origin: original, 
+//  
 // Spec: docs/external-perturbations.md (D-019).
 //
 //   -resetData          replace stored sync-ups with a fixed seed (fixed ids and dates)

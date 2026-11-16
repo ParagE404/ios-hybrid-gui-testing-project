@@ -1,6 +1,6 @@
 """Scenario format: load and validate benchmark YAML files.
 
-Origin: original, 
+ 
 
 Example (benchmark/scenarios/tb-01.yaml):
 

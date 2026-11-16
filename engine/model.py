@@ -1,6 +1,6 @@
 """Core data types shared by the engine.
 
-Origin: original,  See docs/ai-use-log.md.
+  See docs/ai-use-log.md.
 """
 
 from __future__ import annotations

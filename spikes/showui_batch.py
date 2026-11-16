@@ -1,6 +1,6 @@
 """Spike 2b: score ShowUI-2B grounding on a labelled screen (evidence for decision D-002).
 
-Origin: original,  Uses
+  Uses
 engine.vlm.showui.ShowUIAdapter, which is adapted from the ShowUI-2B model card.
 
 For every labelled row in spikes/out/screenshot_truth.json it asks the model to locate
