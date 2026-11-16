@@ -1,6 +1,6 @@
 """Element matchers used by step oracles and scenario postconditions.
 
-Origin: original, 
+ 
 
 A matcher is a small dict, for example:
     {type: Button, label: "Add item"}

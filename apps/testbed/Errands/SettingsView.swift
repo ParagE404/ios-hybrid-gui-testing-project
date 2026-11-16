@@ -1,5 +1,5 @@
 // Settings tab: toggles, segmented sort control, reset with confirmation alert.
-// Origin: original, 
+//  
 //
 // The List toggles deliberately have NO accessibility identifiers, so the scripted
 // baseline must use a structural locator for them (decision D-011). TB-04's

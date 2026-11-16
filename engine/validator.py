@@ -1,6 +1,6 @@
 """Validate model-proposed actions before anything touches the app.
 
-Origin: original, 
+ 
 
 Only six actions exist: tap, type_text, swipe, navigate_back, wait, reject.
 Anything else, anything malformed, out of screen bounds, outside the bounded

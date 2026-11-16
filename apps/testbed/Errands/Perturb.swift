@@ -1,5 +1,5 @@
 // Perturbation switches, read from launch arguments: -perturb <flag> (repeatable).
-// Origin: original, 
+//  
 //
 // Each flag changes accessibility metadata or view structure WITHOUT changing what
 // the app does, so a correct test should still pass (proposal: "matched perturbed
@@ -49,7 +49,7 @@ extension View {
 }
 
 /// An SF Symbol redrawn into a plain bitmap, so it LOOKS identical but carries no symbol
-/// semantics. Pilot finding (18 Oct 2026): with `Image(systemName:)` iOS still exposed the
+/// semantics. Pilot finding: with `Image(systemName:)` iOS still exposed the
 /// symbol's inferred label ("Edit", "Home", "Briefcase") on the child image even when
 /// `.accessibilityHidden(true)` was applied, which leaked the meaning of category 4 controls.
 struct UnlabelledSymbol: View {

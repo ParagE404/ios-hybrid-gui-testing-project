@@ -1,6 +1,6 @@
 """Live narrator for the video demo: follows a telemetry log and explains each decision as it lands.
 
-Origin: original, AI-assisted (Claude), reviewed by Parag Dharadhar. A demo aid only: it reads the
+ AI-assisted (Claude), reviewed by Parag Dharadhar. A demo aid only: it reads the
 JSONL log the engine already writes (and the scenario YAML for the scripted locators); it changes
 nothing in the engine, the benchmark or the formal data.
 

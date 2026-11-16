@@ -1,5 +1,5 @@
-# NetNewsWire scenario. Origin: original, 
-# Written 18 Oct 2026 BEFORE any formal results were viewed (D-018). expected_outcome is a prediction.
+# NetNewsWire scenario.  
+
 # Scripted locators follow D-011 against the baseline page source. Perturbations: docs/external-perturbations.md.
 # Steps marked VERIFY have no captured screen yet; check them against page source before the batch.
 id: nn-05
@@ -7,7 +7,7 @@ app: netnewswire
 title: Show only unread articles in 'Today'
 pilot: false
 category: 3
-expected_outcome: 'REVISED 18 Oct 22:55 after static inspection, before any results (D-020): scripted fails at step 1. a11y
+expected_outcome: 'After static inspection, before any results (D-020): scripted fails at step 1. a11y
   is predicted to SUCCEED via the cell''s title text, which XCUITest still exposes (accessible=false) under the generic ''Smart
   Feed'' label. Hybrid behaves like a11y.'
 initial_state:

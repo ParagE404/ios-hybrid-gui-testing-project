@@ -1,7 +1,7 @@
 //
 //  Instrumentation.swift
 //  Research instrumentation for the MSc benchmark; not part of upstream NetNewsWire.
-//  Origin: original, 
+//   
 //  Spec: docs/external-perturbations.md (D-019).
 //
 //  -resetData          wipe accounts and preferences (Timeline settings and smart-feed read

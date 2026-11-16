@@ -35,8 +35,8 @@ Promised in the proposal's risk register. Each decision gives the options, the e
 - **Calibration set:** 6 pilot scenarios (benchmark/pilot/p-01..06), testbed only.
 - **Calibration rule:** grid tau 0.60 to 0.95 and delta 0.05 to 0.30; maximize precision (target 1.0), then coverage.
 - **Disclosure:** baseline development runs of the FORMAL testbed scenarios reported accepted margins as low as 0.118. The rule is NOT changed in response to avoid tuning.
-- **Pilot round 1 (16 Sep 2026):** rule output tau = 0.66, delta = 0.09. Precision 1.0, coverage 0.933.
-- **Frozen values (pilot round 2, 18 Sep; freeze, 19 Sep 2026):** tau = 0.66, delta = 0.09, freeze tag \`experiment-freeze-1\`. .
+- **Pilot round 1:** rule output tau = 0.66, delta = 0.09. Precision 1.0, coverage 0.933.
+- **Frozen values:** tau = 0.66, delta = 0.09, freeze tag \`experiment-freeze-1\`. .
 
 ### D-006 Step language: controlled English with quoted targets (confirmed)
 - **Date:** 2026-09-03

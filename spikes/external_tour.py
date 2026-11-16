@@ -1,6 +1,6 @@
 """Tour the external apps (SyncUps, NetNewsWire) and save page source + screenshot per screen.
 
-Origin: original,  Spike only, not part of
+  Spike only, not part of
 the engine. Every launch passes -resetData (apps/external/<app>.patch), so state is seeded.
 
 Usage (Appium running, apps installed):

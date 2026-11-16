@@ -6,7 +6,7 @@ candidate when it is valid (D-007 best_effort), so each step's oracle_ok tells u
 whether the top candidate was right. That gives labelled (top score, margin, correct)
 points.
 
-Pre-registered selection rule (written 18 Oct 2026, before any pilot data existed):
+Pre-registered selection rule:
   1. Search tau in [0.60, 0.95] and delta in [0.05, 0.30], step 0.01 (floors stop
      degenerate thresholds).
   2. A step is "accepted" when top >= tau and (top - second) >= delta.

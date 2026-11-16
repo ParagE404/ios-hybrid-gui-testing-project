@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Build the Errands testbed for the iOS Simulator and install it on the booted device.
-# Origin: original, 
+#  
 # Usage: apps/testbed/build.sh            (needs Xcode, xcodegen, and a booted simulator)
 set -euo pipefail
 cd "$(dirname "$0")"

@@ -1,16 +1,3 @@
-"""Command line: run scenarios against a real simulator through Appium.
-
-Origin: original, 
-Not yet verified on a simulator (needs Xcode). Example:
-
-    appium &      # in another terminal
-    python -m engine.cli run benchmark/examples/tb-example-add-item.yaml \
-        --config a11y --condition baseline --device "iPhone 16" \
-        --bundle com.parag.Testbed --log experiments/raw/dev.jsonl
-
-    python -m engine.cli resolve spikes/out/page_source.xml "Tap the 'General' cell"
-"""
-
 from __future__ import annotations
 
 import argparse

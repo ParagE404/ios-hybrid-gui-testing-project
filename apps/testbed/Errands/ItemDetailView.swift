@@ -1,5 +1,5 @@
 // Item detail: status texts, Mark as done, Edit, and the favourite star.
-// Origin: original, 
+//  
 
 import SwiftUI
 

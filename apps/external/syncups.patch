@@ -1,5 +1,5 @@
 SyncUps instrumentation patch for the MSc benchmark.
-Origin: original, 
+ 
 Upstream: https://github.com/pointfreeco/syncups @ 170bc1ad7b0ec1e64606d7c45c54456a0f26b04c (main)
 
 Apply (from the repo root):

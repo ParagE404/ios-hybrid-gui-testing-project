@@ -1,6 +1,6 @@
 """Normalise XCUITest page source (XML) into a flat list of Elements.
 
-Origin: original, 
+ 
 
 Appium's XCUITest driver returns XML where each node is an XCUIElementType* tag with
 attributes such as type, name, label, value, enabled, visible, accessible, x, y,

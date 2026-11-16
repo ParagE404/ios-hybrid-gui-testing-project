@@ -1,8 +1,8 @@
 """Formal experiment batch runner: scenarios x conditions x configurations x repetitions.
 
-Origin: original, 
+ 
 
-Pre-registered run protocol (D-014, written 18 Oct 2026 before any formal run):
+Pre-registered run protocol:
   * Order: repetition blocks (all of rep 1, then rep 2, then rep 3). Within a block the
     scenario order is shuffled, and for each scenario the 6 condition x configuration
     pairs are shuffled. One fixed seed, stored in the manifest.
