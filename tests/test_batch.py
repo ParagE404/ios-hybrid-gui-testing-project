@@ -1,4 +1,4 @@
-"""Batch runner tests on the fake backend. Origin: original, """
+"""Batch runner tests on the fake backend.  """
 import json
 from pathlib import Path
 

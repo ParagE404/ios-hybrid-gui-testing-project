@@ -1,4 +1,4 @@
-# NetNewsWire scenario. Origin: original, 
+# NetNewsWire scenario.  
 
 # Scripted locators follow D-011 against the baseline page source. Perturbations: docs/external-perturbations.md.
 # Steps marked VERIFY have no captured screen yet; check them against page source before the batch.

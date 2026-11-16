@@ -1,4 +1,4 @@
-"""Tests for the MCP adapter (D-026). Origin: original, 
+"""Tests for the MCP adapter (D-026).  
 
 1. EngineSession reproduces engine.runner.run_scenario exactly (same telemetry, minus timings).
 2. The same calls through a real MCP client (in-memory transport) give the same results.

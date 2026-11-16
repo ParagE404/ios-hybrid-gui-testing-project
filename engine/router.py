@@ -1,6 +1,6 @@
 """Confidence router: accept the structured result or route to VLM fallback.
 
-Origin: original, 
+ 
 
 A deterministic action is accepted only when the best candidate clears a calibrated
 threshold AND is separated from the runner-up by a margin (proposal, "System design
@@ -61,4 +61,3 @@ def route(res: Resolution, cfg: RouterConfig | None = None) -> RouteDecision:
         return RouteDecision("fallback", LOW_MARGIN, top, margin)
 
     return RouteDecision("structured", OK, top, margin)
-# Router update

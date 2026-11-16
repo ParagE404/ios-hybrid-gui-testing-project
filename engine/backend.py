@@ -1,6 +1,6 @@
 """Execution backends: Appium XCUITest (real) and a fake (tests).
 
-Origin: original,  The Appium
+  The Appium
 backend uses the Appium Python client and XCUITest 'mobile:' commands
 (Appium Project, 2026a). Verified on an iOS 27.0 simulator for tap,
 type_text, back, scripted and reset; swipe and screenshot_png not yet exercised live.

@@ -1,5 +1,5 @@
 // List tab: filter chips, sort menu, add button, item rows with inline delete.
-// Origin: original, 
+//  
 
 import SwiftUI
 

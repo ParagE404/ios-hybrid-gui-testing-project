@@ -1,6 +1,6 @@
 """Run one scenario under one configuration and record everything.
 
-Origin: original, 
+ 
 
 Configurations share one codebase (proposal):
     scripted  fixed Appium locators from the scenario file

@@ -1,5 +1,5 @@
 // Perturbation switches, read from launch arguments: -perturb <flag> (repeatable).
-// Origin: original, 
+//  
 //
 // Each flag changes accessibility metadata or view structure WITHOUT changing what
 // the app does, so a correct test should still pass (proposal: "matched perturbed

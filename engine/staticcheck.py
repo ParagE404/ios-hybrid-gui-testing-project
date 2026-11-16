@@ -1,6 +1,6 @@
 """Static benchmark check: evaluate scenario steps against saved page sources.
 
-Origin: original, 
+ 
 
 Purpose: verify the BENCHMARK (scripted locators resolve, oracles match, step text
 parses) before any live run. It is approximate: each step is checked against a saved

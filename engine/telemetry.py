@@ -1,6 +1,6 @@
 """Append-only JSONL telemetry.
 
-Origin: original, 
+ 
 
 One line per event. Every line carries the run context (run_id, scenario, condition,
 configuration, repetition) so the analysis scripts can work from raw logs alone.

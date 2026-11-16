@@ -1,5 +1,5 @@
 // Errands: purpose-built SwiftUI testbed for the benchmark.
-// Origin: original, 
+//  
 
 import SwiftUI
 

@@ -1,6 +1,6 @@
 """Parse constrained natural-language test steps into Intents.
 
-Origin: original, 
+ 
 
 Design (decision D-006, proposed): steps use a controlled English with quoted targets,
 for example:
