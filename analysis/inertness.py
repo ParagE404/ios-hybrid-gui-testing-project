@@ -35,18 +35,20 @@ def main(argv=None):
     ap.add_argument("log")
     ap.add_argument("--reference", default="experiments/raw/formal.jsonl")
     ap.add_argument("--out", default="analysis/out")
+    ap.add_argument("--name", default="fault_inertness.md", help="output file name (never reuse an existing one)")
     a = ap.parse_args(argv)
     new = F.load_runs(a.log)
     formal = [r for r in F.load_runs(a.reference) if r["scenario"].startswith("tb-")]
     ok, bad = compare(new, formal)
     done = sum(bool(r["end"].get("completed")) for r in new)
-    md = (f"# Fault-build inertness check (generated, D-028)\n\nLog: {a.log}; reference: {a.reference}.\n\n"
+    md = (f"# Inertness check of a rebuilt testbed (generated, D-028/D-029)\n\nLog: {a.log}; reference: {a.reference}.\n\n"
           f"- runs: {len(new)} (tb-01..08 x 2 conditions x 3 configurations x 1 repetition)\n"
           f"- runner-completed: {done}; failed: {len(new) - done}\n"
           f"- runs matching a formal run on completion, oracle-free first failure and per-step route and "
           f"oracle: {ok} of {len(new)}\n"
           + "".join(f"- MISMATCH {k}: {s}\n" for k, s in bad))
-    Path(a.out, "fault_inertness.md").write_text(md, encoding="utf-8")
+    Path(a.out).mkdir(parents=True, exist_ok=True)
+    Path(a.out, a.name).write_text(md, encoding="utf-8")
     print(md)
 
 
