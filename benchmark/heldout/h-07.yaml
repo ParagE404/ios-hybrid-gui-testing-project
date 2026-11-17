@@ -1,0 +1,78 @@
+# Held-out scenario for engine v2 (workstream C, D-029). Written 2026-11-17 BEFORE any v2 code and before any run.
+# Not derived from SU-03, SU-05 or SU-07 screens or controls. The scripted configuration is not run;
+# its locators exist only because the scenario loader requires them.
+id: h-07
+app: testbed
+title: Change the quantity of 'Eggs' to 13
+pilot: false
+expected_outcome: 'a11y-v1: complete; hybrid-v1: complete; a11y-v2: complete; hybrid-v2: complete'
+heldout:
+  class: control
+  mechanism: 'Control: every target is visible, labelled and resolved on the structured route; neither fix should
+    change anything.'
+  configurations:
+  - a11y-v1
+  - hybrid-v1
+  - a11y-v2
+  - hybrid-v2
+  conditions:
+  - baseline
+  - perturbed
+  outcome_measure: runner completion (as in the formal experiment)
+  expected:
+    a11y-v1:
+      baseline: complete
+      perturbed: complete
+    hybrid-v1:
+      baseline: complete
+      perturbed: complete
+    a11y-v2:
+      baseline: complete
+      perturbed: complete
+    hybrid-v2:
+      baseline: complete
+      perturbed: complete
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Eggs' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Eggs, Qty 12"]
+  oracle:
+    type: Button
+    label_contains: Eggs,
+  screen: list
+- step: Tap the 'Edit' button
+  scripted:
+    strategy: accessibility_id
+    value: editButton
+  oracle:
+    label: Edit
+  screen: detail
+- step: Tap the 'Increment' button
+  scripted:
+    strategy: accessibility_id
+    value: quantityStepper-Increment
+  oracle:
+    type: Button
+    label_contains: Increment
+  screen: edit_form
+- step: Tap the 'Save' button
+  scripted:
+    strategy: accessibility_id
+    value: saveButton
+  oracle:
+    label: Save
+  screen: edit_form
+postconditions:
+- check: exists
+  element:
+    label: Quantity, 13
+perturbation:
+  kind: identifier_removal
+  description: Urgent toggle and Save lose their ids (existing tb-02 flag)
+  launch_args:
+  - -perturb
+  - tb02_ids_removed

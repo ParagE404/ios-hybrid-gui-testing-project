@@ -1,0 +1,70 @@
+# Held-out scenario for engine v2 (workstream C, D-029). Written 2026-11-17 BEFORE any v2 code and before any run.
+# Not derived from SU-03, SU-05 or SU-07 screens or controls. The scripted configuration is not run;
+# its locators exist only because the scenario loader requires them.
+id: h-03
+app: netnewswire
+title: Open 'About NetNewsWire' from Settings
+pilot: false
+expected_outcome: 'a11y-v1: fail at step 1; hybrid-v1: fail at step 1; a11y-v2: complete; hybrid-v2: complete'
+heldout:
+  class: below_fold
+  mechanism: '''About NetNewsWire'' is the last row of Settings and absent from the page source until scrolled (needs
+    two or three swipes).'
+  configurations:
+  - a11y-v1
+  - hybrid-v1
+  - a11y-v2
+  - hybrid-v2
+  conditions:
+  - baseline
+  - perturbed
+  outcome_measure: runner completion (as in the formal experiment)
+  expected:
+    a11y-v1:
+      baseline: 'fail at step 1: target below the fold is absent from the tree (no_match); a11y has no action'
+      perturbed: 'fail at step 1: target below the fold is absent from the tree (no_match); a11y has no action'
+    hybrid-v1:
+      baseline: 'fail at step 1: no_match, so the VLM chooses freely on a screen without the target; predicted rejection
+        or a wrong tap'
+      perturbed: 'fail at step 1: no_match, so the VLM chooses freely on a screen without the target; predicted
+        rejection or a wrong tap'
+    a11y-v2:
+      baseline: 'complete: scroll_to_find swipes and the target resolves on the structured route (may need a third
+        swipe)'
+      perturbed: 'complete: scroll_to_find swipes and the target resolves on the structured route (may need a third
+        swipe)'
+    hybrid-v2:
+      baseline: 'complete: scroll_to_find swipes and the target resolves on the structured route (may need a third
+        swipe)'
+      perturbed: 'complete: scroll_to_find swipes and the target resolves on the structured route (may need a third
+        swipe)'
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Settings' button
+  scripted:
+    strategy: accessibility_id
+    value: settingsButton
+  oracle:
+    type: Button
+    label: Settings
+  screen: feeds
+- step: Tap 'About NetNewsWire'
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeStaticText[@name="About NetNewsWire"]
+  oracle:
+    label: About NetNewsWire
+  screen: settings_bottom
+postconditions:
+- check: exists
+  element:
+    label: By Brent Simmons and the Ranchero Software team
+perturbation:
+  kind: identifier_removal
+  description: Toolbar Settings button loses the instrumentation identifier 'settingsButton' (existing nn-02 flag;
+    cosmetic for these journeys)
+  launch_args:
+  - -perturb
+  - nn02_settings_id_removed
