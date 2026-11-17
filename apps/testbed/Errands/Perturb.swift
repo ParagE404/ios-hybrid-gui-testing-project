@@ -28,6 +28,13 @@ enum Perturb: String, CaseIterable {
     case p05PickerGeneric = "p05_picker_generic"        // cat 3: "Category" picker relabelled "Type"
     case p06CancelIdRemoved = "p06_cancel_id_removed"   // cat 1: Cancel button loses its id
 
+    // Held-out flags for the engine v2 evaluation (benchmark/heldout/, D-029). Metadata only:
+    // the control looks and behaves the same, but its text metadata is gone, while a hidden
+    // control behind the sheet still matches the step's wording.
+    case h04AddConfirmIcon = "h04_add_confirm_icon"            // add form Save -> unlabelled checkmark, id button_21
+    case h05NameFieldUnlabelled = "h05_name_field_unlabelled"  // add form name field: no placeholder/label, id textField_1
+    case h06EditConfirmIcon = "h06_edit_confirm_icon"          // edit form Save -> unlabelled checkmark, id button_22
+
     static let active: Set<Perturb> = {
         let args = ProcessInfo.processInfo.arguments
         var set = Set<Perturb>()
