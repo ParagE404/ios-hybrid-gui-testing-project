@@ -1,0 +1,79 @@
+# Seeded-fault scenario (workstream A, D-028). Written 2026-11-17 BEFORE any run of this file.
+# Steps, locators, oracles, postconditions and perturbation copied unchanged from tb-01.yaml;
+# only id, title, expected_outcome, the fault block and the -fault launch argument differ.
+id: f-09
+app: testbed
+title: 'Add an item ''Coffee'' with quantity 2 [fault: f09_save_draft_lure]'
+pilot: false
+category: 1
+expected_outcome: No false pass, but a11y and hybrid are predicted to tap 'Save draft' on the structured route (score
+  about 0.74, above tau, no runner-up) and to be caught only by the postcondition.
+fault:
+  flag: f09_save_draft_lure
+  class: lure
+  base_scenario: tb-01
+  description: The 'Save' button is removed; a 'Save draft' button (id saveDraftButton) takes its place and closes
+    the form without adding the item.
+  fault_step: 3
+  observed_by:
+  - postcondition 0 (exists 'Coffee')
+  - postcondition 1 (exists 'Qty 2')
+  postconditions_can_observe: true
+  expected:
+    scripted:
+      baseline: detection at step 3 (locator saveButton missing)
+      perturbed: 'fragility (masked: fails as the fault-free formal run did) at step 0'
+    a11y:
+      baseline: detection at postcondition, after tapping the substitute 'Save draft'
+      perturbed: detection at postcondition, after tapping the substitute
+    hybrid:
+      baseline: detection at postcondition, after tapping the substitute
+      perturbed: detection at postcondition, after tapping the substitute
+initial_state:
+  launch_args:
+  - -resetData
+  - -fault
+  - f09_save_draft_lure
+steps:
+- step: Tap the 'Add item' button
+  scripted:
+    strategy: accessibility_id
+    value: addItemButton
+  oracle:
+    label: Add item
+  screen: list
+- step: Type 'Coffee' into the 'Item name' field
+  scripted:
+    strategy: accessibility_id
+    value: itemNameField
+  oracle:
+    type: TextField
+  screen: add_form
+- step: Tap the 'Increment' button
+  scripted:
+    strategy: accessibility_id
+    value: quantityStepper-Increment
+  oracle:
+    type: Button
+    label_contains: Increment
+  screen: add_form
+- step: Tap the 'Save' button
+  scripted:
+    strategy: accessibility_id
+    value: saveButton
+  oracle:
+    label: Save
+  screen: add_form
+postconditions:
+- check: exists
+  element:
+    label_contains: Coffee
+- check: exists
+  element:
+    label_contains: Qty 2
+perturbation:
+  kind: identifier_rename
+  description: Add button accessibilityIdentifier addItemButton -> addButton_v2; label unchanged
+  launch_args:
+  - -perturb
+  - tb01_add_id_renamed

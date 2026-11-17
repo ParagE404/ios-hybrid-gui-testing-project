@@ -1,0 +1,75 @@
+# Seeded-fault scenario (workstream A, D-028). Written 2026-11-17 BEFORE any run of this file.
+# Steps, locators, oracles, postconditions and perturbation copied unchanged from tb-02.yaml;
+# only id, title, expected_outcome, the fault block and the -fault launch argument differ.
+id: f-02
+app: testbed
+title: 'Edit ''Bread'' and mark it urgent [fault: f02_urgent_not_saved]'
+pilot: false
+category: 1
+expected_outcome: No false pass. Detected by the 'Urgent item' postcondition wherever Save is reached; scripted
+  perturbed is masked at step 2.
+fault:
+  flag: f02_urgent_not_saved
+  class: behavioural
+  base_scenario: tb-02
+  description: Editing an item saves name, quantity and category but drops the Urgent flag (toggle has no effect).
+  fault_step: 3
+  observed_by:
+  - postcondition 0 (exists 'Urgent item')
+  postconditions_can_observe: true
+  expected:
+    scripted:
+      baseline: detection at postcondition
+      perturbed: 'fragility (masked: fails as the fault-free formal run did) at step 2'
+    a11y:
+      baseline: detection at postcondition
+      perturbed: detection at postcondition
+    hybrid:
+      baseline: detection at postcondition
+      perturbed: detection at postcondition
+initial_state:
+  launch_args:
+  - -resetData
+  - -fault
+  - f02_urgent_not_saved
+steps:
+- step: Tap the 'Bread' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Bread, Qty 1"]
+  oracle:
+    type: Button
+    label_contains: Bread,
+  screen: list
+- step: Tap the 'Edit' button
+  scripted:
+    strategy: accessibility_id
+    value: editButton
+  oracle:
+    label: Edit
+  screen: detail
+- step: Toggle the 'Urgent' switch
+  scripted:
+    strategy: accessibility_id
+    value: urgentToggle
+  oracle:
+    type: Switch
+    label: Urgent
+  screen: edit_form
+- step: Tap the 'Save' button
+  scripted:
+    strategy: accessibility_id
+    value: saveButton
+  oracle:
+    label: Save
+  screen: edit_form
+postconditions:
+- check: exists
+  element:
+    label: Urgent item
+perturbation:
+  kind: identifier_removal
+  description: Urgent toggle and Save button lose their accessibilityIdentifiers
+  launch_args:
+  - -perturb
+  - tb02_ids_removed

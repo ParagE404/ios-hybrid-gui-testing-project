@@ -1,0 +1,78 @@
+# Seeded-fault scenario (workstream A, D-028). Written 2026-11-17 BEFORE any run of this file.
+# Steps, locators, oracles, postconditions and perturbation copied unchanged from tb-01.yaml;
+# only id, title, expected_outcome, the fault block and the -fault launch argument differ.
+id: f-01
+app: testbed
+title: 'Add an item ''Coffee'' with quantity 2 [fault: f01_save_not_persisted]'
+pilot: false
+category: 1
+expected_outcome: No false pass. Scripted baseline, a11y and hybrid reach Save and fail the 'Coffee' postcondition;
+  scripted perturbed fails at step 0 as in the formal run (masked).
+fault:
+  flag: f01_save_not_persisted
+  class: behavioural
+  base_scenario: tb-01
+  description: Save dismisses the form but does not add the item to the store.
+  fault_step: 3
+  observed_by:
+  - postcondition 0 (exists 'Coffee')
+  - postcondition 1 (exists 'Qty 2')
+  postconditions_can_observe: true
+  expected:
+    scripted:
+      baseline: detection at postcondition
+      perturbed: 'fragility (masked: fails as the fault-free formal run did) at step 0'
+    a11y:
+      baseline: detection at postcondition
+      perturbed: detection at postcondition
+    hybrid:
+      baseline: detection at postcondition
+      perturbed: detection at postcondition
+initial_state:
+  launch_args:
+  - -resetData
+  - -fault
+  - f01_save_not_persisted
+steps:
+- step: Tap the 'Add item' button
+  scripted:
+    strategy: accessibility_id
+    value: addItemButton
+  oracle:
+    label: Add item
+  screen: list
+- step: Type 'Coffee' into the 'Item name' field
+  scripted:
+    strategy: accessibility_id
+    value: itemNameField
+  oracle:
+    type: TextField
+  screen: add_form
+- step: Tap the 'Increment' button
+  scripted:
+    strategy: accessibility_id
+    value: quantityStepper-Increment
+  oracle:
+    type: Button
+    label_contains: Increment
+  screen: add_form
+- step: Tap the 'Save' button
+  scripted:
+    strategy: accessibility_id
+    value: saveButton
+  oracle:
+    label: Save
+  screen: add_form
+postconditions:
+- check: exists
+  element:
+    label_contains: Coffee
+- check: exists
+  element:
+    label_contains: Qty 2
+perturbation:
+  kind: identifier_rename
+  description: Add button accessibilityIdentifier addItemButton -> addButton_v2; label unchanged
+  launch_args:
+  - -perturb
+  - tb01_add_id_renamed

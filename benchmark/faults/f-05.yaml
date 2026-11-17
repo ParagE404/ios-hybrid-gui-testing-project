@@ -1,0 +1,77 @@
+# Seeded-fault scenario (workstream A, D-028). Written 2026-11-17 BEFORE any run of this file.
+# Steps, locators, oracles, postconditions and perturbation copied unchanged from tb-05.yaml;
+# only id, title, expected_outcome, the fault block and the -fault launch argument differ.
+id: f-05
+app: testbed
+title: 'Delete ''Eggs'' and then ''Bread'' [fault: f05_delete_wrong_row]'
+pilot: false
+category: 3
+expected_outcome: No false pass. The step-0 check that 'Eggs' is gone fails immediately; scripted perturbed is masked
+  at step 0.
+fault:
+  flag: f05_delete_wrong_row
+  class: behavioural
+  base_scenario: tb-05
+  description: Delete removes the row below the one tapped (Eggs -> Light bulbs).
+  fault_step: 0
+  observed_by:
+  - step 0 expect_after (absent 'Eggs')
+  - postconditions 0, 2, 3
+  postconditions_can_observe: true
+  expected:
+    scripted:
+      baseline: detection at step 0 (expect_after)
+      perturbed: 'fragility (masked: fails as the fault-free formal run did) at step 0'
+    a11y:
+      baseline: detection at step 0 (expect_after)
+      perturbed: detection at step 0 (expect_after)
+    hybrid:
+      baseline: detection at step 0 (expect_after)
+      perturbed: detection at step 0 (expect_after)
+initial_state:
+  launch_args:
+  - -resetData
+  - -fault
+  - f05_delete_wrong_row
+steps:
+- step: Tap 'Delete' in the 'Eggs' row
+  scripted:
+    strategy: accessibility_id
+    value: delete_Eggs
+  oracle:
+    type: Button
+    label_contains: Delete
+    in_row: Eggs
+  expect_after:
+    check: absent
+    element:
+      label_contains: Eggs
+  screen: list
+- step: Tap 'Delete' in the 'Bread' row
+  scripted:
+    strategy: accessibility_id
+    value: delete_Bread
+  oracle:
+    type: Button
+    label_contains: Delete
+    in_row: Bread
+  screen: list
+postconditions:
+- check: absent
+  element:
+    label_contains: Eggs
+- check: absent
+  element:
+    label_contains: Bread
+- check: exists
+  element:
+    label_contains: Milk
+- check: exists
+  element:
+    label_contains: Batteries
+perturbation:
+  kind: duplicate_label
+  description: Every row's delete button is labelled just 'Delete' with the same id 'deleteButton'
+  launch_args:
+  - -perturb
+  - tb05_duplicate_delete
