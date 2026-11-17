@@ -1,0 +1,76 @@
+# Seeded-fault scenario (workstream A, D-028). Written 2026-11-17 BEFORE any run of this file.
+# Steps, locators, oracles, postconditions and perturbation copied unchanged from tb-08.yaml;
+# only id, title, expected_outcome, the fault block and the -fault launch argument differ.
+id: f-08
+app: testbed
+title: 'Filter to ''Home'' items and mark ''Light bulbs'' as done [fault: f08_filter_wrong_category]'
+pilot: false
+category: 4
+expected_outcome: No false pass. The step-0 check that 'Milk' is hidden fails under the Food filter; scripted and
+  a11y perturbed are masked at step 0.
+fault:
+  flag: f08_filter_wrong_category
+  class: behavioural
+  base_scenario: tb-08
+  description: Each category chip applies the previous category (Home -> Food).
+  fault_step: 0
+  observed_by:
+  - step 0 expect_after (absent 'Milk')
+  - later steps (Light bulbs row not shown)
+  postconditions_can_observe: true
+  expected:
+    scripted:
+      baseline: detection at step 0 (expect_after)
+      perturbed: 'fragility (masked: fails as the fault-free formal run did) at step 0'
+    a11y:
+      baseline: detection at step 0 (expect_after)
+      perturbed: 'fragility (masked: fails as the fault-free formal run did) at step 0'
+    hybrid:
+      baseline: detection at step 0 (expect_after)
+      perturbed: detection at step 0 (expect_after)
+initial_state:
+  launch_args:
+  - -resetData
+  - -fault
+  - f08_filter_wrong_category
+steps:
+- step: Tap the 'Home' filter
+  scripted:
+    strategy: accessibility_id
+    value: filter_Home
+  oracle:
+    type: Button
+    name: filter_Home
+  expect_after:
+    check: absent
+    element:
+      label_contains: Milk
+  screen: list
+  oracle_perturbed:
+    type: Button
+    name: chip_2
+- step: Tap the 'Light bulbs' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Light bulbs, Qty 3"]
+  oracle:
+    type: Button
+    label_contains: Light bulbs,
+  screen: list
+- step: Tap the 'Mark as done' button
+  scripted:
+    strategy: accessibility_id
+    value: markDoneButton
+  oracle:
+    label: Mark as done
+  screen: detail
+postconditions:
+- check: exists
+  element:
+    label: Completed
+perturbation:
+  kind: weak_metadata
+  description: Filter chips become icon-only with no accessibility label; ids become chip_0..3
+  launch_args:
+  - -perturb
+  - tb08_chips_unlabelled

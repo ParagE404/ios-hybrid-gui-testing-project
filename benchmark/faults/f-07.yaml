@@ -1,0 +1,64 @@
+# Seeded-fault scenario (workstream A, D-028). Written 2026-11-17 BEFORE any run of this file.
+# Steps, locators, oracles, postconditions and perturbation copied unchanged from tb-07.yaml;
+# only id, title, expected_outcome, the fault block and the -fault launch argument differ.
+id: f-07
+app: testbed
+title: 'Favourite ''Batteries'' [fault: f07_favourite_not_stored]'
+pilot: false
+category: 4
+expected_outcome: No false pass. Detected by 'In favourites' wherever the star is tapped; scripted and a11y perturbed
+  are masked at step 1; hybrid perturbed detects if the VLM grounds the star as in the formal run.
+fault:
+  flag: f07_favourite_not_stored
+  class: behavioural
+  base_scenario: tb-07
+  description: Tapping the favourite star does nothing.
+  fault_step: 1
+  observed_by:
+  - postcondition 0 (exists 'In favourites')
+  postconditions_can_observe: true
+  expected:
+    scripted:
+      baseline: detection at postcondition
+      perturbed: 'fragility (masked: fails as the fault-free formal run did) at step 1'
+    a11y:
+      baseline: detection at postcondition
+      perturbed: 'fragility (masked: fails as the fault-free formal run did) at step 1'
+    hybrid:
+      baseline: detection at postcondition
+      perturbed: detection at postcondition
+initial_state:
+  launch_args:
+  - -resetData
+  - -fault
+  - f07_favourite_not_stored
+steps:
+- step: Tap the 'Batteries' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Batteries, Qty 4"]
+  oracle:
+    type: Button
+    label_contains: Batteries,
+  screen: list
+- step: Tap the 'Favourite' button
+  scripted:
+    strategy: accessibility_id
+    value: favouriteButton
+  oracle:
+    type: Button
+    name: favouriteButton
+  screen: detail
+  oracle_perturbed:
+    type: Button
+    name: button_7
+postconditions:
+- check: exists
+  element:
+    label: In favourites
+perturbation:
+  kind: weak_metadata
+  description: Favourite star (drawn shape) loses its accessibility label; id becomes 'button_7'
+  launch_args:
+  - -perturb
+  - tb07_star_unlabelled

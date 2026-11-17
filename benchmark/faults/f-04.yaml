@@ -1,0 +1,72 @@
+# Seeded-fault scenario (workstream A, D-028). Written 2026-11-17 BEFORE any run of this file.
+# Steps, locators, oracles, postconditions and perturbation copied unchanged from tb-04.yaml;
+# only id, title, expected_outcome, the fault block and the -fault launch argument differ.
+id: f-04
+app: testbed
+title: 'Turn off ''Show completed'' in Settings [fault: f04_show_completed_ignored]'
+pilot: false
+category: 2
+expected_outcome: No false pass. a11y and hybrid detect via 'Stamps' still listed; scripted cannot reach the fault
+  in either condition (its Settings-tab locator already fails in the formal runs).
+fault:
+  flag: f04_show_completed_ignored
+  class: behavioural
+  base_scenario: tb-04
+  description: 'The list ignores the Show completed setting: the switch moves but completed items stay visible.'
+  fault_step: 1
+  observed_by:
+  - postcondition 0 (absent 'Stamps')
+  postconditions_can_observe: true
+  expected:
+    scripted:
+      baseline: 'fragility (masked: fails as the fault-free formal run did) at step 0'
+      perturbed: 'fragility (masked: fails as the fault-free formal run did) at step 0'
+    a11y:
+      baseline: detection at postcondition
+      perturbed: detection at postcondition
+    hybrid:
+      baseline: detection at postcondition
+      perturbed: detection at postcondition
+initial_state:
+  launch_args:
+  - -resetData
+  - -fault
+  - f04_show_completed_ignored
+steps:
+- step: Tap the 'Settings' tab
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Settings"]
+  oracle:
+    type: Button
+    label: Settings
+  screen: list
+- step: Toggle the 'Show completed' switch
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeSwitch[@name="Show completed"]
+  oracle:
+    type: Switch
+    label_contains: Show completed
+  screen: settings
+- step: Tap the 'List' tab
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="checklist"]
+  oracle:
+    type: Button
+    label: List
+  screen: settings
+postconditions:
+- check: absent
+  element:
+    label_contains: Stamps
+- check: exists
+  element:
+    label_contains: Milk
+perturbation:
+  kind: hierarchy_restructure
+  description: New 'Display' section inserted above; 'Show completed' moved into it with a subtitle
+  launch_args:
+  - -perturb
+  - tb04_section_inserted

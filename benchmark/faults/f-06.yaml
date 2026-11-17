@@ -1,0 +1,61 @@
+# Seeded-fault scenario (workstream A, D-028). Written 2026-11-17 BEFORE any run of this file.
+# Steps, locators, oracles, postconditions and perturbation copied unchanged from tb-06.yaml;
+# only id, title, expected_outcome, the fault block and the -fault launch argument differ.
+id: f-06
+app: testbed
+title: 'Sort the list by date [fault: f06_sort_ignored]'
+pilot: false
+category: 3
+expected_outcome: No false pass; all six cells detect via the ordering postcondition (scripted perturbed passed
+  tb-06 in the formal run, so it reaches the fault).
+fault:
+  flag: f06_sort_ignored
+  class: behavioural
+  base_scenario: tb-06
+  description: Choosing 'By date' leaves the list sorted by name.
+  fault_step: 1
+  observed_by:
+  - postcondition 0 (Milk above Batteries)
+  postconditions_can_observe: true
+  expected:
+    scripted:
+      baseline: detection at postcondition
+      perturbed: detection at postcondition
+    a11y:
+      baseline: detection at postcondition
+      perturbed: detection at postcondition
+    hybrid:
+      baseline: detection at postcondition
+      perturbed: detection at postcondition
+initial_state:
+  launch_args:
+  - -resetData
+  - -fault
+  - f06_sort_ignored
+steps:
+- step: Tap the 'Sort' button
+  scripted:
+    strategy: accessibility_id
+    value: sortMenu
+  oracle:
+    identifier: sortMenu
+  screen: list
+- step: Tap the 'By date' button
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="By date"]
+  oracle:
+    label: By date
+  screen: sort_menu
+postconditions:
+- check: above
+  element:
+    label_contains: Milk
+  other:
+    label_contains: Batteries
+perturbation:
+  kind: generic_label
+  description: Sort menu relabelled 'Options' (generic); identifier unchanged
+  launch_args:
+  - -perturb
+  - tb06_sort_relabel

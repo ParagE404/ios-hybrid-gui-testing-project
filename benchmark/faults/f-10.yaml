@@ -1,0 +1,67 @@
+# Seeded-fault scenario (workstream A, D-028). Written 2026-11-17 BEFORE any run of this file.
+# Steps, locators, oracles, postconditions and perturbation copied unchanged from tb-03.yaml;
+# only id, title, expected_outcome, the fault block and the -fault launch argument differ.
+id: f-10
+app: testbed
+title: 'Mark ''Milk'' as done from its detail page [fault: f10_mark_all_lure]'
+pilot: false
+category: 2
+expected_outcome: No false pass. a11y and hybrid are predicted to accept 'Mark all as done' structurally (score
+  about 0.9); 'Milk done' then exists, so only the absent 'Light bulbs done' postcondition catches it.
+fault:
+  flag: f10_mark_all_lure
+  class: lure
+  base_scenario: tb-03
+  description: The 'Mark as done' button is removed; a 'Mark all as done' button (id markAllDoneButton) marks every
+    item done.
+  fault_step: 1
+  observed_by:
+  - postcondition 1 (absent 'Light bulbs done')
+  postconditions_can_observe: true
+  expected:
+    scripted:
+      baseline: detection at step 1 (locator markDoneButton missing)
+      perturbed: 'fragility (masked: fails as the fault-free formal run did) at step 0'
+    a11y:
+      baseline: detection at postcondition, after tapping the substitute 'Mark all as done'
+      perturbed: detection at postcondition, after tapping the substitute
+    hybrid:
+      baseline: detection at postcondition, after tapping the substitute
+      perturbed: detection at postcondition, after tapping the substitute
+initial_state:
+  launch_args:
+  - -resetData
+  - -fault
+  - f10_mark_all_lure
+steps:
+- step: Tap the 'Milk' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Milk, Qty 1"]
+  oracle:
+    type: Button
+    label_contains: Milk,
+  screen: list
+- step: Tap the 'Mark as done' button
+  scripted:
+    strategy: accessibility_id
+    value: markDoneButton
+  oracle:
+    label: Mark as done
+  screen: detail
+- step: Go back
+  screen: detail
+postconditions:
+- check: exists
+  element:
+    label_contains: Milk done
+- check: absent
+  element:
+    label_contains: Light bulbs done
+perturbation:
+  kind: hierarchy_insertion
+  description: Pinned section inserted above the rows; each row gains a category caption, so 'Milk, Qty 1' becomes
+    'Milk, Food, Qty 1'
+  launch_args:
+  - -perturb
+  - tb03_rows_wrapped

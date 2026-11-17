@@ -1,0 +1,66 @@
+# Seeded-fault scenario (workstream A, D-028). Written 2026-11-17 BEFORE any run of this file.
+# Steps, locators, oracles, postconditions and perturbation copied unchanged from tb-03.yaml;
+# only id, title, expected_outcome, the fault block and the -fault launch argument differ.
+id: f-03
+app: testbed
+title: 'Mark ''Milk'' as done from its detail page [fault: f03_done_wrong_item]'
+pilot: false
+category: 2
+expected_outcome: No false pass. 'Milk done' is absent after the wrong item is marked; scripted perturbed is masked
+  at step 0.
+fault:
+  flag: f03_done_wrong_item
+  class: behavioural
+  base_scenario: tb-03
+  description: Mark as done marks the next item in the store (Milk -> Batteries) instead of the item shown.
+  fault_step: 1
+  observed_by:
+  - postcondition 0 (exists 'Milk done')
+  postconditions_can_observe: true
+  expected:
+    scripted:
+      baseline: detection at postcondition
+      perturbed: 'fragility (masked: fails as the fault-free formal run did) at step 0'
+    a11y:
+      baseline: detection at postcondition
+      perturbed: detection at postcondition
+    hybrid:
+      baseline: detection at postcondition
+      perturbed: detection at postcondition
+initial_state:
+  launch_args:
+  - -resetData
+  - -fault
+  - f03_done_wrong_item
+steps:
+- step: Tap the 'Milk' row
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeButton[@name="Milk, Qty 1"]
+  oracle:
+    type: Button
+    label_contains: Milk,
+  screen: list
+- step: Tap the 'Mark as done' button
+  scripted:
+    strategy: accessibility_id
+    value: markDoneButton
+  oracle:
+    label: Mark as done
+  screen: detail
+- step: Go back
+  screen: detail
+postconditions:
+- check: exists
+  element:
+    label_contains: Milk done
+- check: absent
+  element:
+    label_contains: Light bulbs done
+perturbation:
+  kind: hierarchy_insertion
+  description: Pinned section inserted above the rows; each row gains a category caption, so 'Milk, Qty 1' becomes
+    'Milk, Food, Qty 1'
+  launch_args:
+  - -perturb
+  - tb03_rows_wrapped
