@@ -1,0 +1,151 @@
+scenario,condition,step_index,screen,same_top,same_candidates,same_route,same_oracle,agree,logged_top,replayed_top,logged_score,replayed_score
+nn-01,baseline,0,netnewswire/baseline/feeds.xml,True,True,True,True,True,"('Button', 'Add', 'addButton')","('Button', 'Add', 'addButton')",1.0,1.0
+nn-01,baseline,1,netnewswire/baseline/add_menu.xml,True,True,True,True,True,"('Button', 'Add Folder', None)","('Button', 'Add Folder', None)",1.0,1.0
+nn-01,baseline,2,netnewswire/baseline/add_folder.xml,True,True,True,True,True,"('TextField', None, None)","('TextField', None, None)",0.8941,0.8941
+nn-01,baseline,3,netnewswire/baseline/add_folder.xml,False,False,False,False,False,"('Button', 'Add', None)","('StaticText', 'Add Folder', None)",1.0,0.5597
+nn-01,perturbed,0,netnewswire/nn01_add_id_renamed/feeds.xml,True,True,True,True,True,"('Button', 'Add', 'addFeedOrFolderButton')","('Button', 'Add', 'addFeedOrFolderButton')",1.0,1.0
+nn-01,perturbed,1,netnewswire/nn01_add_id_renamed/add_menu.xml,True,True,True,True,True,"('Button', 'Add Folder', None)","('Button', 'Add Folder', None)",1.0,1.0
+nn-01,perturbed,2,netnewswire/nn01_add_id_renamed/add_folder.xml,True,True,True,True,True,"('TextField', None, None)","('TextField', None, None)",0.8941,0.8941
+nn-01,perturbed,3,netnewswire/nn01_add_id_renamed/add_folder.xml,False,False,False,False,False,"('Button', 'Add', None)","('StaticText', 'Add Folder', None)",1.0,0.5597
+nn-02,baseline,0,netnewswire/baseline/feeds.xml,True,True,True,True,True,"('Button', 'Settings', 'settingsButton')","('Button', 'Settings', 'settingsButton')",1.0,1.0
+nn-02,baseline,1,netnewswire/baseline/settings.xml,True,True,True,True,True,"('Switch', 'Group by Feed', None)","('Switch', 'Group by Feed', None)",1.0,1.0
+nn-02,baseline,2,netnewswire/baseline/settings.xml,True,True,True,True,True,"('Button', 'Done', None)","('Button', 'Done', None)",1.0,1.0
+nn-02,baseline,3,netnewswire/baseline/feeds.xml,True,True,True,True,True,"('Button', 'Settings', 'settingsButton')","('Button', 'Settings', 'settingsButton')",1.0,1.0
+nn-02,perturbed,0,netnewswire/nn02_settings_id_removed/feeds.xml,True,True,True,True,True,"('Button', 'Settings', None)","('Button', 'Settings', None)",1.0,1.0
+nn-02,perturbed,1,netnewswire/nn02_settings_id_removed/settings.xml,True,True,True,True,True,"('Switch', 'Group by Feed', None)","('Switch', 'Group by Feed', None)",1.0,1.0
+nn-02,perturbed,2,netnewswire/nn02_settings_id_removed/settings.xml,True,True,True,True,True,"('Button', 'Done', None)","('Button', 'Done', None)",1.0,1.0
+nn-02,perturbed,3,netnewswire/nn02_settings_id_removed/feeds.xml,True,True,True,True,True,"('Button', 'Settings', None)","('Button', 'Settings', None)",1.0,1.0
+nn-03,baseline,0,netnewswire/baseline/feeds.xml,True,True,True,True,True,"('Button', 'Settings', 'settingsButton')","('Button', 'Settings', 'settingsButton')",1.0,1.0
+nn-03,baseline,1,netnewswire/baseline/settings.xml,True,True,True,True,True,"('Switch', 'Sort Oldest to Newest', None)","('Switch', 'Sort Oldest to Newest', None)",1.0,1.0
+nn-03,baseline,2,netnewswire/baseline/settings.xml,True,True,True,True,True,"('Button', 'Done', None)","('Button', 'Done', None)",1.0,1.0
+nn-03,baseline,3,netnewswire/baseline/feeds.xml,True,True,True,True,True,"('Button', 'Settings', 'settingsButton')","('Button', 'Settings', 'settingsButton')",1.0,1.0
+nn-03,perturbed,0,netnewswire/nn03_timeline_cells_restructured/feeds.xml,True,True,True,True,True,"('Button', 'Settings', 'settingsButton')","('Button', 'Settings', 'settingsButton')",1.0,1.0
+nn-03,perturbed,1,netnewswire/nn03_timeline_cells_restructured/settings.xml,True,True,True,True,True,"('Switch', 'Sort Oldest to Newest, Timeline order', None)","('Switch', 'Sort Oldest to Newest, Timeline order', None)",0.9647,0.9647
+nn-03,perturbed,2,netnewswire/nn03_timeline_cells_restructured/settings.xml,True,True,True,True,True,"('Button', 'Done', None)","('Button', 'Done', None)",1.0,1.0
+nn-03,perturbed,3,netnewswire/nn03_timeline_cells_restructured/feeds.xml,True,True,True,True,True,"('Button', 'Settings', 'settingsButton')","('Button', 'Settings', 'settingsButton')",1.0,1.0
+nn-04,baseline,0,netnewswire/baseline/feeds.xml,True,True,True,True,True,"('Button', 'Add', 'addButton')","('Button', 'Add', 'addButton')",1.0,1.0
+nn-04,baseline,1,netnewswire/baseline/add_menu.xml,True,True,True,True,True,"('Button', 'Add Folder', None)","('Button', 'Add Folder', None)",1.0,1.0
+nn-04,baseline,2,netnewswire/baseline/add_folder.xml,True,True,True,True,True,"('TextField', None, None)","('TextField', None, None)",0.8941,0.8941
+nn-04,baseline,3,netnewswire/baseline/add_folder.xml,False,False,False,False,False,"('Button', 'Add', None)","('StaticText', 'Add Folder', None)",1.0,0.5597
+nn-04,perturbed,0,netnewswire/nn04_add_menu_restructured/feeds.xml,True,True,True,True,True,"('Button', 'Add', 'addButton')","('Button', 'Add', 'addButton')",1.0,1.0
+nn-04,perturbed,1,netnewswire/nn04_add_menu_restructured/add_menu.xml,True,True,True,True,True,"('Button', 'Add Folder, Group your feeds', None)","('Button', 'Add Folder, Group your feeds', None)",0.9647,0.9647
+nn-04,perturbed,2,netnewswire/nn04_add_menu_restructured/add_folder.xml,True,True,True,True,True,"('TextField', None, None)","('TextField', None, None)",0.8941,0.8941
+nn-04,perturbed,3,netnewswire/nn04_add_menu_restructured/add_folder.xml,False,False,False,False,False,"('Button', 'Add', None)","('StaticText', 'Add Folder', None)",1.0,0.5597
+nn-05,baseline,0,netnewswire/baseline/feeds.xml,True,True,True,True,True,"('Cell', 'Today', None)","('Cell', 'Today', None)",1.0,1.0
+nn-05,baseline,1,netnewswire/baseline/today_timeline.xml,True,True,True,True,True,"('Button', 'Filter Read Articles', None)","('Button', 'Filter Read Articles', None)",1.0,1.0
+nn-05,perturbed,0,netnewswire/nn05_smart_feeds_generic/feeds.xml,True,True,True,True,True,"('StaticText', 'Today', None)","('StaticText', 'Today', None)",0.8529,0.8529
+nn-05,perturbed,1,netnewswire/nn05_smart_feeds_generic/today_timeline.xml,True,True,True,True,True,"('Button', 'Filter Read Articles', None)","('Button', 'Filter Read Articles', None)",1.0,1.0
+nn-06,baseline,0,netnewswire/baseline/feeds.xml,True,True,True,True,True,"('Button', 'Settings', 'settingsButton')","('Button', 'Settings', 'settingsButton')",1.0,1.0
+nn-06,baseline,1,netnewswire/baseline/settings.xml,True,True,True,True,True,"('Switch', 'Confirm Mark All as Read', None)","('Switch', 'Confirm Mark All as Read', None)",1.0,1.0
+nn-06,baseline,2,netnewswire/baseline/settings.xml,True,True,True,True,True,"('Button', 'Done', None)","('Button', 'Done', None)",1.0,1.0
+nn-06,baseline,3,netnewswire/baseline/feeds.xml,True,True,True,True,True,"('Button', 'Settings', 'settingsButton')","('Button', 'Settings', 'settingsButton')",1.0,1.0
+nn-06,perturbed,0,netnewswire/nn06_switches_generic/feeds.xml,True,True,True,True,True,"('Button', 'Settings', 'settingsButton')","('Button', 'Settings', 'settingsButton')",1.0,1.0
+nn-06,perturbed,1,netnewswire/nn06_switches_generic/settings.xml,True,True,True,True,True,"('StaticText', 'Confirm Mark All as Read', None)","('StaticText', 'Confirm Mark All as Read', None)",0.8529,0.8529
+nn-06,perturbed,2,netnewswire/nn06_switches_generic/settings.xml,True,True,True,True,True,"('Button', 'Done', None)","('Button', 'Done', None)",1.0,1.0
+nn-06,perturbed,3,netnewswire/nn06_switches_generic/feeds.xml,True,True,True,True,True,"('Button', 'Settings', 'settingsButton')","('Button', 'Settings', 'settingsButton')",1.0,1.0
+nn-07,baseline,0,netnewswire/baseline/feeds.xml,True,True,True,True,True,"('Button', 'Add', 'addButton')","('Button', 'Add', 'addButton')",1.0,1.0
+nn-07,baseline,1,netnewswire/baseline/add_menu.xml,True,True,True,True,True,"('Button', 'Add Folder', None)","('Button', 'Add Folder', None)",1.0,1.0
+nn-07,baseline,2,netnewswire/baseline/add_folder.xml,True,True,True,True,True,"('TextField', None, None)","('TextField', None, None)",0.8941,0.8941
+nn-07,baseline,3,netnewswire/baseline/add_folder.xml,False,False,False,False,False,"('Button', 'Add', None)","('StaticText', 'Add Folder', None)",1.0,0.5597
+nn-07,perturbed,0,netnewswire/nn07_add_icon_unlabelled/feeds.xml,True,True,True,True,True,,,,
+nn-08,baseline,0,netnewswire/baseline/feeds.xml,True,True,True,True,True,"('Button', 'Settings', 'settingsButton')","('Button', 'Settings', 'settingsButton')",1.0,1.0
+nn-08,baseline,1,netnewswire/baseline/settings.xml,True,True,True,True,True,"('Switch', 'Refresh to Clear Read Articles', None)","('Switch', 'Refresh to Clear Read Articles', None)",1.0,1.0
+nn-08,baseline,2,netnewswire/baseline/settings.xml,True,True,True,True,True,"('Button', 'Done', None)","('Button', 'Done', None)",1.0,1.0
+nn-08,baseline,3,netnewswire/baseline/feeds.xml,True,True,True,True,True,"('Button', 'Settings', 'settingsButton')","('Button', 'Settings', 'settingsButton')",1.0,1.0
+nn-08,perturbed,0,netnewswire/nn08_settings_icon_unlabelled/feeds.xml,True,True,True,True,True,,,,
+su-01,baseline,0,syncups/baseline/list.xml,True,True,True,True,True,"('Button', 'Add', 'plus')","('Button', 'Add', 'plus')",1.0,1.0
+su-01,baseline,1,syncups/baseline/new_syncup.xml,True,True,True,True,True,"('TextField', None, None)","('TextField', None, None)",0.8941,0.8941
+su-01,baseline,2,syncups/baseline/new_syncup.xml,True,True,True,True,True,"('Button', 'Add', None)","('Button', 'Add', None)",1.0,1.0
+su-01,perturbed,0,syncups/su01_add_symbol_changed/list.xml,True,True,True,True,True,"('Button', 'Add', 'plus.circle')","('Button', 'Add', 'plus.circle')",1.0,1.0
+su-01,perturbed,1,syncups/su01_add_symbol_changed/new_syncup.xml,True,True,True,True,True,"('TextField', None, None)","('TextField', None, None)",0.8941,0.8941
+su-01,perturbed,2,syncups/su01_add_symbol_changed/new_syncup.xml,True,True,True,True,True,"('Button', 'Add', None)","('Button', 'Add', None)",1.0,1.0
+su-02,baseline,0,syncups/baseline/list.xml,True,True,True,True,True,"('Button', 'Product, 2, 30 min', None)","('Button', 'Product, 2, 30 min', None)",0.9059,0.9059
+su-02,baseline,1,syncups/baseline/detail.xml,True,True,True,True,True,"('Button', 'Edit', 'editSyncUpButton')","('Button', 'Edit', 'editSyncUpButton')",1.0,1.0
+su-02,baseline,2,syncups/baseline/edit.xml,True,True,True,True,True,"('Button', 'Theme', 'paintpalette')","('Button', 'Theme', 'paintpalette')",1.0,1.0
+su-02,baseline,4,syncups/baseline/theme_menu.xml,True,True,True,True,True,"('Button', 'Lavender', 'paintpalette')","('Button', 'Lavender', 'paintpalette')",1.0,1.0
+su-02,baseline,5,syncups/baseline/edit.xml,True,True,True,True,True,"('Button', 'Done', None)","('Button', 'Done', None)",1.0,1.0
+su-02,perturbed,0,syncups/su02_edit_id_removed/list.xml,True,True,True,True,True,"('Button', 'Product, 2, 30 min', None)","('Button', 'Product, 2, 30 min', None)",0.9059,0.9059
+su-02,perturbed,1,syncups/su02_edit_id_removed/detail.xml,True,True,True,True,True,"('Button', 'Edit', None)","('Button', 'Edit', None)",1.0,1.0
+su-02,perturbed,2,syncups/su02_edit_id_removed/edit.xml,True,True,True,True,True,"('Button', 'Theme', 'paintpalette')","('Button', 'Theme', 'paintpalette')",1.0,1.0
+su-02,perturbed,4,syncups/su02_edit_id_removed/theme_menu.xml,True,True,True,True,True,"('Button', 'Lavender', 'paintpalette')","('Button', 'Lavender', 'paintpalette')",1.0,1.0
+su-02,perturbed,5,syncups/su02_edit_id_removed/edit.xml,True,True,True,True,True,"('Button', 'Done', None)","('Button', 'Done', None)",1.0,1.0
+su-03,baseline,0,syncups/baseline/list.xml,True,True,True,True,True,"('Button', 'Add', 'plus')","('Button', 'Add', 'plus')",1.0,1.0
+su-03,baseline,1,syncups/baseline/new_syncup.xml,True,True,True,True,True,"('TextField', None, None)","('TextField', None, None)",0.8941,0.8941
+su-03,baseline,2,syncups/baseline/new_syncup.xml,True,True,True,True,True,"('TextField', None, None)","('TextField', None, None)",0.8941,0.8941
+su-03,baseline,3,syncups/baseline/new_syncup.xml,True,True,True,True,True,"('Button', 'Add', None)","('Button', 'Add', None)",1.0,1.0
+su-03,perturbed,0,syncups/su03_notes_section_inserted/list.xml,True,True,True,True,True,"('Button', 'Add', 'plus')","('Button', 'Add', 'plus')",1.0,1.0
+su-03,perturbed,1,syncups/su03_notes_section_inserted/new_syncup.xml,True,True,True,True,True,"('TextField', None, None)","('TextField', None, None)",0.8941,0.8941
+su-03,perturbed,2,syncups/su03_notes_section_inserted/new_syncup.xml,True,True,True,True,True,"('TextField', None, None)","('TextField', None, None)",0.0,0.0
+su-04,baseline,0,syncups/baseline/list.xml,True,True,True,True,True,"('Button', 'Engineering, 2, 10 min', None)","('Button', 'Engineering, 2, 10 min', None)",0.9059,0.9059
+su-04,baseline,1,syncups/baseline/detail_delete.xml,True,True,True,True,True,"('Button', 'Delete', None)","('Button', 'Delete', None)",1.0,1.0
+su-04,baseline,2,syncups/baseline/delete_alert.xml,True,True,True,True,True,"('Button', 'Yes', None)","('Button', 'Yes', None)",1.0,1.0
+su-04,perturbed,0,syncups/su04_rows_restructured/list.xml,True,True,True,True,True,"('Button', 'Engineering, Periwinkle, 2, 10 min', None)","('Button', 'Engineering, Periwinkle, 2, 10 min', None)",0.9059,0.9059
+su-04,perturbed,1,syncups/su04_rows_restructured/detail_delete.xml,True,True,True,True,True,"('Button', 'Delete', None)","('Button', 'Delete', None)",1.0,1.0
+su-04,perturbed,2,syncups/su04_rows_restructured/delete_alert.xml,True,True,True,True,True,"('Button', 'Yes', None)","('Button', 'Yes', None)",1.0,1.0
+su-05,baseline,0,syncups/baseline/list.xml,True,True,True,True,True,"('Button', 'Add', 'plus')","('Button', 'Add', 'plus')",1.0,1.0
+su-05,baseline,1,syncups/baseline/new_syncup.xml,True,True,True,True,True,"('TextField', None, None)","('TextField', None, None)",0.8941,0.8941
+su-05,baseline,2,syncups/baseline/new_syncup.xml,True,True,True,True,True,"('Button', 'Add', None)","('Button', 'Add', None)",1.0,1.0
+su-05,perturbed,0,syncups/su05_confirm_relabelled/list.xml,True,True,True,True,True,"('Button', 'Add', 'plus')","('Button', 'Add', 'plus')",1.0,1.0
+su-05,perturbed,1,syncups/su05_confirm_relabelled/new_syncup.xml,True,True,True,True,True,"('TextField', None, None)","('TextField', None, None)",0.8941,0.8941
+su-05,perturbed,2,syncups/su05_confirm_relabelled/new_syncup.xml,True,True,True,True,True,"('Button', 'Add', 'plus')","('Button', 'Add', 'plus')",0.0,0.0
+su-06,baseline,0,syncups/baseline/list.xml,True,True,True,True,True,"('Button', 'Product, 2, 30 min', None)","('Button', 'Product, 2, 30 min', None)",0.9059,0.9059
+su-06,baseline,1,syncups/baseline/detail_delete.xml,True,True,True,True,True,"('Button', 'Delete', None)","('Button', 'Delete', None)",1.0,1.0
+su-06,baseline,2,syncups/baseline/delete_alert.xml,True,True,True,True,True,"('Button', 'Yes', None)","('Button', 'Yes', None)",1.0,1.0
+su-06,perturbed,0,syncups/su06_rows_generic_label/list.xml,True,True,True,True,True,"('StaticText', 'Product', None)","('StaticText', 'Product', None)",0.8529,0.8529
+su-06,perturbed,1,syncups/su06_rows_generic_label/detail_delete.xml,True,True,True,True,True,"('Button', 'Delete', None)","('Button', 'Delete', None)",1.0,1.0
+su-06,perturbed,2,syncups/su06_rows_generic_label/delete_alert.xml,True,True,True,True,True,"('Button', 'Yes', None)","('Button', 'Yes', None)",1.0,1.0
+su-07,baseline,0,syncups/baseline/list.xml,True,True,True,True,True,"('Button', 'Engineering, 2, 10 min', None)","('Button', 'Engineering, 2, 10 min', None)",0.9059,0.9059
+su-07,baseline,1,syncups/baseline/detail.xml,True,True,True,True,True,"('Button', 'Edit', 'editSyncUpButton')","('Button', 'Edit', 'editSyncUpButton')",1.0,1.0
+su-07,baseline,2,syncups/baseline/edit.xml,True,True,True,True,True,"('Button', 'Theme', 'paintpalette')","('Button', 'Theme', 'paintpalette')",1.0,1.0
+su-07,baseline,4,syncups/baseline/theme_menu.xml,False,False,False,False,False,"('Button', 'Seafoam', 'paintpalette')","('Button', 'Seafoam', 'paintpalette')",1.0,0.0
+su-07,baseline,5,syncups/baseline/edit.xml,True,True,True,True,True,"('Button', 'Done', None)","('Button', 'Done', None)",1.0,1.0
+su-07,perturbed,0,syncups/su07_theme_icon_only/list.xml,True,True,True,True,True,"('Button', 'Engineering, 2, 10 min', None)","('Button', 'Engineering, 2, 10 min', None)",0.9059,0.9059
+su-07,perturbed,1,syncups/su07_theme_icon_only/detail.xml,True,True,True,True,True,"('Button', 'Edit', 'editSyncUpButton')","('Button', 'Edit', 'editSyncUpButton')",1.0,1.0
+su-07,perturbed,2,syncups/su07_theme_icon_only/edit.xml,True,True,True,True,True,"('StaticText', 'Theme', None)","('StaticText', 'Theme', None)",0.0,0.0
+su-08,baseline,0,syncups/baseline/list.xml,True,True,True,True,True,"('Button', 'Design, 6, 1 min', None)","('Button', 'Design, 6, 1 min', None)",0.9059,0.9059
+su-08,baseline,2,syncups/baseline/detail_delete.xml,True,True,True,True,True,"('Button', 'Delete', None)","('Button', 'Delete', None)",1.0,1.0
+su-08,baseline,3,syncups/baseline/delete_alert.xml,True,True,True,True,True,"('Button', 'Yes', None)","('Button', 'Yes', None)",1.0,1.0
+su-08,perturbed,0,syncups/su08_delete_icon_only/list.xml,True,True,True,True,True,"('Button', 'Design, 6, 1 min', None)","('Button', 'Design, 6, 1 min', None)",0.9059,0.9059
+su-08,perturbed,2,syncups/su08_delete_icon_only/detail_delete.xml,True,True,True,True,True,,,,
+tb-01,baseline,0,baseline/list.xml,True,True,True,True,True,"('Button', 'Add item', 'addItemButton')","('Button', 'Add item', 'addItemButton')",1.0,1.0
+tb-01,baseline,1,baseline/add_form.xml,True,True,True,True,True,"('TextField', None, 'itemNameField')","('TextField', None, 'itemNameField')",0.9294,0.9294
+tb-01,baseline,2,baseline/add_form.xml,True,True,True,True,True,"('Button', 'Quantity: 1, Increment', 'quantityStepper-Increment')","('Button', 'Quantity: 1, Increment', 'quantityStepper-Increment')",0.9647,0.9647
+tb-01,baseline,3,baseline/add_form.xml,False,False,False,False,False,"('Button', 'Save', 'saveButton')","('Button', 'Save', 'saveButton')",1.0,0.0
+tb-01,perturbed,0,tb01_add_id_renamed/list.xml,True,True,True,True,True,"('Button', 'Add item', 'addButton_v2')","('Button', 'Add item', 'addButton_v2')",1.0,1.0
+tb-01,perturbed,1,tb01_add_id_renamed/add_form.xml,True,True,True,True,True,"('TextField', None, 'itemNameField')","('TextField', None, 'itemNameField')",0.9294,0.9294
+tb-01,perturbed,2,tb01_add_id_renamed/add_form.xml,True,True,True,True,True,"('Button', 'Quantity: 1, Increment', 'quantityStepper-Increment')","('Button', 'Quantity: 1, Increment', 'quantityStepper-Increment')",0.9647,0.9647
+tb-01,perturbed,3,tb01_add_id_renamed/add_form.xml,False,False,False,False,False,"('Button', 'Save', 'saveButton')","('Button', 'Save', 'saveButton')",1.0,0.0
+tb-02,baseline,0,baseline/list.xml,True,True,True,True,True,"('Button', 'Bread, Qty 1', None)","('Button', 'Bread, Qty 1', None)",0.9059,0.9059
+tb-02,baseline,1,baseline/detail.xml,True,True,True,True,True,"('Button', 'Edit', 'editButton')","('Button', 'Edit', 'editButton')",1.0,1.0
+tb-02,baseline,2,baseline/edit_form.xml,True,True,True,True,True,"('Switch', 'Urgent', 'urgentToggle')","('Switch', 'Urgent', 'urgentToggle')",1.0,1.0
+tb-02,baseline,3,baseline/edit_form.xml,True,True,True,True,True,"('Button', 'Save', 'saveButton')","('Button', 'Save', 'saveButton')",1.0,1.0
+tb-02,perturbed,0,tb02_ids_removed/list.xml,True,True,True,True,True,"('Button', 'Bread, Qty 1', None)","('Button', 'Bread, Qty 1', None)",0.9059,0.9059
+tb-02,perturbed,1,tb02_ids_removed/detail.xml,True,True,True,True,True,"('Button', 'Edit', 'editButton')","('Button', 'Edit', 'editButton')",1.0,1.0
+tb-02,perturbed,2,tb02_ids_removed/edit_form.xml,True,True,True,True,True,"('Switch', 'Urgent', None)","('Switch', 'Urgent', None)",1.0,1.0
+tb-02,perturbed,3,tb02_ids_removed/edit_form.xml,True,True,True,True,True,"('Button', 'Save', None)","('Button', 'Save', None)",1.0,1.0
+tb-03,baseline,0,baseline/list.xml,True,True,True,True,True,"('Button', 'Milk, Qty 1', None)","('Button', 'Milk, Qty 1', None)",0.9059,0.9059
+tb-03,baseline,1,baseline/detail.xml,True,True,True,True,True,"('Button', 'Mark as done', 'markDoneButton')","('Button', 'Mark as done', 'markDoneButton')",1.0,1.0
+tb-03,perturbed,0,tb03_rows_wrapped/list.xml,True,True,True,True,True,"('Button', 'Milk, Food, Qty 1', None)","('Button', 'Milk, Food, Qty 1', None)",0.9059,0.9059
+tb-03,perturbed,1,tb03_rows_wrapped/detail.xml,True,True,True,True,True,"('Button', 'Mark as done', 'markDoneButton')","('Button', 'Mark as done', 'markDoneButton')",1.0,1.0
+tb-04,baseline,0,baseline/list.xml,True,True,True,True,True,"('Button', 'Settings', None)","('Button', 'Settings', None)",1.0,1.0
+tb-04,baseline,1,baseline/settings.xml,True,True,True,True,True,"('Switch', 'Show completed', None)","('Switch', 'Show completed', None)",1.0,1.0
+tb-04,baseline,2,baseline/settings.xml,True,True,True,True,True,"('Button', 'List', 'checklist')","('Button', 'List', 'checklist')",1.0,1.0
+tb-04,perturbed,0,tb04_section_inserted/list.xml,False,False,True,True,False,"('Button', 'Settings', 'gearshape')","('Button', 'Settings', None)",1.0,1.0
+tb-04,perturbed,1,tb04_section_inserted/settings.xml,True,True,True,True,True,"('Switch', 'Show completed, Includes finished errands', None)","('Switch', 'Show completed, Includes finished errands', None)",0.9647,0.9647
+tb-04,perturbed,2,tb04_section_inserted/settings.xml,True,True,True,True,True,"('Button', 'List', 'checklist')","('Button', 'List', 'checklist')",1.0,1.0
+tb-05,baseline,0,baseline/list.xml,True,True,True,True,True,"('Button', 'Delete Eggs', 'delete_Eggs')","('Button', 'Delete Eggs', 'delete_Eggs')",0.8094,0.8094
+tb-05,baseline,1,baseline/list.xml,True,False,True,True,True,"('Button', 'Delete Bread', 'delete_Bread')","('Button', 'Delete Bread', 'delete_Bread')",0.8,0.8
+tb-05,perturbed,0,tb05_duplicate_delete/list.xml,True,True,True,True,True,"('Button', 'Delete', 'deleteButton')","('Button', 'Delete', 'deleteButton')",1.0,1.0
+tb-05,perturbed,1,tb05_duplicate_delete/list.xml,True,False,True,True,True,"('Button', 'Delete', 'deleteButton')","('Button', 'Delete', 'deleteButton')",1.0,1.0
+tb-06,baseline,0,baseline/list.xml,True,True,True,True,True,"('Button', 'Sort', 'sortMenu')","('Button', 'Sort', 'sortMenu')",1.0,1.0
+tb-06,baseline,1,baseline/sort_menu.xml,True,True,True,True,True,"('Button', 'By date', None)","('Button', 'By date', None)",1.0,1.0
+tb-06,perturbed,0,tb06_sort_relabel/list.xml,True,True,True,True,True,"('Button', 'Options', 'sortMenu')","('Button', 'Options', 'sortMenu')",0.7046,0.7046
+tb-06,perturbed,1,tb06_sort_relabel/sort_menu.xml,True,True,True,True,True,"('Button', 'By date', None)","('Button', 'By date', None)",1.0,1.0
+tb-07,baseline,0,baseline/list.xml,True,True,True,True,True,"('Button', 'Batteries, Qty 4', None)","('Button', 'Batteries, Qty 4', None)",0.9059,0.9059
+tb-07,baseline,1,baseline/detail.xml,True,True,True,True,True,"('Button', 'Favourite', 'favouriteButton')","('Button', 'Favourite', 'favouriteButton')",1.0,1.0
+tb-07,perturbed,0,tb07_star_unlabelled/list.xml,True,True,True,True,True,"('Button', 'Batteries, Qty 4', None)","('Button', 'Batteries, Qty 4', None)",0.9059,0.9059
+tb-07,perturbed,1,tb07_star_unlabelled/detail.xml,True,True,True,True,True,,,,
+tb-08,baseline,0,baseline/list.xml,True,True,True,True,True,"('Button', 'Home', 'filter_Home')","('Button', 'Home', 'filter_Home')",1.0,1.0
+tb-08,baseline,1,baseline/list.xml,True,True,True,True,True,"('Button', 'Light bulbs, Qty 3', None)","('Button', 'Light bulbs, Qty 3', None)",0.9059,0.9059
+tb-08,baseline,2,baseline/detail.xml,True,True,True,True,True,"('Button', 'Mark as done', 'markDoneButton')","('Button', 'Mark as done', 'markDoneButton')",1.0,1.0
+tb-08,perturbed,0,tb08_chips_unlabelled/list.xml,True,True,True,True,True,,,,
