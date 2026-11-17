@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18AD91E4736D28DA20BF4268 /* Fault.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2746264EA8E2ED521DCFF2 /* Fault.swift */; };
 		1BC4C81D4D1F240FE8E350E0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0571E863F09C9B67F5672D /* SettingsView.swift */; };
 		3A9F4C6C16D8CFBDDF0395BC /* ItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D655A5A238FBF37E8C09A846 /* ItemFormView.swift */; };
 		488F6F6ED61561EDB24FCF9C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAB947BAF19DA276CCA333E /* Store.swift */; };
@@ -25,6 +26,7 @@
 		D655A5A238FBF37E8C09A846 /* ItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFormView.swift; sourceTree = "<group>"; };
 		D8D16AD16CE113C86B89A26B /* Errands.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Errands.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB0571E863F09C9B67F5672D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FB2746264EA8E2ED521DCFF2 /* Fault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fault.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -48,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				43D682AA6425E46C5FEDDD66 /* ErrandsApp.swift */,
+				FB2746264EA8E2ED521DCFF2 /* Fault.swift */,
 				C12019C36A3DC0094553894B /* ItemDetailView.swift */,
 				D655A5A238FBF37E8C09A846 /* ItemFormView.swift */,
 				06D60CBDA5093C96181343E3 /* ItemListView.swift */,
@@ -114,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2E9181C6C27D8DA8460350C /* ErrandsApp.swift in Sources */,
+				18AD91E4736D28DA20BF4268 /* Fault.swift in Sources */,
 				56B9E48DF2EA6D2DD6944CC4 /* ItemDetailView.swift in Sources */,
 				3A9F4C6C16D8CFBDDF0395BC /* ItemFormView.swift in Sources */,
 				952878D64BCCCDB4B61DC2C4 /* ItemListView.swift in Sources */,

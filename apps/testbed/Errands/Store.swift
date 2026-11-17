@@ -48,6 +48,7 @@ final class Store {
     var largeText = false
     var sort: SortOrder = .name
     var filter: Category? = nil
+    var completedFirst = false      // only reachable through the f11 lure fault (D-028)
 
     init() { reset() }
 
@@ -70,11 +71,13 @@ final class Store {
         largeText = false
         sort = .name
         filter = nil
+        completedFirst = false
     }
 
     var visibleItems: [Item] {
-        items
-            .filter { showCompleted || !$0.done }
+        let ignoreShowCompleted = Fault.on(.f04ShowCompletedIgnored)
+        let sorted = items
+            .filter { ignoreShowCompleted || showCompleted || !$0.done }
             .filter { filter == nil || $0.category == filter }
             .sorted {
                 switch sort {
@@ -82,6 +85,8 @@ final class Store {
                 case .date: return $0.created > $1.created
                 }
             }
+        guard completedFirst else { return sorted }
+        return sorted.filter { $0.done } + sorted.filter { !$0.done }
     }
 
     func item(_ id: UUID) -> Item? { items.first { $0.id == id } }
@@ -96,16 +101,36 @@ final class Store {
         items[i].name = name
         items[i].quantity = quantity
         items[i].category = category
-        items[i].urgent = urgent
+        if !Fault.on(.f02UrgentNotSaved) { items[i].urgent = urgent }
     }
 
-    func delete(_ id: UUID) { items.removeAll { $0.id == id } }
+    func delete(_ id: UUID) {
+        if Fault.on(.f05DeleteWrongRow) {
+            // Removes the row below the tapped one (or above, for the last row).
+            let rows = visibleItems
+            if let r = rows.firstIndex(where: { $0.id == id }), rows.count > 1 {
+                let victim = rows[r + 1 < rows.count ? r + 1 : r - 1].id
+                items.removeAll { $0.id == victim }
+                return
+            }
+        }
+        items.removeAll { $0.id == id }
+    }
 
     func toggleDone(_ id: UUID) {
-        if let i = items.firstIndex(where: { $0.id == id }) { items[i].done.toggle() }
+        if let i = items.firstIndex(where: { $0.id == id }) {
+            // f03: marks the next item in the store instead of the one shown.
+            let target = Fault.on(.f03DoneWrongItem) ? (i + 1) % items.count : i
+            items[target].done.toggle()
+        }
+    }
+
+    func markAllDone() {      // only reachable through the f10 lure fault
+        for i in items.indices { items[i].done = true }
     }
 
     func toggleFavourite(_ id: UUID) {
+        if Fault.on(.f07FavouriteNotStored) { return }
         if let i = items.firstIndex(where: { $0.id == id }) { items[i].favourite.toggle() }
     }
 }

@@ -90,6 +90,7 @@ def main() -> None:
     p.add_argument("--server", default="http://127.0.0.1:4723")
     p.add_argument("--repeats", type=int, default=5)
     p.add_argument("--perturb", action="append", default=[], help="Errands perturbation flag (repeatable)")
+    p.add_argument("--fault", action="append", default=[], help="Errands seeded-fault flag (repeatable, D-028)")
     p.add_argument("--out-dir", type=Path, default=OUT)
     p.add_argument("--tour", action="store_true", help="Errands only: save every screen")
     args = p.parse_args()
@@ -103,8 +104,9 @@ def main() -> None:
     # Relaunch on every session so launch arguments take effect and the seeded data is fresh.
     opts.force_app_launch = True
     opts.should_terminate_app = True
-    if args.perturb:
-        opts.process_arguments = {"args": [a for f in args.perturb for a in ("-perturb", f)]}
+    launch = [a for f in args.perturb for a in ("-perturb", f)] + [a for f in args.fault for a in ("-fault", f)]
+    if launch:
+        opts.process_arguments = {"args": launch}
 
     out = args.out_dir
     out.mkdir(parents=True, exist_ok=True)

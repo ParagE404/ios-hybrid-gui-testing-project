@@ -39,9 +39,15 @@ struct ItemFormView: View {
                         .optionalIdentifier(Perturb.on(.p06CancelIdRemoved) ? nil : "cancelButton")
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") { save() }
-                        .disabled(trimmed.isEmpty)
-                        .optionalIdentifier(idsRemoved ? nil : "saveButton")
+                    if Fault.on(.f09SaveDraftLure) {
+                        // Lure: Save is gone; "Save draft" closes the form and stores nothing visible.
+                        Button("Save draft") { dismiss() }
+                            .accessibilityIdentifier("saveDraftButton")
+                    } else {
+                        Button("Save") { save() }
+                            .disabled(trimmed.isEmpty)
+                            .optionalIdentifier(idsRemoved ? nil : "saveButton")
+                    }
                 }
             }
             .onAppear(perform: load)
@@ -60,6 +66,10 @@ struct ItemFormView: View {
     }
 
     private func save() {
+        if Fault.on(.f01SaveNotPersisted) && editing == nil {
+            dismiss()
+            return
+        }
         if let id = editing {
             store.update(id, name: trimmed, quantity: quantity, category: category, urgent: urgent)
         } else {

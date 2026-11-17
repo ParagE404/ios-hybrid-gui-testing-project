@@ -63,14 +63,16 @@ struct ItemListView: View {
             }
             .buttonStyle(.plain)
 
-            Button(role: .destructive) {
-                store.delete(item.id)
-            } label: {
-                Image(systemName: "trash")
+            if !(Fault.on(.f12DeleteEggsLure) && item.name == "Eggs") {   // lure: Eggs row loses its Delete
+                Button(role: .destructive) {
+                    store.delete(item.id)
+                } label: {
+                    Image(systemName: "trash")
+                }
+                .buttonStyle(.borderless)
+                .accessibilityLabel(Perturb.on(.tb05DuplicateDelete) ? "Delete" : "Delete \(item.name)")
+                .accessibilityIdentifier(Perturb.on(.tb05DuplicateDelete) ? "deleteButton" : "delete_\(item.name)")
             }
-            .buttonStyle(.borderless)
-            .accessibilityLabel(Perturb.on(.tb05DuplicateDelete) ? "Delete" : "Delete \(item.name)")
-            .accessibilityIdentifier(Perturb.on(.tb05DuplicateDelete) ? "deleteButton" : "delete_\(item.name)")
         }
     }
 
@@ -87,7 +89,7 @@ struct ItemListView: View {
     private var sortMenu: some View {
         Menu {
             Button("By name") { store.sort = .name }
-            Button("By date") { store.sort = .date }
+            Button("By date") { store.sort = Fault.on(.f06SortIgnored) ? .name : .date }
         } label: {
             Label(Perturb.on(.tb06SortRelabel) ? "Options" : "Sort", systemImage: "arrow.up.arrow.down")
         }
@@ -117,7 +119,7 @@ struct FilterChips: View {
         let selected = store.filter == category
         let unlabelled = Perturb.on(.tb08ChipsUnlabelled)
         Button {
-            store.filter = category
+            store.filter = Fault.on(.f08FilterWrongCategory) ? Self.previous(category) : category
         } label: {
             Group {
                 if unlabelled, let category {
@@ -135,5 +137,12 @@ struct FilterChips: View {
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier(unlabelled ? "chip_\(index)" : "filter_\(category?.rawValue ?? "All")")
+    }
+
+    /// f08: the category before this one (Home -> Food); "All" stays "All".
+    private static func previous(_ c: Category?) -> Category? {
+        guard let c, let i = Category.allCases.firstIndex(of: c) else { return c }
+        let all = Category.allCases
+        return all[(i + all.count - 1) % all.count]
     }
 }
