@@ -16,12 +16,29 @@ struct ItemFormView: View {
 
     private var trimmed: String { name.trimmingCharacters(in: .whitespaces) }
     private var idsRemoved: Bool { Perturb.on(.tb02IdsRemoved) }
+    private var confirmIconID: String? {
+        if editing == nil && Perturb.on(.h04AddConfirmIcon) { return "button_21" }
+        if editing != nil && Perturb.on(.h06EditConfirmIcon) { return "button_22" }
+        return nil
+    }
 
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Item name", text: $name)
-                    .accessibilityIdentifier("itemNameField")
+                if editing == nil && Perturb.on(.h05NameFieldUnlabelled) {
+                    // Looks the same (placeholder drawn as plain text) but exposes no label or placeholder.
+                    TextField("", text: $name)
+                        .accessibilityIdentifier("textField_1")
+                        .overlay(alignment: .leading) {
+                            if name.isEmpty {
+                                Text("Item name").foregroundStyle(.tertiary)
+                                    .accessibilityHidden(true).allowsHitTesting(false)
+                            }
+                        }
+                } else {
+                    TextField("Item name", text: $name)
+                        .accessibilityIdentifier("itemNameField")
+                }
                 Stepper("Quantity: \(quantity)", value: $quantity, in: 1...99)
                     .accessibilityIdentifier("quantityStepper")
                 Picker(Perturb.on(.p05PickerGeneric) ? "Type" : "Category", selection: $category) {
@@ -43,6 +60,11 @@ struct ItemFormView: View {
                         // Lure: Save is gone; "Save draft" closes the form and stores nothing visible.
                         Button("Save draft") { dismiss() }
                             .accessibilityIdentifier("saveDraftButton")
+                    } else if let iconID = confirmIconID {
+                        // Held-out flags h04/h06: same action, icon only, no accessibility label.
+                        Button { save() } label: { UnlabelledSymbol(name: "checkmark", pointSize: 18) }
+                            .disabled(trimmed.isEmpty)
+                            .accessibilityIdentifier(iconID)
                     } else {
                         Button("Save") { save() }
                             .disabled(trimmed.isEmpty)
