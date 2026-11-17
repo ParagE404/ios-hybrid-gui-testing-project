@@ -30,6 +30,9 @@ MAX_WAIT_S = 5.0
 class ValidatorConfig:
     require_candidate: bool = True   # snapped element must be in the bounded candidate list
     snap_to_element: bool = True     # map a point to the smallest compatible element under it
+    # Engine v2 (D-029), off by default: when every resolver candidate scores 0 (hidden, disabled or an
+    # incompatible type), the candidate set carries no evidence, so the candidate-set check is skipped.
+    relax_candidate_set: bool = False
 
 
 def _reject(reason: str) -> Action:
@@ -63,7 +66,7 @@ def _element_at(snap: Snapshot, x: float, y: float, intent: Intent) -> tuple[Opt
 
 def validate(raw: Any, intent: Intent, snap: Snapshot,
              candidate_idxs: Optional[set[int]] = None,
-             cfg: Optional[ValidatorConfig] = None) -> Action:
+             cfg: Optional[ValidatorConfig] = None, all_candidates_invalid: bool = False) -> Action:
     cfg = cfg or ValidatorConfig()
     if not isinstance(raw, dict):
         return _reject("malformed_output")
@@ -107,7 +110,8 @@ def validate(raw: Any, intent: Intent, snap: Snapshot,
         if el is None:
             return _reject(why)
         # An empty candidate set (no_match) leaves the model free to choose.
-        if candidate_idxs and cfg.require_candidate:
+        relaxed = cfg.relax_candidate_set and all_candidates_invalid
+        if candidate_idxs and cfg.require_candidate and not relaxed:
             ok = el.idx in candidate_idxs or any(a in candidate_idxs for a in el.ancestors) \
                  or any(snap.elements[c].is_ancestor_of(el) or el.is_ancestor_of(snap.elements[c])
                         for c in candidate_idxs)

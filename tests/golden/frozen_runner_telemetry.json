@@ -1,0 +1,8936 @@
+[
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"scripted",
+"home",
+"none",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "scripted",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action_type": "tap",
+"app": "testbed",
+"condition": "baseline",
+"config": "scripted",
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2534,
+"snapshot_sha1": "a722b5f525b9e3af4de6a6a92a8bff9423bceae4",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action_type": "type_text",
+"app": "testbed",
+"condition": "baseline",
+"config": "scripted",
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action_type": "tap",
+"app": "testbed",
+"condition": "baseline",
+"config": "scripted",
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "scripted",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"scripted",
+"home",
+"none",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "scripted",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action_type": "tap",
+"app": "testbed",
+"condition": "perturbed",
+"config": "scripted",
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2534,
+"snapshot_sha1": "a722b5f525b9e3af4de6a6a92a8bff9423bceae4",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action_type": "type_text",
+"app": "testbed",
+"condition": "perturbed",
+"config": "scripted",
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action_type": "tap",
+"app": "testbed",
+"condition": "perturbed",
+"config": "scripted",
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "scripted",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+}
+],
+"case": [
+"scripted",
+"renamed",
+"none",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "scripted",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action_type": "tap",
+"app": "testbed",
+"condition": "baseline",
+"config": "scripted",
+"event": "step",
+"executed": false,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "locator_not_found",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2533,
+"snapshot_sha1": "371c1edeeaf69880ab17e58dc8d41c0f1c9c9cc7",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"app": "testbed",
+"completed": false,
+"condition": "baseline",
+"config": "scripted",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 0 found",
+"count {'type': 'Cell'}: expected 3, found 2"
+],
+"postconditions_ok": false,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 1
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+}
+],
+"case": [
+"scripted",
+"renamed",
+"none",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "scripted",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action_type": "tap",
+"app": "testbed",
+"condition": "perturbed",
+"config": "scripted",
+"event": "step",
+"executed": false,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "locator_not_found",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2533,
+"snapshot_sha1": "371c1edeeaf69880ab17e58dc8d41c0f1c9c9cc7",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"app": "testbed",
+"completed": false,
+"condition": "perturbed",
+"config": "scripted",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 0 found",
+"count {'type': 'Cell'}: expected 3, found 2"
+],
+"postconditions_ok": false,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 1
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+}
+],
+"case": [
+"scripted",
+"weak",
+"none",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "scripted",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action_type": "tap",
+"app": "testbed",
+"condition": "baseline",
+"config": "scripted",
+"event": "step",
+"executed": false,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "locator_not_found",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2521,
+"snapshot_sha1": "747c668d910727121d6dea8f45981151ed56c0f0",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"app": "testbed",
+"completed": false,
+"condition": "baseline",
+"config": "scripted",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 0 found",
+"count {'type': 'Cell'}: expected 3, found 2"
+],
+"postconditions_ok": false,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 1
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+}
+],
+"case": [
+"scripted",
+"weak",
+"none",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "scripted",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action_type": "tap",
+"app": "testbed",
+"condition": "perturbed",
+"config": "scripted",
+"event": "step",
+"executed": false,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "locator_not_found",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2521,
+"snapshot_sha1": "747c668d910727121d6dea8f45981151ed56c0f0",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"app": "testbed",
+"completed": false,
+"condition": "perturbed",
+"config": "scripted",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 0 found",
+"count {'type': 'Cell'}: expected 3, found 2"
+],
+"postconditions_ok": false,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 1
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"scripted",
+"delete",
+"none",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "scripted",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action_type": "tap",
+"app": "testbed",
+"condition": "baseline",
+"config": "scripted",
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2930,
+"snapshot_sha1": "390386dbb2a5c82fd7cf0f0806227b3affffa3f8",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action_type": "type_text",
+"app": "testbed",
+"condition": "baseline",
+"config": "scripted",
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action_type": "tap",
+"app": "testbed",
+"condition": "baseline",
+"config": "scripted",
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "scripted",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"scripted",
+"delete",
+"none",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "scripted",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action_type": "tap",
+"app": "testbed",
+"condition": "perturbed",
+"config": "scripted",
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2930,
+"snapshot_sha1": "390386dbb2a5c82fd7cf0f0806227b3affffa3f8",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action_type": "type_text",
+"app": "testbed",
+"condition": "perturbed",
+"config": "scripted",
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action_type": "tap",
+"app": "testbed",
+"condition": "perturbed",
+"config": "scripted",
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "scripted",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "scripted",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"a11y",
+"home",
+"none",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "a11y",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "a11y",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2534,
+"snapshot_sha1": "a722b5f525b9e3af4de6a6a92a8bff9423bceae4",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "a11y",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "a11y",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "a11y",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"a11y",
+"home",
+"none",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "a11y",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "a11y",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2534,
+"snapshot_sha1": "a722b5f525b9e3af4de6a6a92a8bff9423bceae4",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "a11y",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "a11y",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "a11y",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"a11y",
+"renamed",
+"none",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "a11y",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addButton_v2",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "a11y",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2533,
+"snapshot_sha1": "371c1edeeaf69880ab17e58dc8d41c0f1c9c9cc7",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "a11y",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "a11y",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "a11y",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"a11y",
+"renamed",
+"none",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "a11y",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addButton_v2",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "a11y",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2533,
+"snapshot_sha1": "371c1edeeaf69880ab17e58dc8d41c0f1c9c9cc7",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "a11y",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "a11y",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "a11y",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+}
+],
+"case": [
+"a11y",
+"weak",
+"none",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "a11y",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": null,
+"action_type": "tap",
+"app": "testbed",
+"candidates": [],
+"collapsed": [],
+"condition": "baseline",
+"config": "a11y",
+"decision": {
+"chosen_idx": null,
+"margin": null,
+"reason": "no_match",
+"route": "fallback"
+},
+"event": "step",
+"executed": false,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "no_match",
+"repetition": 1,
+"route": "fallback",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2521,
+"snapshot_sha1": "747c668d910727121d6dea8f45981151ed56c0f0",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"app": "testbed",
+"completed": false,
+"condition": "baseline",
+"config": "a11y",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 0 found",
+"count {'type': 'Cell'}: expected 3, found 2"
+],
+"postconditions_ok": false,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 1
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+}
+],
+"case": [
+"a11y",
+"weak",
+"none",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "a11y",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": null,
+"action_type": "tap",
+"app": "testbed",
+"candidates": [],
+"collapsed": [],
+"condition": "perturbed",
+"config": "a11y",
+"decision": {
+"chosen_idx": null,
+"margin": null,
+"reason": "no_match",
+"route": "fallback"
+},
+"event": "step",
+"executed": false,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "no_match",
+"repetition": 1,
+"route": "fallback",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2521,
+"snapshot_sha1": "747c668d910727121d6dea8f45981151ed56c0f0",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"app": "testbed",
+"completed": false,
+"condition": "perturbed",
+"config": "a11y",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 0 found",
+"count {'type': 'Cell'}: expected 3, found 2"
+],
+"postconditions_ok": false,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 1
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"a11y",
+"delete",
+"none",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "a11y",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "a11y",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2930,
+"snapshot_sha1": "390386dbb2a5c82fd7cf0f0806227b3affffa3f8",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "a11y",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "a11y",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "a11y",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"a11y",
+"delete",
+"none",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "a11y",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "a11y",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2930,
+"snapshot_sha1": "390386dbb2a5c82fd7cf0f0806227b3affffa3f8",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "a11y",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "a11y",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "a11y",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"home",
+"none",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2534,
+"snapshot_sha1": "a722b5f525b9e3af4de6a6a92a8bff9423bceae4",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"home",
+"none",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2534,
+"snapshot_sha1": "a722b5f525b9e3af4de6a6a92a8bff9423bceae4",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"home",
+"icon",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2534,
+"snapshot_sha1": "a722b5f525b9e3af4de6a6a92a8bff9423bceae4",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"home",
+"icon",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2534,
+"snapshot_sha1": "a722b5f525b9e3af4de6a6a92a8bff9423bceae4",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"home",
+"junk",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2534,
+"snapshot_sha1": "a722b5f525b9e3af4de6a6a92a8bff9423bceae4",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"home",
+"junk",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2534,
+"snapshot_sha1": "a722b5f525b9e3af4de6a6a92a8bff9423bceae4",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"home",
+"retry",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2534,
+"snapshot_sha1": "a722b5f525b9e3af4de6a6a92a8bff9423bceae4",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"home",
+"retry",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2534,
+"snapshot_sha1": "a722b5f525b9e3af4de6a6a92a8bff9423bceae4",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"renamed",
+"none",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addButton_v2",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2533,
+"snapshot_sha1": "371c1edeeaf69880ab17e58dc8d41c0f1c9c9cc7",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"renamed",
+"none",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addButton_v2",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2533,
+"snapshot_sha1": "371c1edeeaf69880ab17e58dc8d41c0f1c9c9cc7",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"renamed",
+"icon",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addButton_v2",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2533,
+"snapshot_sha1": "371c1edeeaf69880ab17e58dc8d41c0f1c9c9cc7",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"renamed",
+"icon",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addButton_v2",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2533,
+"snapshot_sha1": "371c1edeeaf69880ab17e58dc8d41c0f1c9c9cc7",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"renamed",
+"junk",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addButton_v2",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2533,
+"snapshot_sha1": "371c1edeeaf69880ab17e58dc8d41c0f1c9c9cc7",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"renamed",
+"junk",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addButton_v2",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2533,
+"snapshot_sha1": "371c1edeeaf69880ab17e58dc8d41c0f1c9c9cc7",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"renamed",
+"retry",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addButton_v2",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2533,
+"snapshot_sha1": "371c1edeeaf69880ab17e58dc8d41c0f1c9c9cc7",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"renamed",
+"retry",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addButton_v2",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2533,
+"snapshot_sha1": "371c1edeeaf69880ab17e58dc8d41c0f1c9c9cc7",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+}
+],
+"case": [
+"hybrid",
+"weak",
+"none",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": null,
+"action_type": "tap",
+"app": "testbed",
+"candidates": [],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": null,
+"margin": null,
+"reason": "no_match",
+"route": "fallback"
+},
+"event": "step",
+"executed": false,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "no_match",
+"repetition": 1,
+"route": "vlm_rejected",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2521,
+"snapshot_sha1": "747c668d910727121d6dea8f45981151ed56c0f0",
+"step": "Tap the 'Add item' button",
+"step_index": 0,
+"vlm_attempts": [
+{
+"attempt": 0,
+"validated": {
+"kind": "reject",
+"reason": "malformed_output"
+},
+"vlm": {
+"image_bytes": 9,
+"input_chars": 15,
+"output_chars": 0,
+"parsed": null,
+"query": "Add item button",
+"raw_text": ""
+}
+},
+{
+"attempt": 1,
+"validated": {
+"kind": "reject",
+"reason": "malformed_output"
+},
+"vlm": {
+"image_bytes": 9,
+"input_chars": 25,
+"output_chars": 0,
+"parsed": null,
+"query": "Tap the 'Add item' button",
+"raw_text": ""
+}
+}
+]
+},
+{
+"app": "testbed",
+"completed": false,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 0 found",
+"count {'type': 'Cell'}: expected 3, found 2"
+],
+"postconditions_ok": false,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 1
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+}
+],
+"case": [
+"hybrid",
+"weak",
+"none",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": null,
+"action_type": "tap",
+"app": "testbed",
+"candidates": [],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": null,
+"margin": null,
+"reason": "no_match",
+"route": "fallback"
+},
+"event": "step",
+"executed": false,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "no_match",
+"repetition": 1,
+"route": "vlm_rejected",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2521,
+"snapshot_sha1": "747c668d910727121d6dea8f45981151ed56c0f0",
+"step": "Tap the 'Add item' button",
+"step_index": 0,
+"vlm_attempts": [
+{
+"attempt": 0,
+"validated": {
+"kind": "reject",
+"reason": "malformed_output"
+},
+"vlm": {
+"image_bytes": 9,
+"input_chars": 15,
+"output_chars": 0,
+"parsed": null,
+"query": "Add item button",
+"raw_text": ""
+}
+},
+{
+"attempt": 1,
+"validated": {
+"kind": "reject",
+"reason": "malformed_output"
+},
+"vlm": {
+"image_bytes": 9,
+"input_chars": 25,
+"output_chars": 0,
+"parsed": null,
+"query": "Tap the 'Add item' button",
+"raw_text": ""
+}
+}
+]
+},
+{
+"app": "testbed",
+"completed": false,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 0 found",
+"count {'type': 'Cell'}: expected 3, found 2"
+],
+"postconditions_ok": false,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 1
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": null
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"weak",
+"icon",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": null,
+"margin": null,
+"reason": "no_match",
+"route": "fallback"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "no_match",
+"repetition": 1,
+"route": "vlm",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2521,
+"snapshot_sha1": "747c668d910727121d6dea8f45981151ed56c0f0",
+"step": "Tap the 'Add item' button",
+"step_index": 0,
+"vlm_attempts": [
+{
+"attempt": 0,
+"validated": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"vlm": {
+"image_bytes": 9,
+"input_chars": 15,
+"output_chars": 41,
+"parsed": {
+"action": "tap",
+"relative": true,
+"x": 0.9253731343283582,
+"y": 0.08810068649885583
+},
+"query": "Add item button",
+"raw_text": "[0.9253731343283582, 0.08810068649885583]"
+}
+}
+]
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": null
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"weak",
+"icon",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": null,
+"margin": null,
+"reason": "no_match",
+"route": "fallback"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "no_match",
+"repetition": 1,
+"route": "vlm",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2521,
+"snapshot_sha1": "747c668d910727121d6dea8f45981151ed56c0f0",
+"step": "Tap the 'Add item' button",
+"step_index": 0,
+"vlm_attempts": [
+{
+"attempt": 0,
+"validated": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"vlm": {
+"image_bytes": 9,
+"input_chars": 15,
+"output_chars": 41,
+"parsed": {
+"action": "tap",
+"relative": true,
+"x": 0.9253731343283582,
+"y": 0.08810068649885583
+},
+"query": "Add item button",
+"raw_text": "[0.9253731343283582, 0.08810068649885583]"
+}
+}
+]
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+}
+],
+"case": [
+"hybrid",
+"weak",
+"junk",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": null,
+"action_type": "tap",
+"app": "testbed",
+"candidates": [],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": null,
+"margin": null,
+"reason": "no_match",
+"route": "fallback"
+},
+"event": "step",
+"executed": false,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "no_match",
+"repetition": 1,
+"route": "vlm_rejected",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2521,
+"snapshot_sha1": "747c668d910727121d6dea8f45981151ed56c0f0",
+"step": "Tap the 'Add item' button",
+"step_index": 0,
+"vlm_attempts": [
+{
+"attempt": 0,
+"validated": {
+"kind": "reject",
+"reason": "malformed_output"
+},
+"vlm": {
+"image_bytes": 9,
+"input_chars": 15,
+"output_chars": 14,
+"parsed": null,
+"query": "Add item button",
+"raw_text": "click the plus"
+}
+},
+{
+"attempt": 1,
+"validated": {
+"kind": "reject",
+"reason": "malformed_output"
+},
+"vlm": {
+"image_bytes": 9,
+"input_chars": 25,
+"output_chars": 14,
+"parsed": null,
+"query": "Tap the 'Add item' button",
+"raw_text": "click the plus"
+}
+}
+]
+},
+{
+"app": "testbed",
+"completed": false,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 0 found",
+"count {'type': 'Cell'}: expected 3, found 2"
+],
+"postconditions_ok": false,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 1
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+}
+],
+"case": [
+"hybrid",
+"weak",
+"junk",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": null,
+"action_type": "tap",
+"app": "testbed",
+"candidates": [],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": null,
+"margin": null,
+"reason": "no_match",
+"route": "fallback"
+},
+"event": "step",
+"executed": false,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "no_match",
+"repetition": 1,
+"route": "vlm_rejected",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2521,
+"snapshot_sha1": "747c668d910727121d6dea8f45981151ed56c0f0",
+"step": "Tap the 'Add item' button",
+"step_index": 0,
+"vlm_attempts": [
+{
+"attempt": 0,
+"validated": {
+"kind": "reject",
+"reason": "malformed_output"
+},
+"vlm": {
+"image_bytes": 9,
+"input_chars": 15,
+"output_chars": 14,
+"parsed": null,
+"query": "Add item button",
+"raw_text": "click the plus"
+}
+},
+{
+"attempt": 1,
+"validated": {
+"kind": "reject",
+"reason": "malformed_output"
+},
+"vlm": {
+"image_bytes": 9,
+"input_chars": 25,
+"output_chars": 14,
+"parsed": null,
+"query": "Tap the 'Add item' button",
+"raw_text": "click the plus"
+}
+}
+]
+},
+{
+"app": "testbed",
+"completed": false,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 0 found",
+"count {'type': 'Cell'}: expected 3, found 2"
+],
+"postconditions_ok": false,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 1
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": null
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"weak",
+"retry",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": null,
+"margin": null,
+"reason": "no_match",
+"route": "fallback"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "no_match",
+"repetition": 1,
+"route": "vlm",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2521,
+"snapshot_sha1": "747c668d910727121d6dea8f45981151ed56c0f0",
+"step": "Tap the 'Add item' button",
+"step_index": 0,
+"vlm_attempts": [
+{
+"attempt": 0,
+"validated": {
+"kind": "reject",
+"reason": "not_interactive"
+},
+"vlm": {
+"image_bytes": 9,
+"input_chars": 15,
+"output_chars": 12,
+"parsed": {
+"action": "tap",
+"relative": true,
+"x": 0.74,
+"y": 0.01
+},
+"query": "Add item button",
+"raw_text": "[0.74, 0.01]"
+}
+},
+{
+"attempt": 1,
+"validated": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"vlm": {
+"image_bytes": 9,
+"input_chars": 25,
+"output_chars": 41,
+"parsed": {
+"action": "tap",
+"relative": true,
+"x": 0.9253731343283582,
+"y": 0.08810068649885583
+},
+"query": "Tap the 'Add item' button",
+"raw_text": "[0.9253731343283582, 0.08810068649885583]"
+}
+}
+]
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": null
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"weak",
+"retry",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": null,
+"margin": null,
+"reason": "no_match",
+"route": "fallback"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "no_match",
+"repetition": 1,
+"route": "vlm",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2521,
+"snapshot_sha1": "747c668d910727121d6dea8f45981151ed56c0f0",
+"step": "Tap the 'Add item' button",
+"step_index": 0,
+"vlm_attempts": [
+{
+"attempt": 0,
+"validated": {
+"kind": "reject",
+"reason": "not_interactive"
+},
+"vlm": {
+"image_bytes": 9,
+"input_chars": 15,
+"output_chars": 12,
+"parsed": {
+"action": "tap",
+"relative": true,
+"x": 0.74,
+"y": 0.01
+},
+"query": "Add item button",
+"raw_text": "[0.74, 0.01]"
+}
+},
+{
+"attempt": 1,
+"validated": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"vlm": {
+"image_bytes": 9,
+"input_chars": 25,
+"output_chars": 41,
+"parsed": {
+"action": "tap",
+"relative": true,
+"x": 0.9253731343283582,
+"y": 0.08810068649885583
+},
+"query": "Tap the 'Add item' button",
+"raw_text": "[0.9253731343283582, 0.08810068649885583]"
+}
+}
+]
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"delete",
+"none",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2930,
+"snapshot_sha1": "390386dbb2a5c82fd7cf0f0806227b3affffa3f8",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"delete",
+"none",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2930,
+"snapshot_sha1": "390386dbb2a5c82fd7cf0f0806227b3affffa3f8",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"delete",
+"icon",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2930,
+"snapshot_sha1": "390386dbb2a5c82fd7cf0f0806227b3affffa3f8",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"delete",
+"icon",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2930,
+"snapshot_sha1": "390386dbb2a5c82fd7cf0f0806227b3affffa3f8",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"delete",
+"junk",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2930,
+"snapshot_sha1": "390386dbb2a5c82fd7cf0f0806227b3affffa3f8",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"delete",
+"junk",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2930,
+"snapshot_sha1": "390386dbb2a5c82fd7cf0f0806227b3affffa3f8",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"delete",
+"retry",
+"baseline"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2930,
+"snapshot_sha1": "390386dbb2a5c82fd7cf0f0806227b3affffa3f8",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "baseline",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "baseline",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+},
+{
+"actions": [
+{
+"reset": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+]
+},
+{
+"tap": "Add item"
+},
+{
+"into": null,
+"type": "Eggs"
+},
+{
+"tap": "Save"
+}
+],
+"case": [
+"hybrid",
+"delete",
+"retry",
+"perturbed"
+],
+"records": [
+{
+"app": "testbed",
+"category": null,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_start",
+"launch_args": [
+"-resetData",
+"-perturb",
+"identifier_rename"
+],
+"perturbation_kind": "identifier_rename",
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item"
+},
+{
+"action": {
+"element_idx": 4,
+"kind": "tap",
+"x": 372.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "addItemButton",
+"idx": 4,
+"label": "Add item",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 4,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": null,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 2930,
+"snapshot_sha1": "390386dbb2a5c82fd7cf0f0806227b3affffa3f8",
+"step": "Tap the 'Add item' button",
+"step_index": 0
+},
+{
+"action": {
+"element_idx": 6,
+"kind": "type_text",
+"text": "Eggs",
+"x": 201.0,
+"y": 152.0
+},
+"action_type": "type_text",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 0.9,
+"type": 1.0
+},
+"identifier": "itemNameField",
+"idx": 6,
+"label": null,
+"matched_field": "identifier",
+"score": 0.9294,
+"type": "TextField"
+},
+{
+"components": {
+"state": 1.0,
+"text": 0.4394,
+"type": 0.0
+},
+"identifier": "New Item",
+"idx": 2,
+"label": null,
+"matched_field": "identifier",
+"score": 0.0,
+"type": "NavigationBar"
+}
+],
+"collapsed": [
+{
+"dropped": 4,
+"kept": 2,
+"why": "same_text"
+}
+],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 6,
+"margin": 0.9294,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1657,
+"snapshot_sha1": "c1a166bf0179fcd3d5732f93b800577779a4fe84",
+"step": "Type 'Eggs' into the 'Item name' field",
+"step_index": 1
+},
+{
+"action": {
+"element_idx": 5,
+"kind": "tap",
+"x": 360.0,
+"y": 77.0
+},
+"action_type": "tap",
+"app": "testbed",
+"candidates": [
+{
+"components": {
+"state": 1.0,
+"text": 1.0,
+"type": 1.0
+},
+"identifier": "saveButton",
+"idx": 5,
+"label": "Save",
+"matched_field": "label",
+"score": 1.0,
+"type": "Button"
+}
+],
+"collapsed": [],
+"condition": "perturbed",
+"config": "hybrid",
+"decision": {
+"chosen_idx": 5,
+"margin": 1.0,
+"reason": "ok",
+"route": "structured"
+},
+"event": "step",
+"executed": true,
+"expect_ok": null,
+"oracle_ok": true,
+"reason": "ok",
+"repetition": 1,
+"route": "structured",
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"snapshot_chars": 1669,
+"snapshot_sha1": "05e87dd5cfd8122b1c334e3947c422d9a39d7165",
+"step": "Tap the 'Save' button",
+"step_index": 2
+},
+{
+"app": "testbed",
+"completed": true,
+"condition": "perturbed",
+"config": "hybrid",
+"event": "scenario_end",
+"infrastructure_error": false,
+"postconditions": [
+"exists {'type': 'Cell', 'label_contains': 'Eggs'}: 1 found",
+"count {'type': 'Cell'}: expected 3, found 3"
+],
+"postconditions_ok": true,
+"repetition": 1,
+"run_id": "g",
+"scenario": "tb-example-add-item",
+"steps_run": 3
+}
+]
+}
+]

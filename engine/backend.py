@@ -155,6 +155,9 @@ class FakeBackend:
 
     def swipe(self, direction):
         self.actions.append({"swipe": direction})
+        nxt = self.transitions.get((self.current, f"swipe:{direction}"))
+        if nxt:
+            self.current = nxt
 
     def back(self):
         self.actions.append({"back": True})
