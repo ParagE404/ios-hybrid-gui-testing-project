@@ -24,7 +24,7 @@ from . import matchers
 from .backend import Backend
 from .model import Action, Intent, Snapshot
 from .resolver import ResolverConfig, resolve
-from .router import RouterConfig, route
+from .router import NO_MATCH, RouterConfig, route
 from .scenario import Scenario, Step
 from .telemetry import Telemetry
 from .validator import ValidatorConfig, validate
@@ -42,12 +42,20 @@ class RunConfig:
     resolver: ResolverConfig = field(default_factory=ResolverConfig)
     router: RouterConfig = field(default_factory=RouterConfig)
     validator: ValidatorConfig = field(default_factory=ValidatorConfig)
+    # Engine v2 (D-029), off by default: on no_match, swipe up and re-snapshot, at most max_scrolls times.
+    scroll_to_find: bool = False
+    max_scrolls: int = 3
 
 
 CONFIGS = {
     "scripted": RunConfig("scripted", use_resolver=False, use_vlm=False),
     "a11y": RunConfig("a11y", use_resolver=True, use_vlm=False),
     "hybrid": RunConfig("hybrid", use_resolver=True, use_vlm=True),
+    # Engine v2 (D-029, tag engine-v2): the frozen configurations plus the two fixes.
+    "a11y-v2": RunConfig("a11y-v2", use_resolver=True, use_vlm=False, scroll_to_find=True,
+                         validator=ValidatorConfig(relax_candidate_set=True)),
+    "hybrid-v2": RunConfig("hybrid-v2", use_resolver=True, use_vlm=True, scroll_to_find=True,
+                           validator=ValidatorConfig(relax_candidate_set=True)),
 }
 
 
@@ -182,6 +190,18 @@ def run_step(i: int, step: Step, backend: Backend, cfg: RunConfig, vlm: Optional
     res = resolve(snap, intent, cfg.resolver)
     lat["resolution_ms"] = res.resolution_ms
     dec = route(res, cfg.router)
+    if cfg.scroll_to_find and dec.reason == NO_MATCH and intent.action in ("tap", "type_text"):
+        scrolls, t_scroll = [], time.perf_counter()
+        for k in range(cfg.max_scrolls):
+            backend.swipe("up")
+            snap = backend.snapshot()
+            res = resolve(snap, intent, cfg.resolver)
+            dec = route(res, cfg.router)
+            scrolls.append({"swipe": k + 1, "reason": dec.reason, "snapshot_sha1": snap.source_sha1})
+            if dec.reason != NO_MATCH:
+                break
+        lat["scroll_ms"] = (time.perf_counter() - t_scroll) * 1000
+        log["scroll_to_find"] = scrolls
     route_name, reason = dec.route, dec.reason
     log["candidates"] = [c.to_log() for c in res.candidates]
     log["collapsed"] = res.collapsed
@@ -195,6 +215,9 @@ def run_step(i: int, step: Step, backend: Backend, cfg: RunConfig, vlm: Optional
         top_valid = res.top is not None and res.top.score > 0
         if cfg.use_vlm and vlm is not None:
             cand_idxs = {c.element.idx for c in res.candidates}
+            all_invalid = bool(res.candidates) and all(c.score == 0 for c in res.candidates)
+            if cfg.validator.relax_candidate_set and all_invalid:
+                log["candidate_set_relaxed"] = True
             attempts = []
             for attempt in range(cfg.max_vlm_attempts):
                 try:
@@ -208,7 +231,7 @@ def run_step(i: int, step: Step, backend: Backend, cfg: RunConfig, vlm: Optional
                     attempts.append({"attempt": attempt, "vlm_error": _err(e)})
                     continue
                 lat.setdefault("vlm_ms", []).append(vr.latency_ms)
-                a = validate(vr.parsed, intent, snap, cand_idxs, cfg.validator)
+                a = validate(vr.parsed, intent, snap, cand_idxs, cfg.validator, all_candidates_invalid=all_invalid)
                 attempts.append({"attempt": attempt, "vlm": vr.to_log(), "validated": a.to_log()})
                 if a.kind != "reject":
                     action, route_name = a, "vlm"

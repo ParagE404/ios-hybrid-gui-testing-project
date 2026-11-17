@@ -40,7 +40,8 @@ def cmd_run(a):
     opts.new_command_timeout = 300
     driver = webdriver.Remote(a.server, options=opts)
     vlm = None
-    if a.config == "hybrid":
+    from .runner import CONFIGS as _C
+    if _C[a.config].use_vlm:
         from .vlm.showui import ShowUIAdapter
         vlm = ShowUIAdapter()
     tel = Telemetry(a.log, run_id=a.run_id or uuid.uuid4().hex[:8])
@@ -168,7 +169,7 @@ def main():
 
     run = sub.add_parser("run", help="Run scenarios on a simulator")
     run.add_argument("scenarios", nargs="+")
-    run.add_argument("--config", choices=["a11y", "hybrid", "scripted"], required=True)
+    run.add_argument("--config", choices=["a11y", "hybrid", "scripted", "a11y-v2", "hybrid-v2"], required=True)
     run.add_argument("--condition", choices=["baseline", "perturbed"], default="baseline")
     run.add_argument("--repetitions", type=int, default=1)
     run.add_argument("--device", required=True)

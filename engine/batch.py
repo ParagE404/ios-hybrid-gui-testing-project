@@ -75,7 +75,7 @@ def run_batch(scenarios: list[Scenario], plan: list[Key], backend_for: Callable[
     t_start = time.perf_counter()
     for n, (sid, cond, cfg_name, rep) in enumerate(todo, 1):
         scn = by_id[sid]
-        if cfg_name == "hybrid" and vlm is None and vlm_factory is not None:
+        if CONFIGS[cfg_name].use_vlm and vlm is None and vlm_factory is not None:
             vlm = vlm_factory()
         cfg = CONFIGS[cfg_name]
         result: Optional[ScenarioResult] = None
@@ -128,7 +128,8 @@ def write_manifest(path: Path, *, batch_id: str, seed: int, plan: list[Key], sce
         "configs": {k: {"use_resolver": v.use_resolver, "use_vlm": v.use_vlm,
                         "a11y_on_uncertain": v.a11y_on_uncertain, "hybrid_on_reject": v.hybrid_on_reject,
                         "max_vlm_attempts": v.max_vlm_attempts, "router": asdict(v.router),
-                        "resolver": asdict(v.resolver)} for k, v in C.items()},
+                        "resolver": asdict(v.resolver), "validator": asdict(v.validator),
+                        "scroll_to_find": v.scroll_to_find, "max_scrolls": v.max_scrolls} for k, v in C.items()},
         "scenarios": {s.id: str(s.path) for s in scenarios},
         "plan": [list(k) for k in plan], **extra,
     }
