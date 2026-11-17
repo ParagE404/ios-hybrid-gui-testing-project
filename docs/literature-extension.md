@@ -37,3 +37,9 @@ Searched but **not found / not recommended**:
 | Microsoft (2026a) | Listed but not cited in the body. Recommend removing it; D-001's rationale (Playwright emulates the browser, not native UIKit) could cite it if kept | — | |
 
 The duplicate placeholder lines ("BrowserStack (2026), Kobiton (2025) …" and "Zhang et al. (2021), BrowserStack …") are to be replaced by the entries above.
+
+## C. Confirmation (2026-11-17)
+
+Parag confirmed having read items 1–9 of section A, and not item 10 (Lee 2026), which is therefore not cited.
+Item 2 (Barr et al. 2015) is cited on Parag's reading; its bibliographic details were not confirmed online here and are to be checked against the copy read.
+No URL was supplied for Setiawan (2026) or for the original Kobiton source, so the defaults in section B apply: the IntelliHeal row is removed from Table 2.1, and the Kobiton row keeps only what the 2026 page states.
