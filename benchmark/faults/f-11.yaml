@@ -1,6 +1,9 @@
 # Seeded-fault scenario (workstream A, D-028). Written 2026-11-17 BEFORE any run of this file.
 # Steps, locators, oracles, postconditions and perturbation copied unchanged from tb-04.yaml;
 # only id, title, expected_outcome, the fault block and the -fault launch argument differ.
+# Amendment 2026-11-17, before any run of this file (D-028 note): the step-1 oracle is tightened from
+# label_contains 'Show completed' to exact labels, because the copied oracle also matched the lure.
+# Steps, locators, postconditions, perturbation and predictions are unchanged.
 id: f-11
 app: testbed
 title: 'Turn off ''Show completed'' in Settings [fault: f11_show_completed_first_lure]'
@@ -48,7 +51,10 @@ steps:
     value: //XCUIElementTypeSwitch[@name="Show completed"]
   oracle:
     type: Switch
-    label_contains: Show completed
+    label: Show completed
+  oracle_perturbed:
+    type: Switch
+    label: Show completed, Includes finished errands
   screen: settings
 - step: Tap the 'List' tab
   scripted:
