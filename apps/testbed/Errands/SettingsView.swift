@@ -20,9 +20,9 @@ struct SettingsView: View {
                     // subtitle, so its combined label becomes "Show completed, Includes finished errands".
                     Section("Display") {
                         Toggle("Large text", isOn: $store.largeText)
-                        Toggle(isOn: $store.showCompleted) {
+                        Toggle(isOn: lure ? $store.completedFirst : $store.showCompleted) {
                             VStack(alignment: .leading) {
-                                Text("Show completed")
+                                Text(lure ? "Show completed first" : "Show completed")
                                 Text("Includes finished errands").font(.caption).foregroundStyle(.secondary)
                             }
                         }
@@ -32,7 +32,12 @@ struct SettingsView: View {
                     }
                 } else {
                     Section("List") {
-                        Toggle("Show completed", isOn: $store.showCompleted)
+                        if lure {
+                            // Lure: "Show completed" is gone; a similar switch reorders instead of hiding.
+                            Toggle("Show completed first", isOn: $store.completedFirst)
+                        } else {
+                            Toggle("Show completed", isOn: $store.showCompleted)
+                        }
                         compactToggle
                     }
                 }
@@ -55,6 +60,8 @@ struct SettingsView: View {
             }
         }
     }
+
+    private var lure: Bool { Fault.on(.f11ShowCompletedFirstLure) }
 
     private var compactToggle: some View {
         Toggle(isOn: Binding(get: { store.compactRows }, set: { store.compactRows = $0 })) {

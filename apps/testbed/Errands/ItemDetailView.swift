@@ -16,10 +16,16 @@ struct ItemDetailView: View {
                 if item.urgent { Text("Urgent item").accessibilityIdentifier("urgentBadge") }
                 if item.favourite { Text("In favourites").accessibilityIdentifier("favouriteStatus") }
                 if item.done { Text("Completed").accessibilityIdentifier("completedStatus") }
-                Button(item.done ? "Mark as not done" : "Mark as done") {
-                    store.toggleDone(itemID)
+                if Fault.on(.f10MarkAllLure) {
+                    // Lure: the per-item button is gone; a bulk action with a similar label remains.
+                    Button("Mark all as done") { store.markAllDone() }
+                        .accessibilityIdentifier("markAllDoneButton")
+                } else {
+                    Button(item.done ? "Mark as not done" : "Mark as done") {
+                        store.toggleDone(itemID)
+                    }
+                    .accessibilityIdentifier("markDoneButton")
                 }
-                .accessibilityIdentifier("markDoneButton")
             }
             .navigationTitle(item.name)
             .toolbar {
