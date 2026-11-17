@@ -1,0 +1,67 @@
+# Held-out scenario for engine v2 (workstream C, D-029). Written 2026-11-17 BEFORE any v2 code and before any run.
+# Not derived from SU-03, SU-05 or SU-07 screens or controls. The scripted configuration is not run;
+# its locators exist only because the scenario loader requires them.
+id: h-08
+app: netnewswire
+title: Turn on 'Refresh to Clear Read Articles'
+pilot: false
+expected_outcome: 'a11y-v1: complete; hybrid-v1: complete; a11y-v2: complete; hybrid-v2: complete'
+heldout:
+  class: control
+  mechanism: 'Control: the switch is visible on the first Settings screen and labelled (the same control as nn-08
+    step 1, here in the unperturbed Settings); neither fix should change anything.'
+  configurations:
+  - a11y-v1
+  - hybrid-v1
+  - a11y-v2
+  - hybrid-v2
+  conditions:
+  - baseline
+  - perturbed
+  outcome_measure: runner completion (as in the formal experiment)
+  expected:
+    a11y-v1:
+      baseline: complete
+      perturbed: complete
+    hybrid-v1:
+      baseline: complete
+      perturbed: complete
+    a11y-v2:
+      baseline: complete
+      perturbed: complete
+    hybrid-v2:
+      baseline: complete
+      perturbed: complete
+initial_state:
+  launch_args:
+  - -resetData
+steps:
+- step: Tap the 'Settings' button
+  scripted:
+    strategy: accessibility_id
+    value: settingsButton
+  oracle:
+    type: Button
+    label: Settings
+  screen: feeds
+- step: Toggle the 'Refresh to Clear Read Articles' switch
+  scripted:
+    strategy: xpath
+    value: //XCUIElementTypeSwitch[@name="Refresh to Clear Read Articles"]
+  oracle:
+    type: Switch
+    label: Refresh to Clear Read Articles
+  screen: settings
+postconditions:
+- check: exists
+  element:
+    type: Switch
+    label: Refresh to Clear Read Articles
+    value: '1'
+perturbation:
+  kind: identifier_removal
+  description: Toolbar Settings button loses the instrumentation identifier 'settingsButton' (existing nn-02 flag;
+    cosmetic for these journeys)
+  launch_args:
+  - -perturb
+  - nn02_settings_id_removed

@@ -1,0 +1,82 @@
+# Held-out scenario for engine v2 (workstream C, D-029). Written 2026-11-17 BEFORE any v2 code and before any run.
+# Not derived from SU-03, SU-05 or SU-07 screens or controls. The scripted configuration is not run;
+# its locators exist only because the scenario loader requires them.
+id: h-05
+app: testbed
+title: Add 'Tea' through an unlabelled name field
+pilot: false
+category: 4
+expected_outcome: 'a11y-v1: fail at step 1; hybrid-v1: fail at step 1; a11y-v2: fail at step 1; hybrid-v2: complete
+  if ShowUI grounds the unlabelled control'
+heldout:
+  class: hidden_candidate
+  mechanism: 'Held-out flag h05_name_field_unlabelled: the add form''s name field loses its placeholder, label and
+    id (id textField_1); the placeholder text is still drawn but hidden from accessibility. The step says ''Item'';
+    the only text match is the hidden ''Add item'' button.'
+  configurations:
+  - a11y-v1
+  - hybrid-v1
+  - a11y-v2
+  - hybrid-v2
+  conditions:
+  - baseline
+  - perturbed
+  outcome_measure: runner completion (as in the formal experiment)
+  expected:
+    a11y-v1:
+      baseline: 'fail at step 1: the only candidate is the hidden ''Add item'' (score 0, incompatible_state); a11y
+        has no action'
+      perturbed: 'fail at step 1: the only candidate is the hidden ''Add item'' (score 0, incompatible_state); a11y
+        has no action'
+    hybrid-v1:
+      baseline: 'fail at step 1: the VLM point on the unlabelled control is rejected as outside_candidate_set (twice);
+        no valid best-effort candidate'
+      perturbed: 'fail at step 1: the VLM point on the unlabelled control is rejected as outside_candidate_set (twice);
+        no valid best-effort candidate'
+    a11y-v2:
+      baseline: 'fail at step 1: the only candidate is the hidden ''Add item'' (score 0, incompatible_state); a11y
+        has no action (no VLM, so v2 cannot help)'
+      perturbed: 'fail at step 1: the only candidate is the hidden ''Add item'' (score 0, incompatible_state); a11y
+        has no action (no VLM, so v2 cannot help)'
+    hybrid-v2:
+      baseline: 'complete if ShowUI grounds the unlabelled control: relax_candidate_set lets the VLM point through
+        because every candidate scores 0 (uncertain: depends on grounding)'
+      perturbed: 'complete if ShowUI grounds the unlabelled control: relax_candidate_set lets the VLM point through
+        because every candidate scores 0 (uncertain: depends on grounding)'
+initial_state:
+  launch_args:
+  - -resetData
+  - -perturb
+  - h05_name_field_unlabelled
+steps:
+- step: Tap the 'Add item' button
+  scripted:
+    strategy: accessibility_id
+    value: addItemButton
+  oracle:
+    label: Add item
+  screen: list
+- step: Type 'Tea' into the 'Item' field
+  scripted:
+    strategy: accessibility_id
+    value: textField_1
+  oracle:
+    type: TextField
+  screen: add_form
+- step: Tap the 'Save' button
+  scripted:
+    strategy: accessibility_id
+    value: saveButton
+  oracle:
+    label: Save
+  screen: add_form
+postconditions:
+- check: exists
+  element:
+    label_contains: Tea
+perturbation:
+  kind: identifier_removal
+  description: Urgent toggle and Save lose their ids (existing tb-02 flag; cosmetic here)
+  launch_args:
+  - -perturb
+  - tb02_ids_removed
