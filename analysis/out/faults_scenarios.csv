@@ -1,0 +1,73 @@
+scenario,fault_class,config,condition,class,where,predicted,prediction_met,substitutes
+f-01,behavioural,a11y,baseline,detection,postcondition,detection,True,
+f-01,behavioural,a11y,perturbed,detection,postcondition,detection,True,
+f-01,behavioural,hybrid,baseline,detection,postcondition,detection,True,
+f-01,behavioural,hybrid,perturbed,detection,postcondition,detection,True,
+f-01,behavioural,scripted,baseline,detection,postcondition,detection,True,
+f-01,behavioural,scripted,perturbed,fragility,step 0 (not_executed),fragility,True,
+f-02,behavioural,a11y,baseline,detection,postcondition,detection,True,
+f-02,behavioural,a11y,perturbed,detection,postcondition,detection,True,
+f-02,behavioural,hybrid,baseline,detection,postcondition,detection,True,
+f-02,behavioural,hybrid,perturbed,detection,postcondition,detection,True,
+f-02,behavioural,scripted,baseline,detection,postcondition,detection,True,
+f-02,behavioural,scripted,perturbed,fragility,step 2 (not_executed),fragility,True,
+f-03,behavioural,a11y,baseline,detection,postcondition,detection,True,
+f-03,behavioural,a11y,perturbed,detection,postcondition,detection,True,
+f-03,behavioural,hybrid,baseline,detection,postcondition,detection,True,
+f-03,behavioural,hybrid,perturbed,detection,postcondition,detection,True,
+f-03,behavioural,scripted,baseline,detection,postcondition,detection,True,
+f-03,behavioural,scripted,perturbed,fragility,step 0 (not_executed),fragility,True,
+f-04,behavioural,a11y,baseline,detection,postcondition,detection,True,
+f-04,behavioural,a11y,perturbed,detection,postcondition,detection,True,
+f-04,behavioural,hybrid,baseline,detection,postcondition,detection,True,
+f-04,behavioural,hybrid,perturbed,detection,postcondition,detection,True,
+f-04,behavioural,scripted,baseline,fragility,step 0 (not_executed),fragility,True,
+f-04,behavioural,scripted,perturbed,fragility,step 0 (not_executed),fragility,True,
+f-05,behavioural,a11y,baseline,detection,fault step,detection,True,
+f-05,behavioural,a11y,perturbed,detection,fault step,detection,True,
+f-05,behavioural,hybrid,baseline,detection,fault step,detection,True,
+f-05,behavioural,hybrid,perturbed,detection,fault step,detection,True,
+f-05,behavioural,scripted,baseline,detection,fault step,detection,True,
+f-05,behavioural,scripted,perturbed,fragility,step 0 (not_executed),fragility,True,
+f-06,behavioural,a11y,baseline,detection,postcondition,detection,True,
+f-06,behavioural,a11y,perturbed,detection,postcondition,detection,True,
+f-06,behavioural,hybrid,baseline,detection,postcondition,detection,True,
+f-06,behavioural,hybrid,perturbed,detection,postcondition,detection,True,
+f-06,behavioural,scripted,baseline,detection,postcondition,detection,True,
+f-06,behavioural,scripted,perturbed,detection,postcondition,detection,True,
+f-07,behavioural,a11y,baseline,detection,postcondition,detection,True,
+f-07,behavioural,a11y,perturbed,fragility,step 1 (not_executed),fragility,True,
+f-07,behavioural,hybrid,baseline,detection,postcondition,detection,True,
+f-07,behavioural,hybrid,perturbed,detection,postcondition,detection,True,
+f-07,behavioural,scripted,baseline,detection,postcondition,detection,True,
+f-07,behavioural,scripted,perturbed,fragility,step 1 (not_executed),fragility,True,
+f-08,behavioural,a11y,baseline,detection,fault step,detection,True,
+f-08,behavioural,a11y,perturbed,fragility,step 0 (not_executed),fragility,True,
+f-08,behavioural,hybrid,baseline,detection,fault step,detection,True,s1 vlm 'None'; s2 vlm 'None'
+f-08,behavioural,hybrid,perturbed,detection,fault step,detection,True,s1 vlm 'None'; s2 vlm 'None'
+f-08,behavioural,scripted,baseline,detection,fault step,detection,True,
+f-08,behavioural,scripted,perturbed,fragility,step 0 (not_executed),fragility,True,
+f-09,lure,a11y,baseline,detection,postcondition,detection,True,s3 structured 'Save draft'
+f-09,lure,a11y,perturbed,detection,postcondition,detection,True,s3 structured 'Save draft'
+f-09,lure,hybrid,baseline,detection,postcondition,detection,True,s3 structured 'Save draft'
+f-09,lure,hybrid,perturbed,detection,postcondition,detection,True,s3 structured 'Save draft'
+f-09,lure,scripted,baseline,detection,fault step,detection,True,
+f-09,lure,scripted,perturbed,fragility,step 0 (not_executed),fragility,True,
+f-10,lure,a11y,baseline,detection,postcondition,detection,True,s1 structured 'Mark all as done'
+f-10,lure,a11y,perturbed,detection,postcondition,detection,True,s1 structured 'Mark all as done'
+f-10,lure,hybrid,baseline,detection,postcondition,detection,True,s1 structured 'Mark all as done'
+f-10,lure,hybrid,perturbed,detection,postcondition,detection,True,s1 structured 'Mark all as done'
+f-10,lure,scripted,baseline,detection,fault step,detection,True,
+f-10,lure,scripted,perturbed,fragility,step 0 (not_executed),fragility,True,
+f-11,lure,a11y,baseline,detection,postcondition,detection,True,s1 structured 'Show completed first'
+f-11,lure,a11y,perturbed,detection,postcondition,detection,True,"s1 structured 'Show completed first, Includes finished errands'"
+f-11,lure,hybrid,baseline,detection,postcondition,detection,True,s1 structured 'Show completed first'
+f-11,lure,hybrid,perturbed,detection,postcondition,detection,True,"s1 structured 'Show completed first, Includes finished errands'"
+f-11,lure,scripted,baseline,fragility,step 0 (not_executed),fragility,True,
+f-11,lure,scripted,perturbed,fragility,step 0 (not_executed),fragility,True,
+f-12,lure,a11y,baseline,detection,fault step,detection,True,s0 best_effort 'Delete Milk'
+f-12,lure,a11y,perturbed,detection,fault step,detection,True,s0 best_effort 'Delete'
+f-12,lure,hybrid,baseline,detection,fault step,detection,True,s0 vlm 'Delete Bread'; s1 vlm 'Delete Batteries'
+f-12,lure,hybrid,perturbed,detection,fault step,detection,True,s0 vlm 'Delete'; s1 vlm 'Delete'
+f-12,lure,scripted,baseline,detection,fault step,detection,True,
+f-12,lure,scripted,perturbed,fragility,step 0 (not_executed),fragility,True,

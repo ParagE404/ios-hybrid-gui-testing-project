@@ -1,0 +1,7 @@
+config,condition,runs,false_pass,detection,fragility,other,engine_error,substitute_runs,runner_completed,false_pass_rate,false_pass_ci_low,false_pass_ci_high,detection_rate,detection_ci_low,detection_ci_high
+a11y,baseline,36,0,36,0,0,0,12,0,0.0,0.0,0.0,1.0,1.0,1.0
+a11y,perturbed,36,0,30,6,0,0,12,0,0.0,0.0,0.0,0.8333333333333334,0.5833333333333334,1.0
+hybrid,baseline,36,0,36,0,0,0,15,0,0.0,0.0,0.0,1.0,1.0,1.0
+hybrid,perturbed,36,0,36,0,0,0,15,0,0.0,0.0,0.0,1.0,1.0,1.0
+scripted,baseline,36,0,30,6,0,0,0,0,0.0,0.0,0.0,0.8333333333333334,0.5833333333333334,1.0
+scripted,perturbed,36,0,3,33,0,0,0,0,0.0,0.0,0.0,0.08333333333333333,0.0,0.25
