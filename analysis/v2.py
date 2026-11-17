@@ -167,6 +167,7 @@ def main(argv=None):
     ap.add_argument("--regression")
     ap.add_argument("--reference", default="experiments/raw/formal.jsonl")
     ap.add_argument("--out", default="analysis/out")
+    ap.add_argument("--md", default="v2.md", help="report file name (use a new name to keep an existing report)")
     a = ap.parse_args(argv)
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
 
@@ -211,7 +212,17 @@ def main(argv=None):
                f"- cells lost by v2: {int((rt.change == 'lost').sum())}; gained: {int((rt.change == 'gained').sum())} "
                f"(of which on motivating scenarios: {int(((rt.change == 'gained') & rt.motivating).sum())})\n\n",
                _md(rc), "\nChanged cells:\n\n", _md(rt[rt.change != ""])]
-    (out / "v2.md").write_text("".join(md), encoding="utf-8")
+        fired = reg[reg.scroll_fired | reg.relax_fired]
+        if len(fired):
+            sc = reg[reg.scroll_fired]
+            ft = (fired.groupby(["scenario", "config", "condition"])
+                  .agg(runs=("completed", "size"), completed=("completed", "sum"), scroll_fired=("scroll_fired", "sum"),
+                       relax_fired=("relax_fired", "sum"), first_failure=("first_failure", "first"),
+                       median_scroll_s=("scroll_ms", lambda v: v.median() / 1000)).reset_index())
+            md += [f"\nAdded scrolling latency when scroll_to_find fired: median {sc.scroll_ms.median() / 1000:.1f} s, "
+                   f"max {sc.scroll_ms.max() / 1000:.1f} s over {len(sc)} runs\n\n",
+                   "Cells where a v2 option fired:\n\n", _md(ft, ".1f")]
+    (out / a.md).write_text("".join(md), encoding="utf-8")
     print("".join(md[:6]))
 
 
