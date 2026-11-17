@@ -20,6 +20,14 @@ Accessibility-first hybrid iOS GUI testing is Parag Dharadhar's MSc Software Eng
 - The formal router values are threshold **0.66** and margin **0.09** (D-005). Keep scroll-to-find and the relaxed visual candidate-set rule opt-in through the v2 configurations. Preserve v1 route and reason codes, action bounds and telemetry behaviour. Use the golden comparison in `tests/test_v2.py` to check v1 compatibility.
 - Keep oracles and postconditions independent of locator selection. An executed tap alone does not establish completion. Keep MCP app selection allowlisted, actions bounded and `resolve` read-only.
 
+## Working with Claude
+
+1. **Inspect.** Read the affected entry point, its callers and the relevant tests or decision records. Check `git status --short` before editing and preserve work already in the tree. For a log or capture, start with the schema or a small slice.
+2. **Define the check.** Identify an observable pass condition before editing. For a bug, reproduce it with the smallest available test, saved screen or log. For a multi-file change with design trade-offs, outline the approach, the affected behaviour and how you will verify it. Parag owns research and design decisions.
+3. **Implement.** Reuse the existing entry points and keep the diff focused. Diagnose failures before changing expectations. In particular, preserve independent scenario oracles, historical fixtures and the distinction between recorded measurements and derived outputs.
+4. **Verify.** Start with the affected tests or offline command. Run the full suite when changing shared engine, telemetry or analysis behaviour. Use simulator evidence for claims about live iOS behaviour. Read the final diff and report the checks you ran, their results and any gaps.
+5. **Hand off.** For work spanning sessions, retain a short summary of the goal, key decisions, files changed, verification and open issues. Keep this file focused on durable instructions and link to project documents for detailed procedures. Leave edits for review unless Parag asks for a commit or push.
+
 ## Commands and verification
 
 Run from the repository root. The report environment uses Python 3.12. Reuse the existing `.venv` if present.
@@ -56,3 +64,5 @@ python -m engine.cli batch benchmark/scenarios --dry-run --limit 1
 - Parag owns benchmark design, predictions and interpretation. When updating the project records, describe what he decided, what AI contributed, what he accepted or changed and how he verified it. Quote prompts only when the original wording is available. Label paraphrases as summaries. See the [AI-use log](docs/ai-use-log.md).
 - Keep source origin headers accurate and aligned with the [component attribution table](docs/decision-register.md#component-attribution). Preserve the upstream MIT notices in both external app patches and the attribution for reused ShowUI code.
 - Follow the approved no-participants ethics scope. Use UK English and Harvard referencing in the report, and avoid em dashes. Keep the Word report and Turnitin source appendix outside Git.
+
+Workflow references: [Claude Code best practices](https://code.claude.com/docs/en/best-practices), [Claude Code project instructions](https://code.claude.com/docs/en/memory), and [Anthropic's context engineering guidance](https://www.anthropic.com/research/effective-context-engineering-for-ai-agents).
