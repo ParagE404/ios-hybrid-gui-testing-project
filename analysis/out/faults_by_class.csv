@@ -1,0 +1,13 @@
+fault_class,config,condition,runs,false_pass,detection,fragility,other,engine_error,substitute_runs,runner_completed,false_pass_rate,false_pass_ci_low,false_pass_ci_high,detection_rate,detection_ci_low,detection_ci_high
+behavioural,a11y,baseline,24,0,24,0,0,0,0,0,0.0,0.0,0.0,1.0,1.0,1.0
+behavioural,a11y,perturbed,24,0,18,6,0,0,0,0,0.0,0.0,0.0,0.75,0.375,1.0
+behavioural,hybrid,baseline,24,0,24,0,0,0,3,0,0.0,0.0,0.0,1.0,1.0,1.0
+behavioural,hybrid,perturbed,24,0,24,0,0,0,3,0,0.0,0.0,0.0,1.0,1.0,1.0
+behavioural,scripted,baseline,24,0,21,3,0,0,0,0,0.0,0.0,0.0,0.875,0.625,1.0
+behavioural,scripted,perturbed,24,0,3,21,0,0,0,0,0.0,0.0,0.0,0.125,0.0,0.375
+lure,a11y,baseline,12,0,12,0,0,0,12,0,0.0,0.0,0.0,1.0,1.0,1.0
+lure,a11y,perturbed,12,0,12,0,0,0,12,0,0.0,0.0,0.0,1.0,1.0,1.0
+lure,hybrid,baseline,12,0,12,0,0,0,12,0,0.0,0.0,0.0,1.0,1.0,1.0
+lure,hybrid,perturbed,12,0,12,0,0,0,12,0,0.0,0.0,0.0,1.0,1.0,1.0
+lure,scripted,baseline,12,0,9,3,0,0,0,0,0.0,0.0,0.0,0.75,0.25,1.0
+lure,scripted,perturbed,12,0,0,12,0,0,0,0,0.0,0.0,0.0,0.0,0.0,0.0

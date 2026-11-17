@@ -1,0 +1,217 @@
+scenario,fault_class,base,config,condition,repetition,verdict,reference,class,where,predicted,prediction_met,runner_completed,substitute_steps,substitutes,failed_postconditions,steps_run
+f-01,behavioural,tb-01,a11y,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,a11y,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,a11y,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,hybrid,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,hybrid,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,hybrid,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,scripted,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,scripted,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,scripted,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,a11y,perturbed,1,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,a11y,perturbed,2,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,a11y,perturbed,3,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,hybrid,perturbed,1,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,hybrid,perturbed,2,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,hybrid,perturbed,3,post,pass,detection,postcondition,detection,True,False,0,,"0,1",4
+f-01,behavioural,tb-01,scripted,perturbed,1,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,"0,1",1
+f-01,behavioural,tb-01,scripted,perturbed,2,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,"0,1",1
+f-01,behavioural,tb-01,scripted,perturbed,3,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,"0,1",1
+f-02,behavioural,tb-02,a11y,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,a11y,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,a11y,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,hybrid,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,hybrid,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,hybrid,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,scripted,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,scripted,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,scripted,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,a11y,perturbed,1,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,a11y,perturbed,2,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,a11y,perturbed,3,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,hybrid,perturbed,1,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,hybrid,perturbed,2,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,hybrid,perturbed,3,post,pass,detection,postcondition,detection,True,False,0,,0,4
+f-02,behavioural,tb-02,scripted,perturbed,1,step/2/not_executed,step/2/not_executed,fragility,step 2 (not_executed),fragility,True,False,0,,0,3
+f-02,behavioural,tb-02,scripted,perturbed,2,step/2/not_executed,step/2/not_executed,fragility,step 2 (not_executed),fragility,True,False,0,,0,3
+f-02,behavioural,tb-02,scripted,perturbed,3,step/2/not_executed,step/2/not_executed,fragility,step 2 (not_executed),fragility,True,False,0,,0,3
+f-03,behavioural,tb-03,a11y,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,a11y,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,a11y,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,hybrid,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,hybrid,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,hybrid,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,scripted,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,scripted,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,scripted,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,a11y,perturbed,1,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,a11y,perturbed,2,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,a11y,perturbed,3,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,hybrid,perturbed,1,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,hybrid,perturbed,2,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,hybrid,perturbed,3,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-03,behavioural,tb-03,scripted,perturbed,1,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-03,behavioural,tb-03,scripted,perturbed,2,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-03,behavioural,tb-03,scripted,perturbed,3,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-04,behavioural,tb-04,a11y,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-04,behavioural,tb-04,a11y,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-04,behavioural,tb-04,a11y,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-04,behavioural,tb-04,hybrid,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-04,behavioural,tb-04,hybrid,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-04,behavioural,tb-04,hybrid,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-04,behavioural,tb-04,scripted,baseline,1,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-04,behavioural,tb-04,scripted,baseline,2,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-04,behavioural,tb-04,scripted,baseline,3,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-04,behavioural,tb-04,a11y,perturbed,1,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-04,behavioural,tb-04,a11y,perturbed,2,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-04,behavioural,tb-04,a11y,perturbed,3,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-04,behavioural,tb-04,hybrid,perturbed,1,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-04,behavioural,tb-04,hybrid,perturbed,2,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-04,behavioural,tb-04,hybrid,perturbed,3,post,pass,detection,postcondition,detection,True,False,0,,0,3
+f-04,behavioural,tb-04,scripted,perturbed,1,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-04,behavioural,tb-04,scripted,perturbed,2,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-04,behavioural,tb-04,scripted,perturbed,3,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-05,behavioural,tb-05,a11y,baseline,1,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,a11y,baseline,2,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,a11y,baseline,3,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,hybrid,baseline,1,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,hybrid,baseline,2,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,hybrid,baseline,3,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,scripted,baseline,1,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,scripted,baseline,2,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,scripted,baseline,3,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,a11y,perturbed,1,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,a11y,perturbed,2,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,a11y,perturbed,3,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,hybrid,perturbed,1,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,hybrid,perturbed,2,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,hybrid,perturbed,3,step/0/expect,pass,detection,fault step,detection,True,False,0,,1,2
+f-05,behavioural,tb-05,scripted,perturbed,1,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,"0,1",1
+f-05,behavioural,tb-05,scripted,perturbed,2,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,"0,1",1
+f-05,behavioural,tb-05,scripted,perturbed,3,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,"0,1",1
+f-06,behavioural,tb-06,a11y,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,a11y,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,a11y,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,hybrid,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,hybrid,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,hybrid,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,scripted,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,scripted,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,scripted,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,a11y,perturbed,1,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,a11y,perturbed,2,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,a11y,perturbed,3,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,hybrid,perturbed,1,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,hybrid,perturbed,2,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,hybrid,perturbed,3,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,scripted,perturbed,1,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,scripted,perturbed,2,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-06,behavioural,tb-06,scripted,perturbed,3,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-07,behavioural,tb-07,a11y,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-07,behavioural,tb-07,a11y,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-07,behavioural,tb-07,a11y,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-07,behavioural,tb-07,hybrid,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-07,behavioural,tb-07,hybrid,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-07,behavioural,tb-07,hybrid,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-07,behavioural,tb-07,scripted,baseline,1,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-07,behavioural,tb-07,scripted,baseline,2,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-07,behavioural,tb-07,scripted,baseline,3,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-07,behavioural,tb-07,a11y,perturbed,1,step/1/not_executed,step/1/not_executed,fragility,step 1 (not_executed),fragility,True,False,0,,0,2
+f-07,behavioural,tb-07,a11y,perturbed,2,step/1/not_executed,step/1/not_executed,fragility,step 1 (not_executed),fragility,True,False,0,,0,2
+f-07,behavioural,tb-07,a11y,perturbed,3,step/1/not_executed,step/1/not_executed,fragility,step 1 (not_executed),fragility,True,False,0,,0,2
+f-07,behavioural,tb-07,hybrid,perturbed,1,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-07,behavioural,tb-07,hybrid,perturbed,2,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-07,behavioural,tb-07,hybrid,perturbed,3,post,pass,detection,postcondition,detection,True,False,0,,0,2
+f-07,behavioural,tb-07,scripted,perturbed,1,step/1/not_executed,step/1/not_executed,fragility,step 1 (not_executed),fragility,True,False,0,,0,2
+f-07,behavioural,tb-07,scripted,perturbed,2,step/1/not_executed,step/1/not_executed,fragility,step 1 (not_executed),fragility,True,False,0,,0,2
+f-07,behavioural,tb-07,scripted,perturbed,3,step/1/not_executed,step/1/not_executed,fragility,step 1 (not_executed),fragility,True,False,0,,0,2
+f-08,behavioural,tb-08,a11y,baseline,1,step/0/expect,pass,detection,fault step,detection,True,False,0,,0,2
+f-08,behavioural,tb-08,a11y,baseline,2,step/0/expect,pass,detection,fault step,detection,True,False,0,,0,2
+f-08,behavioural,tb-08,a11y,baseline,3,step/0/expect,pass,detection,fault step,detection,True,False,0,,0,2
+f-08,behavioural,tb-08,hybrid,baseline,1,step/0/expect,pass,detection,fault step,detection,True,False,2,s1 vlm 'None'; s2 vlm 'None',0,3
+f-08,behavioural,tb-08,hybrid,baseline,2,step/0/expect,pass,detection,fault step,detection,True,False,2,s1 vlm 'None'; s2 vlm 'None',0,3
+f-08,behavioural,tb-08,hybrid,baseline,3,step/0/expect,pass,detection,fault step,detection,True,False,2,s1 vlm 'None'; s2 vlm 'None',0,3
+f-08,behavioural,tb-08,scripted,baseline,1,step/0/expect,pass,detection,fault step,detection,True,False,0,,0,2
+f-08,behavioural,tb-08,scripted,baseline,2,step/0/expect,pass,detection,fault step,detection,True,False,0,,0,2
+f-08,behavioural,tb-08,scripted,baseline,3,step/0/expect,pass,detection,fault step,detection,True,False,0,,0,2
+f-08,behavioural,tb-08,a11y,perturbed,1,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-08,behavioural,tb-08,a11y,perturbed,2,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-08,behavioural,tb-08,a11y,perturbed,3,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-08,behavioural,tb-08,hybrid,perturbed,1,step/0/expect,pass,detection,fault step,detection,True,False,2,s1 vlm 'None'; s2 vlm 'None',0,3
+f-08,behavioural,tb-08,hybrid,perturbed,2,step/0/expect,pass,detection,fault step,detection,True,False,2,s1 vlm 'None'; s2 vlm 'None',0,3
+f-08,behavioural,tb-08,hybrid,perturbed,3,step/0/expect,pass,detection,fault step,detection,True,False,2,s1 vlm 'None'; s2 vlm 'None',0,3
+f-08,behavioural,tb-08,scripted,perturbed,1,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-08,behavioural,tb-08,scripted,perturbed,2,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-08,behavioural,tb-08,scripted,perturbed,3,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-09,lure,tb-01,a11y,baseline,1,post,pass,detection,postcondition,detection,True,False,1,s3 structured 'Save draft',"0,1",4
+f-09,lure,tb-01,a11y,baseline,2,post,pass,detection,postcondition,detection,True,False,1,s3 structured 'Save draft',"0,1",4
+f-09,lure,tb-01,a11y,baseline,3,post,pass,detection,postcondition,detection,True,False,1,s3 structured 'Save draft',"0,1",4
+f-09,lure,tb-01,hybrid,baseline,1,post,pass,detection,postcondition,detection,True,False,1,s3 structured 'Save draft',"0,1",4
+f-09,lure,tb-01,hybrid,baseline,2,post,pass,detection,postcondition,detection,True,False,1,s3 structured 'Save draft',"0,1",4
+f-09,lure,tb-01,hybrid,baseline,3,post,pass,detection,postcondition,detection,True,False,1,s3 structured 'Save draft',"0,1",4
+f-09,lure,tb-01,scripted,baseline,1,step/3/not_executed,pass,detection,fault step,detection,True,False,0,,"0,1",4
+f-09,lure,tb-01,scripted,baseline,2,step/3/not_executed,pass,detection,fault step,detection,True,False,0,,"0,1",4
+f-09,lure,tb-01,scripted,baseline,3,step/3/not_executed,pass,detection,fault step,detection,True,False,0,,"0,1",4
+f-09,lure,tb-01,a11y,perturbed,1,post,pass,detection,postcondition,detection,True,False,1,s3 structured 'Save draft',"0,1",4
+f-09,lure,tb-01,a11y,perturbed,2,post,pass,detection,postcondition,detection,True,False,1,s3 structured 'Save draft',"0,1",4
+f-09,lure,tb-01,a11y,perturbed,3,post,pass,detection,postcondition,detection,True,False,1,s3 structured 'Save draft',"0,1",4
+f-09,lure,tb-01,hybrid,perturbed,1,post,pass,detection,postcondition,detection,True,False,1,s3 structured 'Save draft',"0,1",4
+f-09,lure,tb-01,hybrid,perturbed,2,post,pass,detection,postcondition,detection,True,False,1,s3 structured 'Save draft',"0,1",4
+f-09,lure,tb-01,hybrid,perturbed,3,post,pass,detection,postcondition,detection,True,False,1,s3 structured 'Save draft',"0,1",4
+f-09,lure,tb-01,scripted,perturbed,1,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,"0,1",1
+f-09,lure,tb-01,scripted,perturbed,2,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,"0,1",1
+f-09,lure,tb-01,scripted,perturbed,3,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,"0,1",1
+f-10,lure,tb-03,a11y,baseline,1,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Mark all as done',1,3
+f-10,lure,tb-03,a11y,baseline,2,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Mark all as done',1,3
+f-10,lure,tb-03,a11y,baseline,3,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Mark all as done',1,3
+f-10,lure,tb-03,hybrid,baseline,1,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Mark all as done',1,3
+f-10,lure,tb-03,hybrid,baseline,2,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Mark all as done',1,3
+f-10,lure,tb-03,hybrid,baseline,3,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Mark all as done',1,3
+f-10,lure,tb-03,scripted,baseline,1,step/1/not_executed,pass,detection,fault step,detection,True,False,0,,0,2
+f-10,lure,tb-03,scripted,baseline,2,step/1/not_executed,pass,detection,fault step,detection,True,False,0,,0,2
+f-10,lure,tb-03,scripted,baseline,3,step/1/not_executed,pass,detection,fault step,detection,True,False,0,,0,2
+f-10,lure,tb-03,a11y,perturbed,1,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Mark all as done',1,3
+f-10,lure,tb-03,a11y,perturbed,2,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Mark all as done',1,3
+f-10,lure,tb-03,a11y,perturbed,3,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Mark all as done',1,3
+f-10,lure,tb-03,hybrid,perturbed,1,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Mark all as done',1,3
+f-10,lure,tb-03,hybrid,perturbed,2,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Mark all as done',1,3
+f-10,lure,tb-03,hybrid,perturbed,3,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Mark all as done',1,3
+f-10,lure,tb-03,scripted,perturbed,1,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-10,lure,tb-03,scripted,perturbed,2,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-10,lure,tb-03,scripted,perturbed,3,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-11,lure,tb-04,a11y,baseline,1,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Show completed first',0,3
+f-11,lure,tb-04,a11y,baseline,2,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Show completed first',0,3
+f-11,lure,tb-04,a11y,baseline,3,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Show completed first',0,3
+f-11,lure,tb-04,hybrid,baseline,1,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Show completed first',0,3
+f-11,lure,tb-04,hybrid,baseline,2,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Show completed first',0,3
+f-11,lure,tb-04,hybrid,baseline,3,post,pass,detection,postcondition,detection,True,False,1,s1 structured 'Show completed first',0,3
+f-11,lure,tb-04,scripted,baseline,1,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-11,lure,tb-04,scripted,baseline,2,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-11,lure,tb-04,scripted,baseline,3,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-11,lure,tb-04,a11y,perturbed,1,post,pass,detection,postcondition,detection,True,False,1,"s1 structured 'Show completed first, Includes finished errands'",0,3
+f-11,lure,tb-04,a11y,perturbed,2,post,pass,detection,postcondition,detection,True,False,1,"s1 structured 'Show completed first, Includes finished errands'",0,3
+f-11,lure,tb-04,a11y,perturbed,3,post,pass,detection,postcondition,detection,True,False,1,"s1 structured 'Show completed first, Includes finished errands'",0,3
+f-11,lure,tb-04,hybrid,perturbed,1,post,pass,detection,postcondition,detection,True,False,1,"s1 structured 'Show completed first, Includes finished errands'",0,3
+f-11,lure,tb-04,hybrid,perturbed,2,post,pass,detection,postcondition,detection,True,False,1,"s1 structured 'Show completed first, Includes finished errands'",0,3
+f-11,lure,tb-04,hybrid,perturbed,3,post,pass,detection,postcondition,detection,True,False,1,"s1 structured 'Show completed first, Includes finished errands'",0,3
+f-11,lure,tb-04,scripted,perturbed,1,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-11,lure,tb-04,scripted,perturbed,2,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-11,lure,tb-04,scripted,perturbed,3,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,0,1
+f-12,lure,tb-05,a11y,baseline,1,step/0/expect,pass,detection,fault step,detection,True,False,1,s0 best_effort 'Delete Milk',"0,2",2
+f-12,lure,tb-05,a11y,baseline,2,step/0/expect,pass,detection,fault step,detection,True,False,1,s0 best_effort 'Delete Milk',"0,2",2
+f-12,lure,tb-05,a11y,baseline,3,step/0/expect,pass,detection,fault step,detection,True,False,1,s0 best_effort 'Delete Milk',"0,2",2
+f-12,lure,tb-05,hybrid,baseline,1,step/0/expect,pass,detection,fault step,detection,True,False,2,s0 vlm 'Delete Bread'; s1 vlm 'Delete Batteries',"0,3",2
+f-12,lure,tb-05,hybrid,baseline,2,step/0/expect,pass,detection,fault step,detection,True,False,2,s0 vlm 'Delete Bread'; s1 vlm 'Delete Batteries',"0,3",2
+f-12,lure,tb-05,hybrid,baseline,3,step/0/expect,pass,detection,fault step,detection,True,False,2,s0 vlm 'Delete Bread'; s1 vlm 'Delete Batteries',"0,3",2
+f-12,lure,tb-05,scripted,baseline,1,step/0/not_executed,pass,detection,fault step,detection,True,False,0,,"0,1",1
+f-12,lure,tb-05,scripted,baseline,2,step/0/not_executed,pass,detection,fault step,detection,True,False,0,,"0,1",1
+f-12,lure,tb-05,scripted,baseline,3,step/0/not_executed,pass,detection,fault step,detection,True,False,0,,"0,1",1
+f-12,lure,tb-05,a11y,perturbed,1,step/0/expect,pass,detection,fault step,detection,True,False,1,s0 best_effort 'Delete',"0,3",2
+f-12,lure,tb-05,a11y,perturbed,2,step/0/expect,pass,detection,fault step,detection,True,False,1,s0 best_effort 'Delete',"0,3",2
+f-12,lure,tb-05,a11y,perturbed,3,step/0/expect,pass,detection,fault step,detection,True,False,1,s0 best_effort 'Delete',"0,3",2
+f-12,lure,tb-05,hybrid,perturbed,1,step/0/expect,pass,detection,fault step,detection,True,False,2,s0 vlm 'Delete'; s1 vlm 'Delete',"0,3",2
+f-12,lure,tb-05,hybrid,perturbed,2,step/0/expect,pass,detection,fault step,detection,True,False,2,s0 vlm 'Delete'; s1 vlm 'Delete',"0,3",2
+f-12,lure,tb-05,hybrid,perturbed,3,step/0/expect,pass,detection,fault step,detection,True,False,2,s0 vlm 'Delete'; s1 vlm 'Delete',"0,3",2
+f-12,lure,tb-05,scripted,perturbed,1,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,"0,1",1
+f-12,lure,tb-05,scripted,perturbed,2,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,"0,1",1
+f-12,lure,tb-05,scripted,perturbed,3,step/0/not_executed,step/0/not_executed,fragility,step 0 (not_executed),fragility,True,False,0,,"0,1",1
