@@ -16,3 +16,6 @@ apps/external/netnewswire/
 apps/external/SharedXcodeSettings/
 .claude/settings.local.json
 .docx
+# Local project report drafts and Word lock files
+/INM468 Project Report*.docx
+/~$*Project Report*.docx
