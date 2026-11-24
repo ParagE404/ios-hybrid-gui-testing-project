@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help.
 """Sensitivity of the frozen router thresholds and resolver weights (workstream B, D-027).
 
 Post-hoc analysis made after the formal experiment. It reads the formal log and the saved

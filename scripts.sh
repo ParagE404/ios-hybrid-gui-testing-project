@@ -1,3 +1,4 @@
+# Origin: AI-generated and reviewed by the author. Project demo commands.
 source .venv/bin/activate
 appium
 

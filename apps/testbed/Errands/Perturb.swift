@@ -1,3 +1,4 @@
+// Origin: AI-generated and reviewed by the author. Testbed workflows and perturbations were defined by the author.
 // Perturbation switches, read from launch arguments: -perturb <flag> (repeatable).
 //  
 //

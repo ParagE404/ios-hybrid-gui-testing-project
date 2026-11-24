@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help.
 """VLM adapters.  """
 
 from __future__ import annotations

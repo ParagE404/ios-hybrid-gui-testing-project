@@ -1,3 +1,4 @@
+# Origin: AI-generated and reviewed by the author.
 """Live narrator for the video demo: follows a telemetry log and explains each decision as it lands.
 
  AI-assisted (Claude), reviewed by Parag Dharadhar. A demo aid only: it reads the

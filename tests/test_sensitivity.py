@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Tests for analysis/sensitivity.py (workstream B, D-027)."""
 import sys
 from pathlib import Path

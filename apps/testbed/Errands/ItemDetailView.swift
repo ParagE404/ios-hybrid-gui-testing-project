@@ -1,3 +1,4 @@
+// Origin: AI-generated and reviewed by the author. Testbed workflows and perturbations were defined by the author.
 // Item detail: status texts, Mark as done, Edit, and the favourite star.
 //  
 

@@ -1,3 +1,4 @@
+# Origin: AI-generated and reviewed by the author.
 """Inertness check for the seeded-fault build (D-028): fault-free tb runs on the rebuilt app vs the formal runs.
 
 A run matches when its runner completion, oracle-free first failure point (analysis/faults.verdict) and the

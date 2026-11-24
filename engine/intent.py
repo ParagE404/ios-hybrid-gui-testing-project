@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help.
 """Parse constrained natural-language test steps into Intents.
 
  

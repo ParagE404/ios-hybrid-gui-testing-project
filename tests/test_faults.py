@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Tests for analysis/faults.py (workstream A, D-028), on synthetic logs only."""
 import json
 import sys

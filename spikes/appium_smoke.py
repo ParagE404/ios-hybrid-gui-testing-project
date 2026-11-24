@@ -1,3 +1,4 @@
+# Origin: AI-generated and reviewed by the author.
 """Spike 1: Appium/XCUITest smoke test.
 
 Connects to a running Appium server, opens an app on an iOS simulator, saves the

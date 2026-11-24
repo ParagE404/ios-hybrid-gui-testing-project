@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Batch runner tests on the fake backend.  """
 import json
 from pathlib import Path

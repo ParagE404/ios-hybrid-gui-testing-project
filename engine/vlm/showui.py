@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help. Reuses an adapted grounding example from the ShowUI-2B model card (see README).
 """ShowUI-2B grounding adapter.
 
 ShowUI-2B in grounding mode takes a screenshot and a text description and returns a

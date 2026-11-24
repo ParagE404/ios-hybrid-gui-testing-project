@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Run one scenario under one configuration and record everything.
 
  

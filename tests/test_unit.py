@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Unit tests: normalisation, intent parsing, scoring, routing, validation.
 
  

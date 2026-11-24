@@ -1,3 +1,4 @@
+# Origin: AI-generated and reviewed by the author.
 """Tour the external apps (SyncUps, NetNewsWire) and save page source + screenshot per screen.
 
   Spike only, not part of

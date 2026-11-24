@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Origin: AI-generated and reviewed by the author.
 # Build the Errands testbed for the iOS Simulator and install it on the booted device.
 #  
 # Usage: apps/testbed/build.sh            (needs Xcode, xcodegen, and a booted simulator)

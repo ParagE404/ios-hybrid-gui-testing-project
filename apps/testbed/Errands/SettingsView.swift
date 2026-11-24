@@ -1,3 +1,4 @@
+// Origin: AI-generated and reviewed by the author. Testbed workflows and perturbations were defined by the author.
 // Settings tab: toggles, segmented sort control, reset with confirmation alert.
 //  
 //

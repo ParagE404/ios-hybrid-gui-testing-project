@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help.
 """Normalise XCUITest page source (XML) into a flat list of Elements.
 
  

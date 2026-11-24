@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Execution backends: Appium XCUITest (real) and a fake (tests).
 
   The Appium

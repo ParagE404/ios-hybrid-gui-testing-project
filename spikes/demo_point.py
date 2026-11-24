@@ -1,3 +1,4 @@
+# Origin: AI-generated and reviewed by the author.
 """Show where ShowUI pointed: a simulator screenshot with the model's point drawn on it (video demo aid).
 
  AI-assisted (Claude), reviewed by Parag Dharadhar. Reads the last VLM proposal from a

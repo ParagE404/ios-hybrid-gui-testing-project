@@ -1,3 +1,4 @@
+// Origin: AI-generated and reviewed by the author. Fault design was defined by the author with AI assistance.
 // Seeded faults for the fault-detection study (D-028), read from launch arguments: -fault <flag>.
 //
 // Unlike Perturb (which changes metadata or structure but never behaviour), each flag here makes the
