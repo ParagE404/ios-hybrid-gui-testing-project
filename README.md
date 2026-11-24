@@ -24,6 +24,9 @@ The formal runs use a score threshold of 0.66 and a margin of 0.09. The v2 study
 - `analysis/` analysis scripts and outputs
 - `tests/` automated tests
 - `docs/` decision register, AI-use log, pinned versions
+- `.mcp.json` MCP client configuration for the local engine server
+- `.vscode/launch.json` debugger launch for the TB-07 demonstration
+- `scripts.sh` command notes from recording the demo. Use [Live runs](#live-runs) for a fresh run.
 
 ## Quick start
 

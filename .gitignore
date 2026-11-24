@@ -4,6 +4,7 @@ __pycache__/
 .DS_Store
 spikes/out/
 .cache/
+/.transformer_setup.txt
 *.xcuserstate
 xcuserdata/
 DerivedData/
