@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help.
 """Calibrate the router threshold (tau) and margin (delta) on PILOT runs only (D-005).
 
 Input: JSONL telemetry from pilot scenarios (ids starting "p-") run in the a11y

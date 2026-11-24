@@ -1,3 +1,4 @@
+# Origin: AI-generated and reviewed by the author.
 """Print the steps of one run from a telemetry log as a readable table (video demo aid).
 
   Not part of the engine

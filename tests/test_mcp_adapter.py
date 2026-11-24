@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Tests for the MCP adapter (D-026).  
 
 1. EngineSession reproduces engine.runner.run_scenario exactly (same telemetry, minus timings).

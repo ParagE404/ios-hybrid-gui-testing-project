@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help.
 """Validate model-proposed actions before anything touches the app.
 
  

@@ -1,3 +1,4 @@
+// Origin: AI-scaffolded and rewritten by the author.
 //
 //  Instrumentation.swift
 //  Research instrumentation for the MSc benchmark; not part of upstream NetNewsWire.

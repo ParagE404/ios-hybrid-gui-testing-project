@@ -1,3 +1,4 @@
+// Origin: AI-scaffolded and rewritten by the author. Seed data adapts upstream SyncUps mocks under MIT (notice in syncups.patch).
 // Research instrumentation for the MSc benchmark; not part of upstream SyncUps.
 //  
 // Spec: docs/external-perturbations.md (D-019).

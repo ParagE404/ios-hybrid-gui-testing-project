@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Tests for analysis/v2.py on synthetic logs (D-029)."""
 import json
 import sys

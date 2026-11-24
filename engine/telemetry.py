@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help.
 """Append-only JSONL telemetry.
 
  

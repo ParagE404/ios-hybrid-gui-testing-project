@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help.
 """Scenario format: load and validate benchmark YAML files.
 
  

@@ -1,3 +1,4 @@
+// Origin: AI-generated and reviewed by the author. Testbed workflows and perturbations were defined by the author.
 // In-memory data store with a fixed seed, so every launch starts from the same state.
 //  
 

@@ -1,3 +1,4 @@
+# Origin: AI-generated and reviewed by the author. Scenario design was defined by the author.
 # Errands testbed scenario.  
 # Scripted locators follow D-011 (developer id, else XPath on a unique name, else positional XPath).
 # VERIFY every locator and label against real page source from the simulator before the freeze.

@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help.
 """Core data types shared by the engine.
 
   See docs/ai-use-log.md.

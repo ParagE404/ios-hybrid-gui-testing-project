@@ -1,3 +1,4 @@
+# Origin: AI-generated and reviewed by the author.
 """Seeded-fault study analysis (workstream A, D-028).
 
 Classifies every fault run with the rule pre-registered in D-028:

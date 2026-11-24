@@ -1,3 +1,4 @@
+# Origin: AI-generated and reviewed by the author. Feasibility-script dependency list.
 Appium-Python-Client>=4
 torch
 torchvision

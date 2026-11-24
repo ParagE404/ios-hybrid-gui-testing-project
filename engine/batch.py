@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Formal experiment batch runner: scenarios x conditions x configurations x repetitions.
 
  

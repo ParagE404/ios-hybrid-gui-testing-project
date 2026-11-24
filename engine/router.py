@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help.
 """Confidence router: accept the structured result or route to VLM fallback.
 
  

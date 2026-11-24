@@ -1,3 +1,4 @@
+# Origin: AI-generated and reviewed by the author. Reuses an adapted grounding example from the ShowUI-2B model card (see README).
 """Spike 2: can ShowUI-2B ground a UI element on this Mac, and how fast?
 
 Gives one screenshot and one text query to ShowUI and prints the predicted relative

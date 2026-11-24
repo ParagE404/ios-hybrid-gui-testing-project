@@ -1,3 +1,4 @@
+# Origin: AI-generated and reviewed by the author.
 """Capture NetNewsWire feeds and Settings (top, after one swipe, bottom) for the held-out scenarios (D-029).
 
 Usage: python spikes/capture_nnw_settings.py OUT_DIR [--perturb FLAG]

@@ -1,3 +1,4 @@
+# Origin: AI-generated and reviewed by the author. Fault design and predictions were defined by the author with AI assistance.
 # Seeded-fault scenario (workstream A, D-028). Written 2026-11-17 BEFORE any run of this file.
 # Steps, locators, oracles, postconditions and perturbation copied unchanged from tb-01.yaml;
 # only id, title, expected_outcome, the fault block and the -fault launch argument differ.

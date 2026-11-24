@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Fixed fake-backend cases whose telemetry pins the frozen runner's behaviour (D-029).
 
 `python tests/golden/runner_cases.py OUT.json` writes the telemetry of every case with timing fields

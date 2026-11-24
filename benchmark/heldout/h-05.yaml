@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author. Held-out evaluation design was defined by the author.
 # Held-out scenario for engine v2 (workstream C, D-029). Written 2026-11-17 BEFORE any v2 code and before any run.
 # Not derived from SU-03, SU-05 or SU-07 screens or controls. The scripted configuration is not run;
 # its locators exist only because the scenario loader requires them.

@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Engine v2 options (D-029): scroll_to_find and relax_candidate_set, both off by default."""
 import json
 import sys

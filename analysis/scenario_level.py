@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help.
 """Scenario-level tables and sensitivity checks for Chapter 4 (supplements analyse.py).
 
 Why it exists:

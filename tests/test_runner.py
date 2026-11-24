@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Integration tests: full scenario runs on the fake backend for all three configurations.
 
  

@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help.
 """SEQ1 analysis: does MCP invocation preserve structured outcomes, and what latency does it add?
 
 Inputs: engine telemetry (experiments/raw/seq1.jsonl, field 'mode' = direct | mcp), the per-call

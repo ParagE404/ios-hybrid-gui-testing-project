@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Static benchmark check: evaluate scenario steps against saved page sources.
 
  

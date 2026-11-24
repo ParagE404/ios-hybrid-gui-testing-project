@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 from __future__ import annotations
 
 import argparse

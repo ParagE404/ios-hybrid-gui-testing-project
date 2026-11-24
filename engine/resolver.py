@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help.
 """Structured (accessibility-only) resolver: rank candidate elements for an Intent.
 
   The idea of

@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help.
 """Analysis of formal runs: tables and figures for Chapter 4.
 
 Implements the analysis promised in the proposal ("Experiment and analysis"):

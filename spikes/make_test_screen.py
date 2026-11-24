@@ -1,3 +1,4 @@
+# Origin: AI-generated and reviewed by the author.
 """Render a synthetic iOS-style Settings screen for the ShowUI spike (no simulator needed).
 
  

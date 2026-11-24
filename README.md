@@ -152,3 +152,10 @@ python -m pip install -e '.[appium,vlm]'
 apps/testbed/build.sh
 python -m engine.cli run benchmark/scenarios/tb-07.yaml --config hybrid --condition perturbed --device "iPhone 17" --bundle uk.ac.city.parag.Errands
 ```
+
+## Licence and attribution
+
+- The project's own code uses the MIT licence. [Project licence](LICENSE)
+- Each external app patch includes the full MIT notice from its pinned upstream revision. [SyncUps patch](apps/external/syncups.patch) · [NetNewsWire patch](apps/external/netnewswire.patch)
+- The grounding adapter and ShowUI feasibility script reuse parts of the grounding example from the pinned model card. [ShowUI-2B model card](https://huggingface.co/showlab/ShowUI-2B/blob/cabec4fcc48d15ffd3efe0b33ea9bc7d41509d60/README.md)
+- Source headers record how each file was produced. The component attribution table links each group to its commit evidence. [Component attribution](docs/decision-register.md#component-attribution)

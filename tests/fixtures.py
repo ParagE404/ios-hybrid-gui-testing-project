@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Synthetic XCUITest page sources for tests.
 
 Shapes follow real XCUITest page source (XCUIElementType* nodes with type, name,

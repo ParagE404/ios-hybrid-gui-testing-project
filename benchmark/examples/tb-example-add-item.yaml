@@ -1,3 +1,4 @@
+# Origin: Original project example written by the author with AI help.
 # Example scenario showing the format. Formal scenarios go in benchmark/scenarios/,
 # pilot scenarios in benchmark/pilot/ (pilot: true, never analysed).
 id: tb-example-add-item

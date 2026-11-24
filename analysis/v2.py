@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Engine v2 evaluation (workstream C, D-029): held-out scenarios first, formal regression second.
 
 Held-out (primary, exploratory): completion per configuration x condition (runner completion, as in the

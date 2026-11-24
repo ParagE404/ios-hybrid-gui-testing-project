@@ -1,3 +1,4 @@
+# Origin: Original project code written by the author with AI help. Uses the project ShowUI adapter.
 """Spike 2b: score ShowUI-2B grounding on a labelled screen (evidence for decision D-002).
 
   Uses

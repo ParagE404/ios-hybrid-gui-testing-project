@@ -1,3 +1,4 @@
+# Origin: AI-scaffolded and rewritten by the author.
 """Tests for the pilot calibration rule.  """
 import sys
 from pathlib import Path

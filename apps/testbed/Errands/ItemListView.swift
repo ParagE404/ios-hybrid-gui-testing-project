@@ -1,3 +1,4 @@
+// Origin: AI-generated and reviewed by the author. Testbed workflows and perturbations were defined by the author.
 // List tab: filter chips, sort menu, add button, item rows with inline delete.
 //  
 

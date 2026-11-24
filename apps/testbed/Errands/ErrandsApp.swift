@@ -1,3 +1,4 @@
+// Origin: AI-generated and reviewed by the author. Testbed workflows and perturbations were defined by the author.
 // Errands: purpose-built SwiftUI testbed for the benchmark.
 //  
 
